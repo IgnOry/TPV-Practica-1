@@ -119,6 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlocksMAP.cpp" />
