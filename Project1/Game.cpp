@@ -17,8 +17,6 @@ Game::Game() {
 	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
 	// We now create the textures
 
-	const int NUM_TEXTURES = 3;
-
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 		
 		SDL_Texture* textures[2];

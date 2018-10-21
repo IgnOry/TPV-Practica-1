@@ -10,3 +10,7 @@ Block::Block()
 Block::~Block()
 {
 }
+
+void Block::render()
+{
+}

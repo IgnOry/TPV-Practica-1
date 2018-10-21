@@ -27,6 +27,8 @@ class
 		Dog* dog = nullptr;
 		Helicopter* helicopter = nullptr;
 		bool exit = false;
+		bool gameover;
+		bool win;
 		Texture* textures[NUM_TEXTURES];
 
 
