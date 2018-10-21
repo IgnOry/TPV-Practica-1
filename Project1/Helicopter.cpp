@@ -1,16 +1,5 @@
 #include "Helicopter.h"
 
-
-
-Helicopter::Helicopter()
-{
-}
-
-
-Helicopter::~Helicopter()
-{
-}
-
 void Helicopter::render() const
 {
 	texture->load("..\\images\\helicopter.png", 6, 1);

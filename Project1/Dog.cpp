@@ -1,16 +1,5 @@
 #include "Dog.h"
 
-
-
-Dog::Dog()
-{
-}
-
-
-Dog::~Dog()
-{
-}
-
 void Dog::render() const
 {
 	texture->load("..\\images\\dog.png", 6, 1);

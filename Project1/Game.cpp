@@ -14,14 +14,26 @@ Game::Game() {
 	SDL_Init (SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow( "Perro corre con helicoptero", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if(window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer":
+	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
 	// We now create the textures
-	for(uint i = 0; i < NUM_TEXTURES; i++) {
-		. . .
+
+	const int NUM_TEXTURES = 3;
+
+	for (uint i = 0; i < NUM_TEXTURES; i++) {
+		
+		SDL_Texture* textures[2];
+		string filename[] = { "..\\images\\background1.png" , "..\\images\\dog.png" };
+
+		for (int i = 0; i < 2; i++)
+		{
+			SDL_Surface* surface = IMG_Load(filename[i].c_str());
+			textures[i] = SDL_CreateTextureFromSurface(renderer, surface);
+			SDL_FreeSurface(surface);
+		}
 	}
 	// We finally create the game objects
-	dog = new Dog (...); 
-	helicopter = new Helicopter (...);
+	dog = new Dog (); 
+	helicopter = new Helicopter ();
 }
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
