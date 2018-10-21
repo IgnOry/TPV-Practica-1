@@ -17,7 +17,7 @@ void BlocksMAP::render()
 
 int BlocksMAP::numBloques()
 {
-	return 0;
+	return ;
 }
 
 void BlocksMAP::cargarArchivo()

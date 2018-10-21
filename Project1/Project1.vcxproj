@@ -119,7 +119,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\HolaSDL\main.cpp" />
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlocksMAP.cpp" />
@@ -135,6 +134,7 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlocksMAP.h" />
+    <ClInclude Include="checkML.h" />
     <ClInclude Include="Dog.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Helicopter.h" />

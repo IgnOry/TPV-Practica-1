@@ -19,10 +19,10 @@ Game::Game() {
 
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 		
-		SDL_Texture* textures[2];
-		string filename[] = { "..\\images\\background1.png" , "..\\images\\dog.png" };
+		SDL_Texture* textures[5];
+		string filename[] = { "..\\images\\bricks.png" , "..\\images\\ball.png", "..\\images\\paddle.png", "..\\images\\topside.png", "..\\images\\side.png" };
 
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < NUM_TEXTURES; i++)
 		{
 			SDL_Surface* surface = IMG_Load(filename[i].c_str());
 			textures[i] = SDL_CreateTextureFromSurface(renderer, surface);

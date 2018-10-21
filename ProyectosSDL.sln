@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HolaSDL", "HolaSDL\HolaSDL.vcxproj", "{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Project1", "Project1\Project1.vcxproj", "{1F5BE48E-6F25-40FD-8E70-68CC8B764E8A}"
 EndProject
 Global
@@ -15,12 +13,6 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}.Debug|Win32.ActiveCfg = Debug|Win32
-		{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}.Debug|Win32.Build.0 = Debug|Win32
-		{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}.Debug|x64.ActiveCfg = Debug|Win32
-		{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}.Release|Win32.ActiveCfg = Release|Win32
-		{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}.Release|Win32.Build.0 = Release|Win32
-		{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}.Release|x64.ActiveCfg = Release|Win32
 		{1F5BE48E-6F25-40FD-8E70-68CC8B764E8A}.Debug|Win32.ActiveCfg = Debug|Win32
 		{1F5BE48E-6F25-40FD-8E70-68CC8B764E8A}.Debug|Win32.Build.0 = Debug|Win32
 		{1F5BE48E-6F25-40FD-8E70-68CC8B764E8A}.Debug|x64.ActiveCfg = Debug|x64
