@@ -4,19 +4,21 @@
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
 #include "Texture.h"
+#include "Block.h"
 
 class BlocksMAP
 {
 private:
-	//Matriz dinámica de punteros a bloques
-	uint tamMapap; //Tamaño en píxeles del mapa
+	Block*** bloques;//Matriz dinámica de punteros a bloques
+	uint tamMapaX;
+	uint tamMapaY;//Tamaño en píxeles del mapa
 	uint tamBloque; //Tamaño en píxeles del bloque
 
 public:
-	BlocksMAP();
+	BlocksMAP(uint x, uint y, uint tamBloque);
 	~BlocksMAP();
 	void render();
-	int numBloques();
-	void cargarArchivo();
+	uint numBloques();
+	void cargarArchivo(string filePath);
 };
 

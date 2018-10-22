@@ -8,7 +8,6 @@ using namespace std;
 
 typedef unsigned int uint;
 
-
 Game::Game() {
 	// We first initialize SDL
 	SDL_Init (SDL_INIT_EVERYTHING);

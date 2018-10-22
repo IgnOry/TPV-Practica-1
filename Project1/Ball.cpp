@@ -1,12 +1,23 @@
 #include "Ball.h"
 
+Ball::Ball(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture * puntero, Game * juego)
+{
+	posicion = pos;
+	ancho = anch;
+	alto = alt;
+	dirPos = direccion;
+	punteroTextura = puntero;
+	punteroGame = juego;
+}
 
-
-Ball::Ball()
+Ball::~Ball()
 {
 }
 
+void Ball::render()
+{
+}
 
-Ball::~Ball()
+void Ball::update()
 {
 }

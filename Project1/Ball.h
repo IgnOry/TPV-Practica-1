@@ -13,13 +13,15 @@ class Ball
 
 private:
 		Vector2D posicion;
-		int ancho;
-		int alto;
+		uint ancho;
+		uint alto;
 		Vector2D dirPos;
-		SDL_Texture* punteroTextura;
+		Texture* punteroTextura;
 		Game* punteroGame;
 public:
-	Ball();
+	Ball(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture* puntero, Game* juego);
 	~Ball();
+	void render();
+	void update();
 };
 

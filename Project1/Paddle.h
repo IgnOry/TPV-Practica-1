@@ -12,13 +12,13 @@ class Paddle
 
 private:
 	Vector2D posicion;
-	int ancho;
-	int alto;
+	uint ancho;
+	uint alto;
 	Vector2D dirPos;
-	SDL_Texture* punteroTextura;
+	Texture* punteroTextura;
 
 public:
-	Paddle();
+	Paddle(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture puntero);
 	~Paddle();
 	void render();
 	void update();

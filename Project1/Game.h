@@ -14,7 +14,7 @@ const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
 const uint NUM_TEXTURES = 5;
 const uint FRAMERATE = 60; //¿?
-//const uint TAMANO_ELEMENTOS = ¿?
+const uint tamElem = 60;
 
 class
 	Game
