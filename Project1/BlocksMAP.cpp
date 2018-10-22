@@ -6,13 +6,13 @@
 
 BlocksMAP::BlocksMAP(uint x, uint y, uint tamBloqueDato)
 {
-	bloques = new Block**[x];
+	blocks = new Block**[x];
 	for (int i = 0; i < y; i++)
-		bloques[i] = new Block*[y];
+		blocks[i] = new Block*[y];
 	
-	tamBloque = tamBloqueDato;
-	tamMapaX = tamBloqueDato * x;
-	tamMapaY = tamBloqueDato * y;
+	BlockSize = tamBloqueDato;
+	MapSizeX = tamBloqueDato * x;
+	MapSizeY = tamBloqueDato * y;
 }
 
 BlocksMAP::~BlocksMAP()
@@ -24,17 +24,17 @@ void BlocksMAP::render()
 
 }
 
-uint BlocksMAP::numBloques()
+uint BlocksMAP::BlockNum()
 {
-	uint x = tamMapaX / tamBloque;
-	uint y = tamMapaY / tamBloque;
+	uint x = MapSizeX / BlockSize;
+	uint y = MapSizeY / BlockSize;
 	uint i = 0;
 
 	for (int j = 0; j < x; j++)
 	{
 		for (int k = 0; k < y; k++)
 		{
-			if (bloques[x][y] != nullptr)
+			if (blocks[x][y] != nullptr)
 				i++;
 		}
 	}
@@ -42,17 +42,17 @@ uint BlocksMAP::numBloques()
 	return i;
 }
 
-void BlocksMAP::cargarArchivo(string filePath)
+void BlocksMAP::loadFile(string filePath)
 {
-	ifstream archivo;
-	archivo.open(filePath);
+	ifstream file;
+	file.open(filePath);
 
 	uint x;
 	uint y;
 
-	archivo >> x >> y;
+	file >> x >> y;
 
-	BlocksMAP::BlocksMAP(x, y, tamElem);
+	BlocksMAP::BlocksMAP(x, y, BlockSize);
 	//leer linea a linea
 
 

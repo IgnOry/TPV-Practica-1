@@ -18,14 +18,14 @@ const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
 const uint NUM_TEXTURES = 5;
 const uint FRAMERATE = 60; //¿?
-const uint tamElem = 60;
-const string pathImages = ""; //Path imágenes
+const uint ELEM_SIZE = 60;
+const string PATH_IMAGES = ""; //Path imágenes
 
 const struct TextureAttributes { string fileName; uint nRows; uint nCols;};
 
 TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
 	{
-		{"ball.png",1,1}, {"bricks.png",2,3}, {"",,}, {"",,}, {"",,}
+		{"ball.png",1,1}, {"bricks.png",2,3}, {"paddle",,}, {"side",,}, {"topside",,} //faltan numeros correspondientes al espacio de los objetos
 };
 
 class Game

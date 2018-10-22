@@ -9,13 +9,13 @@ class Wall
 {
 
 private:
-	Vector2D posicion;
-	uint ancho;
-	uint alto;
-	Texture* punteroTextura;
+	Vector2D position;
+	uint width;
+	uint height;
+	Texture* ptrTexture;
 
 public:
-	Wall(double posX, double posY, int ancho, int alto, Texture* textura);
+	Wall(double posX, double posY, int width, int height, Texture* texture);
 	~Wall();
 	void render();
 };

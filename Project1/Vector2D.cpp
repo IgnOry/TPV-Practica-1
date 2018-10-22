@@ -4,6 +4,7 @@
 
 Vector2D::Vector2D() : x(), y() {}
 Vector2D::Vector2D(double x, double y) : x(x), y(y) {}
+
 double Vector2D::getX() const {
 	return x;
 }

@@ -1,12 +1,12 @@
 #include "Paddle.h"
 
-Paddle::Paddle(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture* puntero)
+Paddle::Paddle(Vector2D pos, uint wid, uint heightD, Vector2D direction, Texture* ptr)
 {
-	posicion = pos;
-	ancho = anch;
-	alto = alt;
-	dirPos = direccion;
-	punteroTextura = puntero;
+	position = pos;
+	width = wid;
+	height = heightD;
+	dirPos = direction;
+	ptrTexture = ptr;
 }
 
 Paddle::~Paddle()

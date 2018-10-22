@@ -4,7 +4,6 @@
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
 #include "Texture.h"
-//#include "Game.h"
 
 #include <string>
 
@@ -15,14 +14,14 @@ class Ball
 {
 
 private:
-		Vector2D posicion;
-		uint ancho;
-		uint alto;
+		Vector2D position;
+		uint width;
+		uint height;
 		Vector2D dirPos;
-		Texture* punteroTextura;
-		Game* punteroGame;
+		Texture* ptrTexture;
+		Game* ptrGame;
 public:
-	Ball(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture* puntero, Game* juego);
+	Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD);
 	~Ball();
 	void render();
 	void update();

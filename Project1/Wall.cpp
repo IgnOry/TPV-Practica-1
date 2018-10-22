@@ -4,10 +4,10 @@
 
 Wall::Wall(double posX, double posY, int tamAncho, int tamAlto, Texture* textura)
 {
-	posicion.darValor(posX, posY);
-	ancho = tamAncho;
-	alto = tamAlto;
-	punteroTextura = textura;
+	position = Vector2D::Vector2D(posX, posY);
+	width = tamAncho;
+	height = tamAlto;
+	ptrTexture = textura;
 }
 
 
@@ -17,10 +17,10 @@ Wall::~Wall()
 
 void Wall::render()
 {
-	punteroTextura->load("..\\images\\dog.png", 6, 1); //cambiar ruta
+	ptrTexture->load("..\\images\\dog.png", 6, 1); //cambiar ruta
 
-	SDL_Rect destRect = {posicion.consultaX, posicion.consultaY,ancho, alto};
+	SDL_Rect destRect = {position.getX(), position.getY(), width, height};
 
-	punteroTextura->render(destRect, SDL_FLIP_NONE);
+	ptrTexture->render(destRect, SDL_FLIP_NONE);
 
 }

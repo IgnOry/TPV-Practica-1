@@ -29,8 +29,7 @@ Game::Game() {
 		}
 	}
 	// We finally create the game objects
-	dog = new Dog (); 
-	helicopter = new Helicopter ();
+	
 }
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
@@ -51,7 +50,7 @@ void Game::run()
 void Game::render() const
 {
 	SDL_RenderClear(renderer);
-	dog->render();
+	//dog->render();
 
 	SDL_RenderPresent(renderer);
 }
@@ -65,11 +64,11 @@ void Game::handleEvents()
 		if (event.type == SDL_QUIT)
 			exit = true;
 
-		dog->handleEvents(event);
+		//dog->handleEvents(event);
 	}
 }
 
 void Game::update()
 {
-	dog->update();
+	//dog->update();
 }

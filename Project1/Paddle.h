@@ -11,14 +11,14 @@ class Paddle
 {
 
 private:
-	Vector2D posicion;
-	uint ancho;
-	uint alto;
+	Vector2D position;
+	uint width;
+	uint height;
 	Vector2D dirPos;
-	Texture* punteroTextura;
+	Texture* ptrTexture;
 
 public:
-	Paddle(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture* puntero);
+	Paddle(Vector2D pos, uint width, uint height, Vector2D direction, Texture* ptr);
 	~Paddle();
 	void render();
 	void update();

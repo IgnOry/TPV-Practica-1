@@ -9,16 +9,16 @@
 class BlocksMAP
 {
 private:
-	Block*** bloques;//Matriz dinámica de punteros a bloques
-	uint tamMapaX;
-	uint tamMapaY;//Tamaño en píxeles del mapa
-	uint tamBloque; //Tamaño en píxeles del bloque
+	Block** blocks;//Matriz dinámica de punteros a bloques
+	uint MapSizeX;
+	uint MapSizeY;//Tamaño en píxeles del mapa
+	uint BlockSize; //Tamaño en píxeles del bloque
 
 public:
 	BlocksMAP(uint x, uint y, uint tamBloque);
 	~BlocksMAP();
 	void render();
-	uint numBloques();
-	void cargarArchivo(string filePath);
+	uint BlockNum();
+	void loadFile(string filePath);
 };
 
