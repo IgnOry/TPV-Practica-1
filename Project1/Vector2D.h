@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Game.h"
 #include <math.h>
+
 class Vector2D
 {
 
@@ -18,8 +18,4 @@ public:
 	Vector2D operator*(double d) const;
 	double operator*(const Vector2D& d) const;
 	friend std::ostream& operator<<(std::ostream& os, const Vector2D& v);
-
-};
-	
-	//Falta meter los métodos como operador
 };

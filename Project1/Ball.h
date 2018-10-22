@@ -1,14 +1,12 @@
 #pragma once
 
-#include "Vector2D.h"
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
 #include "Texture.h"
-
 #include <string>
+#include "Vector2D.h"
 
 class Game;
-
 
 class Ball
 {

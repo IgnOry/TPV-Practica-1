@@ -4,9 +4,11 @@
 #include "SDL_image.h" // Windows
 #include "Texture.h"
 #include "Ball.h"
+#include "Paddle.h"
+#include "Wall.h"
+#include "Block.h"
+#include "BlocksMAP.h"
 #include <string>
-
-//hacer include de todos los archivos
 
 using namespace std;
 
@@ -34,14 +36,13 @@ class Game
 		SDL_Window* window = nullptr;
 		SDL_Renderer* renderer = nullptr;	
 		// uint winWidth, winHeight; // También podrían estar aquí
-			
-		//punteros a todos los elementos;
 
 		bool exit = false;
 		bool gameover;
 		bool win;
 		Texture* textures[NUM_TEXTURES];
 		Ball* ball;
+		//punteros a todos los elementos;
 
 		public:
 			Game();
