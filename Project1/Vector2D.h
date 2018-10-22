@@ -1,4 +1,7 @@
 #pragma once
+
+#include "Game.h"
+#include <math.h>
 class Vector2D
 {
 
@@ -11,9 +14,11 @@ public:
 	~Vector2D();
 	double consultaX();
 	double consultaY();
-	//Normalizarvector
-	//SumaVector -Operador
-	//RestaVector -Operador
-	//ProductoEscalarVector -Operador
-	//ProductoVectorEscalar -Operador
+	void sumaVector(Vector2D sumando);
+	void restaVector(Vector2D restando);
+	void productoVectorEscalar(uint escalar); //puede que haya que hacer que devuelva Vector2D
+	uint productoEscalarVectores(Vector2D producto);
+	uint normalizarVector();
+	
+	//Falta meter los métodos como operador
 };

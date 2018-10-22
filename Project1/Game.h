@@ -3,8 +3,6 @@
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
 #include "Texture.h"
-#include "Dog.h"
-#include "Helicopter.h"
 
 #include <string>
 

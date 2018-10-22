@@ -13,10 +13,15 @@ class Block
 
 private:
 	Vector2D posicion;
-	SDL_Texture* punteroTextura;
+	uint ancho;
+	uint alto;
+	uint color;
+	uint fila;
+	uint columna;
+	Texture* punteroTextura;
 
 public:
-	Block();
+	Block(double posX, double posY, int numAncho, int tamAlto, int tamColor, int tamFila, int tamColumna, Texture* textura);
 	~Block();
 	void render();
 };

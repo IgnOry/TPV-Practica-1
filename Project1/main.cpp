@@ -7,6 +7,7 @@ using namespace std;
 
 using uint = unsigned int;
 
+/*
 void firstTest() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 	SDL_Window* window = nullptr;
@@ -49,7 +50,8 @@ void firstTest() {
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
-}
+	}
+	*/
 
 int main(int argc, char* argv[]){
 	
