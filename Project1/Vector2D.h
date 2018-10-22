@@ -10,8 +10,9 @@ private:
 	double y; //Posicion Y
 
 public:
-	Vector2D(double posX, double posY);
+	Vector2D();
 	~Vector2D();
+	void darValor(double posX, double posY); //Se implementa por indicacion de Visual Studio de la necesidad de una constructora sin argumentos (No se encontró un constructor predeterminado)
 	double consultaX();
 	double consultaY();
 	void sumaVector(Vector2D sumando);

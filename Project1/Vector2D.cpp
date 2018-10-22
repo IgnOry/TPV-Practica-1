@@ -2,15 +2,21 @@
 #include "Game.h"
 #include <math.h>
 
-Vector2D::Vector2D(double posX, double posY)
-{
-	double x = posX;
-	double y = posY;
-}
 
+Vector2D::Vector2D()
+{
+	x;
+	y;
+}
 
 Vector2D::~Vector2D()
 {
+}
+
+void Vector2D::darValor(double posX, double posY)
+{
+	x = posX;
+	y = posY;
 }
 
 double Vector2D::consultaX()
