@@ -18,7 +18,7 @@ Game::Game() {
 
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 		
-		SDL_Texture* textures[5];
+		SDL_Texture* textures[NUM_TEXTURES];
 		string filename[] = { "..\\images\\bricks.png" , "..\\images\\ball.png", "..\\images\\paddle.png", "..\\images\\topside.png", "..\\images\\side.png" };
 
 		for (int i = 0; i < NUM_TEXTURES; i++)

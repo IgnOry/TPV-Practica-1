@@ -1,6 +1,7 @@
 #include "Ball.h"
+#include "Game.h"
 
-Ball::Ball(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture * puntero, Game * juego)
+Ball::Ball(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture* puntero, Game* juego)
 {
 	posicion = pos;
 	ancho = anch;
@@ -20,4 +21,9 @@ void Ball::render()
 
 void Ball::update()
 {
+
+
+
 }
+
+

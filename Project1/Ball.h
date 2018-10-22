@@ -4,9 +4,12 @@
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
 #include "Texture.h"
-#include "Game.h"
+//#include "Game.h"
 
 #include <string>
+
+class Game;
+
 
 class Ball
 {
