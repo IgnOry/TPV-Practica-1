@@ -27,7 +27,7 @@ const struct TextureAttributes { string fileName; uint nRows; uint nCols;};
 
 TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
 	{
-		{"ball.png",1,1}, {"bricks.png",2,3}, {"paddle",,}, {"side",,}, {"topside",,} //faltan numeros correspondientes al espacio de los objetos
+		{"ball.png",1,1}, {"bricks.png",2,3}, {"paddle",1,1}, {"side",1,1}, {"topside",1,1} //faltan numeros correspondientes al espacio de los objetos
 };
 
 class Game

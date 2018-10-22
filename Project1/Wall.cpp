@@ -17,10 +17,13 @@ Wall::~Wall()
 
 void Wall::render()
 {
-	ptrTexture->load("..\\images\\dog.png", 6, 1); //cambiar ruta
+	SDL_Rect destRect = { position.getX(), position.getY(), 0, 0};			
+	ptrTexture->render(destRect);		// renderiza el de la izda
+	ptrTexture->render(destRect,SDL_FLIP_HORIZONTAL);		// renderiza el de arriba
 
-	SDL_Rect destRect = {position.getX(), position.getY(), width, height};
+	SDL_Rect destRect = { position.getX(), position.getY(), 0, height };
+	ptrTexture->render(destRect);	// renderiza el de la abajo
 
-	ptrTexture->render(destRect, SDL_FLIP_NONE);
-
+	SDL_Rect destRect = {position.getX(), position.getY(), width, 0};	
+	ptrTexture->render(destRect);	// renderiza el de la dcha
 }

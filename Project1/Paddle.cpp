@@ -15,6 +15,8 @@ Paddle::~Paddle()
 
 void Paddle::render()
 {
+	SDL_Rect srcRect = { position.getX, position.getY, width, height };
+	ptrTexture->render(srcRect);
 }
 
 void Paddle::update()
