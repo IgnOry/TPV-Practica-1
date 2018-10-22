@@ -1,73 +1,39 @@
 #include "Vector2D.h"
-#include "Game.h"
 #include <math.h>
 
 
-Vector2D::Vector2D()
-{
-	x;
-	y;
-}
-
-Vector2D::~Vector2D()
-{
-}
-
-void Vector2D::darValor(double posX, double posY)
-{
-	x = posX;
-	y = posY;
-}
-
-double Vector2D::consultaX()
-{
+Vector2D::Vector2D() : x(), y() {}
+Vector2D::Vector2D(double x, double y) : x(x), y(y) {}
+double Vector2D::getX() const {
 	return x;
 }
-
-double Vector2D::consultaY()
-{
+double Vector2D::getY() const {
 	return y;
 }
-
-void Vector2D::sumaVector(Vector2D sumando)
-{
-	x = x + sumando.consultaX();
-	y = y + sumando.consultaY();
+void Vector2D::normalize() {
+	double mag = sqrt(pow(x, 2) + pow(y, 2));
+	if (mag > 0.0) {
+		x = x / mag;
+		y = y / mag;
+	}
 }
 
-void Vector2D::restaVector(Vector2D restando)
-{
-	x = x - restando.consultaX();
-	y = y - restando.consultaY();
+Vector2D Vector2D::operator+(const Vector2D& v) const {
+	Vector2D r;
+	r.x = this->x + v.x; // El this no es necesario. Se pone para ilustrar su uso
+	r.y = this->y + v.y; // Al ser un puntero se debe usar con ->
+	return r;
 }
-
-void Vector2D::productoVectorEscalar(uint escalar)
-{
-	x = x * escalar;
-	y = y * escalar;
+Vector2D Vector2D::operator*(double d) const {
+	Vector2D r;
+	r.x = x * d;
+	r.y = y * d;
+	return r;
 }
-
-uint Vector2D::productoEscalarVectores(Vector2D producto)
-{
-	uint compX = x * producto.consultaX();
-	uint compY = y * producto.consultaY();
-
-	uint n = compX + compY;
-
-	return n;
+double Vector2D::operator*(const Vector2D& d) const {
+	return d.x * x + d.y * y;
 }
-
-uint Vector2D::normalizarVector()
-{
-	//elevar al cuadrado cada componente
-	uint compX = x * x;
-	uint compY = y * y;
-
-	//Raíz cuadrada
-	uint n = sqrt((compX + compY));
-
-	return n;
-	
+std::ostream& operator<<(std::ostream& os, const Vector2D &v) {
+	os << "(" << v.x << "," << v.y << ")";
+	return os;
 }
-
-

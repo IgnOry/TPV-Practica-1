@@ -6,20 +6,20 @@ class Vector2D
 {
 
 private:
-	double x; //Posicion X
-	double y; //Posicion Y
-
+	double x;
+	double y;
 public:
 	Vector2D();
-	~Vector2D();
-	void darValor(double posX, double posY); //Se implementa por indicacion de Visual Studio de la necesidad de una constructora sin argumentos (No se encontró un constructor predeterminado)
-	double consultaX();
-	double consultaY();
-	void sumaVector(Vector2D sumando);
-	void restaVector(Vector2D restando);
-	void productoVectorEscalar(uint escalar); //puede que haya que hacer que devuelva Vector2D
-	uint productoEscalarVectores(Vector2D producto);
-	uint normalizarVector();
+	Vector2D(double x, double y);
+	double getX() const;
+	double getY() const;
+	void normalize();
+	Vector2D operator+(const Vector2D& v) const;
+	Vector2D operator*(double d) const;
+	double operator*(const Vector2D& d) const;
+	friend std::ostream& operator<<(std::ostream& os, const Vector2D& v);
+
+};
 	
 	//Falta meter los métodos como operador
 };

@@ -18,7 +18,7 @@ private:
 	Texture* punteroTextura;
 
 public:
-	Paddle(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture puntero);
+	Paddle(Vector2D pos, uint anch, uint alt, Vector2D direccion, Texture* puntero);
 	~Paddle();
 	void render();
 	void update();
