@@ -23,9 +23,15 @@ BlocksMAP::~BlocksMAP()
 
 void BlocksMAP::render()
 {
-	//uint rows = MapSizeX / BlockSize;
-	//uint columns = MapSizeY / BlockSize;
-	//for (int r = 0; r < rows; r++)
+	uint rows = MapSizeX / BlockSize;
+	uint columns = MapSizeY / BlockSize;
+	for (int r = 0; r < rows; r++)
+	{
+		for (int c = 0; c < columns; c++)
+		{
+			blocks[r][c]->render;
+		}
+	}
 }
 
 uint BlocksMAP::BlockNum()

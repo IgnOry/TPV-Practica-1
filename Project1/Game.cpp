@@ -29,7 +29,10 @@ Game::Game() {
 		}
 	}
 	// We finally create the game objects
-	
+	ball = new Ball ();
+	paddle = new Paddle();
+	wall = new Wall();
+	blocksMAP = new BlocksMAP();
 }
 Game::~Game() {
 	/*for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
@@ -50,8 +53,8 @@ void Game::run()
 void Game::render() const
 {
 	SDL_RenderClear(renderer);
-	//dog->render();
-
+	//ball->render;
+	
 	SDL_RenderPresent(renderer);
 }
 

@@ -42,6 +42,9 @@ class Game
 		bool win;
 		Texture* textures[NUM_TEXTURES];
 		Ball* ball;
+		Paddle* paddle;
+		Wall* wall;
+		BlocksMAP* blocksMAP;
 		//punteros a todos los elementos;
 
 		public:
