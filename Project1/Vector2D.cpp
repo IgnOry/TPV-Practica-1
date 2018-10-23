@@ -1,6 +1,4 @@
 #include "Vector2D.h"
-#include <math.h>
-
 
 Vector2D::Vector2D() : x(), y() {}
 Vector2D::Vector2D(double x, double y) : x(x), y(y) {}
@@ -34,7 +32,7 @@ Vector2D Vector2D::operator*(double d) const {
 double Vector2D::operator*(const Vector2D& d) const {
 	return d.x * x + d.y * y;
 }
-std::ostream& operator<<(std::ostream& os, const Vector2D &v) {
+std::ostream & operator<<(std::ostream& os, const Vector2D &v) {
 	os << "(" << v.x << "," << v.y << ")";
 	return os;
 }

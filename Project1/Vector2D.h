@@ -1,6 +1,7 @@
 #pragma once
 
 #include <math.h>
+#include <iostream>
 
 class Vector2D
 {
@@ -19,3 +20,4 @@ public:
 	double operator*(const Vector2D& d) const;
 	friend std::ostream& operator<<(std::ostream& os, const Vector2D& v);
 };
+

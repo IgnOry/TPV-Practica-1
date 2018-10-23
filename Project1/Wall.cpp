@@ -21,9 +21,9 @@ void Wall::render()
 	ptrTexture->render(destRect);		// renderiza el de la izda
 	ptrTexture->render(destRect,SDL_FLIP_HORIZONTAL);		// renderiza el de arriba
 
-	SDL_Rect destRect = { position.getX(), position.getY(), 0, height };
+	destRect = {int(position.getX()), int(position.getY()), 0, int(height)};
 	ptrTexture->render(destRect);	// renderiza el de la abajo
 
-	SDL_Rect destRect = {position.getX(), position.getY(), width, 0};	
+	destRect = {int(position.getX()), int(position.getY()), int(width), 0};
 	ptrTexture->render(destRect);	// renderiza el de la dcha
 }
