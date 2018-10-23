@@ -23,12 +23,8 @@ const uint FRAMERATE = 60; //¿?
 const uint ELEM_SIZE = 60;
 const string PATH_IMAGES = ""; //Path imágenes
 
-const struct TextureAttributes { string fileName; uint nRows; uint nCols;};
+const struct TextureAttributes { string fileName; uint nRows; uint nCols; };
 
-TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
-{
-	{"ball.png",1,1}, {"bricks.png",2,3}, {"paddle",1,1}, {"side",1,1}, {"topside",1,1}
-};
 
 class Game
 {
@@ -43,9 +39,15 @@ class Game
 		Texture* textures[NUM_TEXTURES];
 		Ball* ball;
 		Paddle* paddle;
-		Wall* wall;
+		Wall* wallA;
+		Wall* wallI;
+		Wall* wallD;
 		BlocksMAP* blocksMAP;
-		//punteros a todos los elementos;
+		
+		TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
+		{
+			{"ball.png",1,1}, {"bricks.png",2,3}, {"paddle",1,1}, {"side",1,1}, {"topside",1,1}
+		};
 
 		public:
 			Game();

@@ -28,6 +28,6 @@ void Block::render()
 
 	//SDL_Rect R = {position.getX(),position.getY(),width, height };
 	
-	ptrTexture->renderFrame(destRect, row, colour);
+	ptrTexture->render(destRect);
 		
 }

@@ -1,7 +1,5 @@
-﻿  Ball.cpp
-c:\users\usuario_local\documents\proyectossdl\holasdl\ball.cpp(20): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
-c:\users\usuario_local\documents\proyectossdl\holasdl\ball.cpp(20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\usuario_local\documents\proyectossdl\holasdl\ball.cpp(20): warning C4838: conversion from 'uint' to 'int' requires a narrowing conversion
-  Game.cpp
-  Generating Code...
-  HolaSDL.vcxproj -> C:\Users\usuario_local\Documents\ProyectosSDL\bin\HolaSDLDebug.exe
+﻿  Block.cpp
+c:\hlocal\tpv-practica-1\holasdl\block.cpp(27): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+c:\hlocal\tpv-practica-1\holasdl\block.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\hlocal\tpv-practica-1\holasdl\block.cpp(27): warning C4838: conversion from 'uint' to 'int' requires a narrowing conversion
+  HolaSDL.vcxproj -> C:\hlocal\TPV-Practica-1\bin\HolaSDLDebug.exe

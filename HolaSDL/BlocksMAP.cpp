@@ -4,16 +4,13 @@
 
 
 
-BlocksMAP::BlocksMAP(uint x, uint y, uint tamBloqueDato, Texture* textureD)
+BlocksMAP::BlocksMAP()
 {
-	blocks = new Block**[x];
-	for (int i = 0; i < y; i++)
-		blocks[i] = new Block*[y];
-	
-	BlockSize = tamBloqueDato;
-	MapSizeX = tamBloqueDato * x;
-	MapSizeY = tamBloqueDato * y;
-	texture = textureD;
+}
+
+BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK)
+{
+	loadFile(filepath, textureD, ELEM_BLOCK);
 }
 
 BlocksMAP::~BlocksMAP()
@@ -22,12 +19,13 @@ BlocksMAP::~BlocksMAP()
 
 void BlocksMAP::render()
 {
-	uint rows = MapSizeX / BlockSize;
-	uint columns = MapSizeY / BlockSize;
+	uint rows = MapSizeX;
+	uint columns = MapSizeY;
 	for (int r = 0; r < rows; r++)
 	{
 		for (int c = 0; c < columns; c++)
 		{
+			if (blocks[r][c] != nullptr)
 			blocks[r][c]->render();
 		}
 	}
@@ -38,7 +36,7 @@ uint BlocksMAP::BlockNum()
 	return numBlocks;
 }
 
-void BlocksMAP::loadFile(const string& filePath)
+void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BLOCK)
 {
 	ifstream file;
 	file.open(filePath);
@@ -48,21 +46,23 @@ void BlocksMAP::loadFile(const string& filePath)
 
 	file >> x >> y;
 
-	BlocksMAP::BlocksMAP(x, y, BlockSize, texture);
-	
-	for (uint r = 0; r < x; r++) {
-		for (uint c = 0; c < y; c++) {
+	blocks = new Block**[x];
+	for (int i = 0; i < y; i++)
+		blocks[i] = new Block*[y];
 
-		}
-	}
+	BlockSize = ELEM_BLOCK;
+	MapSizeX = x;
+	MapSizeY = y;
+	texture = textureD;
+	
 	int colour;
 	for (int r = 0; r < x; r++) {
 		for (int c = 0; c < y; c++) {
 			file >> colour;
 			if (colour == 0)
-				blocks[x][y] = nullptr;
+				blocks[r][c] = nullptr;
 			else
-				blocks[x][y] = new Block(r * BlockSize, c * (BlockSize / 7), BlockSize, BlockSize / 7, colour, r, c, texture);
+				blocks[r][c] = new Block(r * BlockSize, c * (BlockSize/7), BlockSize, BlockSize/7, colour, r, c, textureD);
 			numBlocks++;
 		}
 	}

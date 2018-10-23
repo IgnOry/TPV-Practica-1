@@ -15,24 +15,22 @@ Game::Game() {
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
 	// We now create the textures
+	Texture* textures[NUM_TEXTURES];
+
 
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 		
-		SDL_Texture* textures[NUM_TEXTURES];
-		string filename[] = { "..\\images\\bricks.png" , "..\\images\\ball.png", "..\\images\\paddle.png", "..\\images\\topside.png", "..\\images\\side.png" };
-
-		for (int i = 0; i < NUM_TEXTURES; i++)
-		{
-			SDL_Surface* surface = IMG_Load(filename[i].c_str());
-			textures[i] = SDL_CreateTextureFromSurface(renderer, surface);
-			SDL_FreeSurface(surface);
-		}
+		string filename[] = {"../images/bricks.png" , "..\\images\\ball.png", "..\\images\\paddle.png", "..\\images\\topside.png", "..\\images\\side.png" };
+		textures[i] = new Texture(renderer,filename[i], TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
 	}
 	// We finally create the game objects
-	//ball = new Ball ();
-	//paddle = new Paddle();
-	//wall = new Wall();
-	//blocksMAP = new BlocksMAP();
+
+	ball = new Ball(Vector2D::Vector2D(400, 300), 10, 10, Vector2D::Vector2D(0,1),textures[1], this);
+	paddle = new Paddle(Vector2D::Vector2D(400, 500), 40, 20, Vector2D::Vector2D(100, 100), textures[2]);
+	wallA = new Wall(0, 0, 800, 20, textures[3]);
+	wallI = new Wall(0, 0, 20, 600, textures[4]);
+	wallD = new Wall(780, 0, 20, 600, textures[4]);
+	blocksMAP = new BlocksMAP("..\\maps\\level01.ark", textures[0], ELEM_SIZE);
 }
 Game::~Game() {
 	/*for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
@@ -53,7 +51,12 @@ void Game::run()
 void Game::render() const
 {
 	SDL_RenderClear(renderer);
-	//ball->render;
+	ball->render();
+	paddle->render();
+	wallA->render();
+	wallI->render();
+	wallD->render();
+	blocksMAP->render();
 	
 	SDL_RenderPresent(renderer);
 }

@@ -11,16 +11,17 @@ class BlocksMAP
 private:
 	Block*** blocks;//Matriz dinámica de punteros a bloques
 	uint MapSizeX;
-	uint MapSizeY;//Tamaño en píxeles del mapa
+	uint MapSizeY;
 	uint BlockSize ; //Tamaño en píxeles del bloque
 	uint numBlocks;
 	Texture* texture; //textura de los bloques, para pasarla a la hora de construirlos
 
 public:
-	BlocksMAP(uint x, uint y, uint tamBloque, Texture* texture);
+	BlocksMAP();
+	BlocksMAP(string filepath, Texture * textureD, uint ELEM_BLOCK);
 	~BlocksMAP();
 	void render();
 	uint BlockNum();
-	void loadFile(const string& filePath);
+	void loadFile(const string& filePath, Texture* texture, uint ELEM_BLOCK);
 };
 
