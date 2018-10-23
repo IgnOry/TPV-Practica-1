@@ -32,10 +32,10 @@ Game::Game() {
 	
 }
 Game::~Game() {
-	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
+	/*for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
 	SDL_DestroyRenderer (renderer);
 	SDL_DestroyWindow( window);
-	SDL_Quit();
+	SDL_Quit();*/
 }
 
 void Game::run()
