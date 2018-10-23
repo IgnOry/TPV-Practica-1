@@ -15,27 +15,19 @@ Block::~Block()
 {
 }
 
-void Block::render()		//hay que elegir qué textura se renderiza
-
-{}
-/*{
-	SDL_Rect destRect = { position.getX, position.getY,width, height};
-
-	for (int r = 0; r < rows; r++) 
+void Block::render()
+{	
+	int row = 0;
+	if (colour > 3)
 	{
-		for( int c = 0; c < columns; c++){
-			if (columns[r][c] != nullptr) {
-				SDL_Rect R = { (position.getX() + r), (position.getY() + c),width, height };
-				ptrTexture->render(destRect);
-			}
-
-		}
-
+		colour = colour - 3; //para la columna de las texturas
+		row = 1;
 	}
+
+	SDL_Rect destRect = {position.getX(), position.getY(),width, height};
+
+	//SDL_Rect R = {position.getX(),position.getY(),width, height };
+	
+	ptrTexture->renderFrame(destRect, row, colour);
+		
 }
-	ptrTexture->load("..\\images\\bricks.png", 6, 1);
-
-	SDL_Rect destRect = { x, y, w, h };
-
-	ptrTexture->render(destRect);
-}*/

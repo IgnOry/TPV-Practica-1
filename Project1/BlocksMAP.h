@@ -14,9 +14,10 @@ private:
 	uint MapSizeY;//Tamaño en píxeles del mapa
 	uint BlockSize ; //Tamaño en píxeles del bloque
 	uint numBlocks;
+	Texture* texture; //textura de los bloques, para pasarla a la hora de construirlos
 
 public:
-	BlocksMAP(uint x, uint y, uint tamBloque);
+	BlocksMAP(uint x, uint y, uint tamBloque, Texture* texture);
 	~BlocksMAP();
 	void render();
 	uint BlockNum();
