@@ -1,4 +1,5 @@
 #include "BlocksMAP.h"
+#include "Game.h"
 #include <iostream>
 #include <fstream>
 
@@ -36,23 +37,27 @@ void BlocksMAP::loadFile(const string& filePath)
 	ifstream file;
 	file.open(filePath);
 
-	uint x;
-	uint y;
+	int x;
+	int y;
 
 	file >> x >> y;
 
 	BlocksMAP::BlocksMAP(x, y, BlockSize);
-	//leer linea a linea
 	
-	//file >> color;
-	//if (color == 0)
-	//	cells[x][y] = nullptr;
-	//else
-	//	{cell[x][y] = new Block(...)
-	//   numblocks++}
+	for (uint r = 0; r < x; r++) {
+		for (uint c = 0; c < y; c++) {
 
-	//if 0 -. nullptr
-	//else se crea bloque
-
-	//asignar color por numero
+		}
+	}
+	int colour;
+	for (int r = 0; r < x; r++) {
+		for (int c = 0; c < y; c++) {
+			file >> colour;
+			if (colour == 0)
+				blocks[x][y] = nullptr;
+			else
+				blocks[x][y] = new Block(r * BlockSize, c * (BlockSize / 7), BlockSize, BlockSize / 7, colour, r, c, );
+			numBlocks++;
+		}
+	}
 }

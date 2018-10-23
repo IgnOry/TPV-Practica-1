@@ -12,7 +12,7 @@ private:
 	Block*** blocks;//Matriz dinámica de punteros a bloques
 	uint MapSizeX;
 	uint MapSizeY;//Tamaño en píxeles del mapa
-	uint BlockSize; //Tamaño en píxeles del bloque
+	uint BlockSize ; //Tamaño en píxeles del bloque
 	uint numBlocks;
 
 public:
