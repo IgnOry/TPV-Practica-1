@@ -23,8 +23,16 @@ void Ball::render()
 
 void Ball::update()
 {
+	Vector2D prevPos = position
+	position = position + dirPos;
+	Vector2D collVector;
+	SDL_Rect ballRect = getDestRect();
 
-
+	if (ptrGame.collides(ballRect, vel, collVector))
+	{
+		dirPos = dirPos - collVector * (2 * dirPos*collVector);
+		pos = prevPos + dirPos;
+	}
 
 }
 

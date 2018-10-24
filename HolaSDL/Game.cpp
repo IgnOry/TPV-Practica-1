@@ -78,3 +78,22 @@ void Game::update()
 {
 	//dog->update();
 }
+
+void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
+{
+	if (...)
+	Block* block = blocksMAP.collides();
+		if (block != nullptr)
+			blocksMAP.ballHitsBlock(block);
+			if (blocksMAP->BlockNum())
+			win = true;
+
+			//casos muros
+
+			//caso paddle
+			if (paddle.collides(..))
+				return true;
+
+
+			//SDL_HasIntersection
+}
