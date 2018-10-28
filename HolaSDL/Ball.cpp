@@ -21,7 +21,7 @@ void Ball::render()
 	ptrTexture->render(srcRect);
 }
 
-void Ball::update()
+/*void Ball::update()
 {
 	Vector2D prevPos = position
 	position = position + dirPos;
@@ -34,6 +34,6 @@ void Ball::update()
 		pos = prevPos + dirPos;
 	}
 
-}
+}*/
 
 

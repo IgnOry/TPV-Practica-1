@@ -79,6 +79,8 @@ void Game::update()
 	//dog->update();
 }
 
+/*
+
 void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
 	if (...)
@@ -96,4 +98,4 @@ void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 
 			//SDL_HasIntersection
-}
+}*/
