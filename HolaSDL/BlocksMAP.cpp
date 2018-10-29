@@ -62,8 +62,10 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BL
 			if (colour == 0)
 				blocks[r][c] = nullptr;
 			else
-				blocks[r][c] = new Block(r * BlockSize, c * (BlockSize/7), BlockSize, BlockSize/7, colour, r, c, textureD);
-			numBlocks++;
+			{
+				blocks[r][c] = new Block(BlockSize,(BlockSize/3), BlockSize, BlockSize/3, colour, c, r, textureD);
+				numBlocks++;
+			}
 		}
 	}
 }

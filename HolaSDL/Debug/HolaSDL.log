@@ -1,27 +1,2 @@
-﻿  Ball.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(20): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(20): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(20): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  Block.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\block.cpp(27): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\block.cpp(27): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\block.cpp(27): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  BlocksMAP.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(24): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(26): warning C4018: '<': no coinciden signed/unsigned
-  Game.cpp
-  main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\crtdbg.h(302): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\malloc.h(120): note: vea la definición anterior de '_malloca'
-  Paddle.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  Texture.cpp
-  Vector2D.cpp
-  Wall.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\wall.cpp(20): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\wall.cpp(20): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\wall.cpp(20): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  Generando código...
+﻿  Game.cpp
   HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

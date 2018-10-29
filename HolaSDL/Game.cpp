@@ -20,23 +20,22 @@ Game::Game() {
 
 	for (uint i = 0; i < NUM_TEXTURES; i++) {
 		
-		string filename[] = {"../images/bricks.png" , "..\\images\\ball.png", "..\\images\\paddle.png", "..\\images\\topside.png", "..\\images\\side.png" };
-		textures[i] = new Texture(renderer,filename[i], TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
+		textures[i] = new Texture(renderer,TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
 	}
 	// We finally create the game objects
 
-	ball = new Ball(Vector2D::Vector2D(400, 300), 10, 10, Vector2D::Vector2D(0,1),textures[1], this);
-	paddle = new Paddle(Vector2D::Vector2D(400, 500), 40, 20, Vector2D::Vector2D(100, 100), textures[2]);
-	wallA = new Wall(0, 0, 800, 20, textures[3]);
-	wallI = new Wall(0, 0, 20, 600, textures[4]);
-	wallD = new Wall(780, 0, 20, 600, textures[4]);
-	blocksMAP = new BlocksMAP("..\\maps\\level01.ark", textures[0], ELEM_SIZE);
+	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0,1),textures[0], this);
+	paddle = new Paddle(Vector2D::Vector2D(400, 500), 120, 20, Vector2D::Vector2D(100, 100), textures[2]);
+	wallA = new Wall(0, 0, 800, 20, textures[4]);
+	wallI = new Wall(0, 0, 20, 600, textures[3]);
+	wallD = new Wall(780, 0, 20, 600, textures[3]);
+	blocksMAP = new BlocksMAP("..\\maps\\level01.ark", textures[1], ELEM_SIZE);
 }
 Game::~Game() {
-	/*for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
+	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
 	SDL_DestroyRenderer (renderer);
 	SDL_DestroyWindow( window);
-	SDL_Quit();*/
+	SDL_Quit();
 }
 
 void Game::run()
@@ -70,20 +69,20 @@ void Game::handleEvents()
 		if (event.type == SDL_QUIT)
 			exit = true;
 
-		//dog->handleEvents(event);
+		//->handleEvents(event);
 	}
 }
 
 void Game::update()
 {
-	//dog->update();
+	//->update();
 }
 
-/*
+
 
 void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
-	if (...)
+	/*if ()
 	Block* block = blocksMAP.collides();
 		if (block != nullptr)
 			blocksMAP.ballHitsBlock(block);
@@ -93,9 +92,9 @@ void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 			//casos muros
 
 			//caso paddle
-			if (paddle.collides(..))
+			if (paddle.collides())
 				return true;
 
 
-			//SDL_HasIntersection
-}*/
+			//SDL_HasIntersection*/
+}

@@ -21,7 +21,7 @@ private:
 	Texture* ptrTexture;
 
 public:
-	Block(double posX, double posY, int widthN, int heightN, int colourN, int rowN, int columnN, Texture* texture);
+	Block(double posX, double posY, int widthN, int heightN, int colourN, int columnN, int rowN, Texture* texture);
 	~Block();
 	void render();
 };

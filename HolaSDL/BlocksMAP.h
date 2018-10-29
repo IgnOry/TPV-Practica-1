@@ -12,7 +12,7 @@ private:
 	Block*** blocks;//Matriz dinámica de punteros a bloques
 	uint MapSizeX;
 	uint MapSizeY;
-	uint BlockSize ; //Tamaño en píxeles del bloque
+	uint BlockSize; //Tamaño en píxeles del bloque
 	uint numBlocks;
 	Texture* texture; //textura de los bloques, para pasarla a la hora de construirlos
 

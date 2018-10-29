@@ -6,8 +6,8 @@ Block::Block(double posX, double posY, int widthN, int heightN, int colourN, int
 	width = widthN;
 	height = heightN;
 	colour = colourN;
-	rows = rowN;
 	columns = columnN;
+	rows = rowN;
 	ptrTexture = texture;
 }
 
@@ -18,16 +18,14 @@ Block::~Block()
 void Block::render()
 {	
 	int row = 0;
-	if (colour > 3)
+	if (colour > 2)
 	{
-		colour = colour - 3; //para la columna de las texturas
 		row = 1;
+		colour = colour - 3;
 	}
 
-	SDL_Rect destRect = {position.getX(), position.getY(),width, height};
+	SDL_Rect destRect = {position.getX()*rows+20, position.getY()*columns+20,width, height};
 
-	//SDL_Rect R = {position.getX(),position.getY(),width, height };
-	
-	ptrTexture->render(destRect);
+	ptrTexture->renderFrame(destRect,row,colour);
 		
 }
