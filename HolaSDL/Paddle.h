@@ -22,7 +22,7 @@ public:
 	~Paddle();
 	void render();
 	void update();
-	void handleEvents();
+	int handleEvents(SDL_Event event);
 	bool collides(const SDL_Rect& rect);
 };
 

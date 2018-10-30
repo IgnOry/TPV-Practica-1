@@ -1,13 +1,2 @@
-﻿  BlocksMAP.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(24): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(26): warning C4018: '<': no coinciden signed/unsigned
-  Paddle.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(31): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(31): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(31): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  Generando código...
-  LINK : no se encontró C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
-  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
+﻿  Game.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(76): error C4700: se utilizó la variable local 'event' sin inicializar

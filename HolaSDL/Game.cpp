@@ -24,7 +24,7 @@ Game::Game() {
 	}
 	// We finally create the game objects
 
-	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0,1),textures[0], this);
+	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0,0.1),textures[0], this);
 	paddle = new Paddle(Vector2D::Vector2D(400, 500), 120, 20, Vector2D::Vector2D(100, 100), textures[2]);
 	wallA = new Wall(0, 0, 800, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, 600, textures[3]);
@@ -63,48 +63,57 @@ void Game::render() const
 void Game::handleEvents()
 {
 	SDL_Event event;
+	
 	while
 		(SDL_PollEvent(&event) && !exit)
 	{
 		if (event.type == SDL_QUIT)
 			exit = true;
 
-		//->handleEvents(event);
+		paddle->handleEvents(event);
 	}
+
+	paddle->handleEvents(event);
 }
 
 void Game::update()
 {
-	//ball->update();
+	ball->update();
+	paddle->update();
 }
 
-/*void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
+bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
-	//uint sida = BlocksMAP::size();
-	//if (rect.y >= blocksMAP->size()) // si la y de la bola es mayor que la el alto de blocksmap
-	Block* block = blocksMAP->collides(rect); //devuelve un puntero al bloque con el que contacta la pelota
+	//caso bloques
+	Block* block = blocksMAP->collides(rect, vel, collVector);
+	if (block != nullptr)
+		//blocksMAP->blockAt()
+	if (blocksMAP->BlockNum())
+		win = true;
+		/*; //devuelve un puntero al bloque con el que contacta la pelota
 		if (block != nullptr)
 			blocksMAP.ballHitsBlock(block);
 			if (blocksMAP->BlockNum())
-				win = true;
+				win = true;*/
 
-			//casos muros
+	//casos muros
+	if (SDL_HasIntersection(&rect, &wallA->rect()))		//WallA
+	{
+		
+	};
+	if (SDL_HasIntersection(&rect, &wallI->rect()))		//WallI
+	{
+
+	};
+	if (SDL_HasIntersection(&rect, &wallD->rect()))		//WallD
+	{
+
+	};
+
+
+	//caso paddle
+	if (paddle->collides(rect)) {};
 			
-			if (SDL_HasIntersection(&rect, &wallA->rect()))		//WallA
-			{
 
-			};
-			if (SDL_HasIntersection(&rect, &wallI->rect()))		//WallI
-			{
-
-			};
-			if (SDL_HasIntersection(&rect, &wallD->rect()))		//WallD
-			{
-
-			};
-
-
-			//caso paddle
-			if (paddle->collides(rect)) {};
-				
-}*/
+			return true;
+}
