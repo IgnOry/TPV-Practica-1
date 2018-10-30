@@ -30,4 +30,5 @@ void Paddle::handleEvents()
 bool Paddle::collides(const SDL_Rect& rect) {
 	SDL_Rect wallRect = { position.getX(), position.getY(), width, height };
 	SDL_HasIntersection(&rect, &wallRect);
+	return true;
 }

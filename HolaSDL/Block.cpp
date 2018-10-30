@@ -29,3 +29,23 @@ void Block::render()
 	ptrTexture->renderFrame(destRect,row,colour);
 		
 }
+
+uint Block::getY()
+{
+	return uint(position.getY());
+}
+
+uint Block::getX()
+{
+	return uint(position.getX());
+}
+
+uint Block::getH()
+{
+	return height;
+}
+
+uint Block::getW()
+{
+	return width;
+}

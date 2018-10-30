@@ -24,6 +24,7 @@ public:
 	uint BlockNum();
 	void loadFile(const string& filePath, Texture* texture, uint ELEM_BLOCK);
 	int size();
-	Block* collides(const SDL_Rect& rect);
+	Block * collides(const SDL_Rect & ballRect, const Vector2D & ballVel, Vector2D & collVector);
+	Block * blockAt(const Vector2D & p);
 };
 
