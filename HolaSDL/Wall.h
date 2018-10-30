@@ -18,5 +18,6 @@ public:
 	Wall(double posX, double posY, int width, int height, Texture* texture);
 	~Wall();
 	void render();
+	SDL_Rect rect();
 };
 

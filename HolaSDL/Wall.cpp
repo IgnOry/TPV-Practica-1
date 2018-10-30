@@ -15,8 +15,15 @@ Wall::~Wall()
 {
 }
 
-void Wall::render()
-{
-	SDL_Rect destRect = { position.getX(), position.getY(), width, height};			
-	ptrTexture->render(destRect);		// renderiza el de la izda
+SDL_Rect Wall::rect() {
+	SDL_Rect rect = { position.getX(), position.getY(), width, height };
+	return rect;
 }
+
+
+void Wall::render()
+{			
+	ptrTexture->render(rect());		// renderiza el de la izda
+}
+
+

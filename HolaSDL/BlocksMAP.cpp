@@ -69,3 +69,11 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BL
 		}
 	}
 }
+int BlocksMAP::size() {
+	return MapSizeY * (BlockSize/3);
+}
+
+Block* BlocksMAP::collides(const SDL_Rect& rect) {
+	Block * block = new Block;
+	return block;
+}

@@ -23,5 +23,7 @@ public:
 	void render();
 	uint BlockNum();
 	void loadFile(const string& filePath, Texture* texture, uint ELEM_BLOCK);
+	int size();
+	Block* collides(const SDL_Rect& rect);
 };
 

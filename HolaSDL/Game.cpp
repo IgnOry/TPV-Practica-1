@@ -75,26 +75,35 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	//->update();
+	//ball->update();
 }
 
 
 
 void Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
-	/*if ()
-	Block* block = blocksMAP.collides();
+	//uint sida = BlocksMAP::size();
+	if (rect.y >= blocksMAP->size()) // si la y de la bola es mayor que la el alto de blocksmap
+	Block* block = blocksMAP->collides(rect); //devuelve un puntero al bloque con el que contacta la pelota
 		if (block != nullptr)
 			blocksMAP.ballHitsBlock(block);
 			if (blocksMAP->BlockNum())
-			win = true;
+				win = true;
 
 			//casos muros
+			
+			if (SDL_HasIntersection(&rect, &wallA->rect()))		//WallA
+			{
+			};
+			if (SDL_HasIntersection(&rect, &wallI->rect()))		//WallI
+			{
+			};
+			if (SDL_HasIntersection(&rect, &wallD->rect()))		//WallD
+			{
+			};
+
 
 			//caso paddle
-			if (paddle.collides())
-				return true;
-
-
-			//SDL_HasIntersection*/
+			if (paddle->collides(rect)) {};
+				
 }

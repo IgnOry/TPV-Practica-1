@@ -23,5 +23,6 @@ public:
 	void render();
 	void update();
 	void handleEvents();
+	bool collides(const SDL_Rect& rect);
 };
 
