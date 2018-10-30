@@ -1,2 +1,6 @@
-﻿  Game.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(76): error C4700: se utilizó la variable local 'event' sin inicializar
+﻿  BlocksMAP.cpp
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(24): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(148): warning C4244: 'initializing': conversion from 'double' to 'uint', possible loss of data
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(149): warning C4244: 'initializing': conversion from 'double' to 'uint', possible loss of data
+  HolaSDL.vcxproj -> C:\Users\usuario_local\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

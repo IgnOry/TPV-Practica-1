@@ -17,16 +17,9 @@ Block::~Block()
 
 void Block::render()
 {	
-	int row = 0;
-	if (colour > 2)
-	{
-		row = 1;
-		colour = colour - 3;
-	}
-
 	SDL_Rect destRect = {position.getX()*rows+20, position.getY()*columns+20,width, height};
 
-	ptrTexture->renderFrame(destRect,row,colour);
+	ptrTexture->renderFrame(destRect,colour/ptrTexture->getNumCols(),colour%ptrTexture->getNumCols());
 		
 }
 

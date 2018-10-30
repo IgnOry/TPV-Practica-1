@@ -20,7 +20,6 @@ SDL_Rect Wall::rect() {
 	return rect;
 }
 
-
 void Wall::render()
 {			
 	ptrTexture->render(rect());		// renderiza el de la izda

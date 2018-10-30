@@ -63,7 +63,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BL
 				blocks[r][c] = nullptr;
 			else
 			{
-				blocks[r][c] = new Block(BlockSize,(BlockSize/3), BlockSize, BlockSize/3, colour, c, r, textureD);
+				blocks[r][c] = new Block(BlockSize,(BlockSize/3), BlockSize, BlockSize/3, colour-1, c, r, textureD);
 				numBlocks++;
 			}
 		}
@@ -146,7 +146,7 @@ Block* BlocksMAP::collides(const SDL_Rect& ballRect, const Vector2D& ballVel, Ve
 */
 Block* BlocksMAP::blockAt(const Vector2D& p) {
 	uint pixelX = p.getX()/BlockSize;
-	uint pixelY = p.getY()/BlockSize;
+	uint pixelY = p.getY()/(BlockSize/3);
 
 	Block* block = blocks[pixelX][pixelY];
 	return block;
