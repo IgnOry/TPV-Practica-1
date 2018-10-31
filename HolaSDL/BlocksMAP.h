@@ -26,5 +26,6 @@ public:
 	int size();
 	Block * collides(const SDL_Rect & ballRect, const Vector2D & ballVel, Vector2D & collVector);
 	Block * blockAt(const Vector2D & p);
+	void ballHitsBlock(Block& block);
 };
 

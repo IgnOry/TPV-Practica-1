@@ -145,9 +145,19 @@ Block* BlocksMAP::collides(const SDL_Rect& ballRect, const Vector2D& ballVel, Ve
 	del espacio del mapa) devuelve nullptr.
 */
 Block* BlocksMAP::blockAt(const Vector2D& p) {
-	uint pixelX = p.getX()/BlockSize;
-	uint pixelY = p.getY()/(BlockSize/3);
+	uint pixelX = (p.getX()/BlockSize);
+	if (pixelX < MapSizeX) {
+		uint pixelY = (p.getY() / (BlockSize / 3));		//-1?
+		if (pixelY < MapSizeY) {
 
-	Block* block = blocks[pixelX][pixelY];
-	return block;
+			Block* block = blocks[pixelX][pixelY];
+			return block;
+		}
+	}
+	return nullptr;	//si p está fuera del mapa devuelve nullptr
+}
+
+void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
+
+	blocks[blockToDestroy.row()][blockToDestroy.colum()] = nullptr;
 }

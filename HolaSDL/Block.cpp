@@ -15,6 +15,16 @@ Block::~Block()
 {
 }
 
+uint Block::row()
+{
+	return rows;
+}
+
+uint Block::colum() 
+{
+	return columns;
+}
+
 void Block::render()
 {	
 	SDL_Rect destRect = {position.getX()*rows+20, position.getY()*columns+20,width, height};

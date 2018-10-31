@@ -28,5 +28,7 @@ public:
 	uint getX();
 	uint getH();
 	uint getW();
+	uint row();
+	uint colum();
 };
 
