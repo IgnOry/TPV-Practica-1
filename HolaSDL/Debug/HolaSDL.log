@@ -1,6 +1,2 @@
-﻿  BlocksMAP.cpp
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(24): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(26): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(148): warning C4244: 'inicializando': conversión de 'double' a 'uint'; posible pérdida de datos
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(150): warning C4244: 'inicializando': conversión de 'double' a 'uint'; posible pérdida de datos
+﻿  Game.cpp
   HolaSDL.vcxproj -> D:\Escritorio\2º Desarrollo de Videojuegos\TVP (Tecnología de la Programación de Videojuegos)\TVP P1\TPV-Practica-1\bin\HolaSDLDebug.exe

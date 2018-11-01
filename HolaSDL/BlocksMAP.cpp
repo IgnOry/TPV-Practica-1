@@ -50,7 +50,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BL
 	for (int i = 0; i < y; i++)
 		blocks[i] = new Block*[y];
 
-	BlockSize = ELEM_BLOCK;
+	BlockSize = ELEM_BLOCK / (x*0.1); // para que se adapte a todos los mapas
 	MapSizeX = x;
 	MapSizeY = y;
 	texture = textureD;
@@ -63,8 +63,8 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BL
 				blocks[r][c] = nullptr;
 			else
 			{
-				blocks[r][c] = new Block(BlockSize,(BlockSize/3), BlockSize, BlockSize/3, colour-1, c, r, textureD);
-				numBlocks++;
+				blocks[r][c] = new Block(BlockSize * c + 20,(BlockSize/3) * r + 20, BlockSize, BlockSize/3, colour-1, c, r, textureD);
+				numBlocks++;			// se suma 20 porque es el ancho del muro
 			}
 		}
 	}
@@ -145,19 +145,26 @@ Block* BlocksMAP::collides(const SDL_Rect& ballRect, const Vector2D& ballVel, Ve
 	del espacio del mapa) devuelve nullptr.
 */
 Block* BlocksMAP::blockAt(const Vector2D& p) {
-	uint pixelX = (p.getX()/BlockSize);
-	if (pixelX < MapSizeX) {
-		uint pixelY = (p.getY() / (BlockSize / 3));		//-1?
-		if (pixelY < MapSizeY) {
 
-			Block* block = blocks[pixelX][pixelY];
-			return block;
+	for (int i = 0; i < MapSizeX; i++)
+	{
+		for (int j = 0; j < MapSizeY; j++)
+		{
+			Block* block = blocks[i][j];
+			if (block != nullptr) {
+				if (p.getX() > block->getX() && p.getX() < (block->getX() + block->getW()))
+				{
+					if (p.getY() > block->getY() && p.getY() < (block->getY() + block->getH()))
+						return block;
+				}
+			}
 		}
 	}
-	return nullptr;	//si p está fuera del mapa devuelve nullptr
+	return nullptr; //si p está fuera del mapa o no ha encontrado ningún bloque distinto de nullptr devuelve nullptr
 }
 
 void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
 
-	blocks[blockToDestroy.row()][blockToDestroy.colum()] = nullptr;
+	blocks[blockToDestroy.colum()][blockToDestroy.row()] = nullptr;
+	numBlocks--;
 }

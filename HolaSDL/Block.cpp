@@ -27,7 +27,7 @@ uint Block::colum()
 
 void Block::render()
 {	
-	SDL_Rect destRect = {position.getX()*rows+20, position.getY()*columns+20,width, height};
+	SDL_Rect destRect = {position.getX(), position.getY(),width, height};
 
 	ptrTexture->renderFrame(destRect,colour/ptrTexture->getNumCols(),colour%ptrTexture->getNumCols());
 		
