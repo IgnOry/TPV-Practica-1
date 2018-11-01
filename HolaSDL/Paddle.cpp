@@ -19,27 +19,31 @@ void Paddle::render()
 	ptrTexture->render(srcRect);
 }
 
-void Paddle::update()
+void Paddle::update(int winWidth)
 {
-	//collides();
+	//if(position.getX() >= 0 && position.getX() < winWidth)
+		position = position + dirPos;
 }
 
-int Paddle::handleEvents(SDL_Event event)
+
+
+void  Paddle::handleEvents(SDL_Event event)
 {
-	switch (SDL_KEYDOWN)
-	{
+	if(event.type == SDL_KEYUP)
+		dirPos = Vector2D(0, 0);
+	else {
+		switch (event.key.keysym.sym)
+		{
 		case(SDLK_RIGHT):
-			{
-				position.operator+(Vector2D(1,0));
-				return 0;
-			}
+			dirPos = Vector2D(1, 0);
+			break;
+
 		case (SDLK_LEFT):
-			{
-				position.operator+(Vector2D(-1, 0));
-				return 0;
-			}
+			dirPos = Vector2D(-1, 0);
+			break;
 		default:
-			return 0;
+			break;
+		}
 	}
 }
 
