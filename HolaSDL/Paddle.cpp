@@ -19,10 +19,24 @@ void Paddle::render()
 	ptrTexture->render(srcRect);
 }
 
-void Paddle::update(int winWidth)
+void Paddle::update()
 {
-	//if(position.getX() >= 0 && position.getX() < winWidth)
+	if (position.getX() >= 20 && position.getX() <= 660)
 		position = position + dirPos;
+
+	else
+	{
+		if (position.getX() < 20)
+		{
+			position = position + Vector2D(1, 0);
+			dirPos = Vector2D(0, 0);
+		}
+		else if (position.getX() > 660)
+		{
+			position = position + Vector2D(-1, 0);
+			dirPos = Vector2D(0, 0);
+		}
+	}
 }
 
 
@@ -35,11 +49,11 @@ void  Paddle::handleEvents(SDL_Event event)
 		switch (event.key.keysym.sym)
 		{
 		case(SDLK_RIGHT):
-			dirPos = Vector2D(1, 0);
+			dirPos = Vector2D(0.2, 0);
 			break;
 
 		case (SDLK_LEFT):
-			dirPos = Vector2D(-1, 0);
+			dirPos = Vector2D(-0.2, 0);
 			break;
 		default:
 			break;
@@ -47,12 +61,19 @@ void  Paddle::handleEvents(SDL_Event event)
 	}
 }
 
-bool Paddle::collides(const SDL_Rect& rect) {
-	SDL_Rect wallRect = { position.getX(), position.getY(), width, height };
+bool Paddle::collides(const SDL_Rect& rect) 
+{
+	SDL_Rect wallRect = {position.getX(), position.getY(), width, height};
 	
 	if (SDL_HasIntersection(&rect, &wallRect))
 		return true;
-
 	else
 		return false;
+}
+
+SDL_Rect Paddle::rect()
+{
+	SDL_Rect wallRect = { position.getX(), position.getY(), width, height };
+
+	return wallRect;
 }

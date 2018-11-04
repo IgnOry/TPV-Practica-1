@@ -11,7 +11,14 @@ using uint = unsigned int;
 
 int main(int argc, char* argv[]){
 	
-	Game* game = new Game();
-	game->run();
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	try {
+		Game* game = new Game();
+		game->run();
+	}
+	catch (exception e)
+	{
+		cout << e.what();
+	}
 	return 0;
 }

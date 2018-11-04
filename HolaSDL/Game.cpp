@@ -9,27 +9,48 @@ using namespace std;
 typedef unsigned int uint;
 
 Game::Game() {
-	// We first initialize SDL
-	SDL_Init (SDL_INIT_EVERYTHING);
-	window = SDL_CreateWindow( "Arkanoid", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
-	// We now create the textures
-	//Texture* textures[NUM_TEXTURES];
+	try {
+		// We first initialize SDL
+		SDL_Init(SDL_INIT_EVERYTHING);
+		window = SDL_CreateWindow("Arkanoid", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
+		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+		if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
+		// We now create the textures
+	}
 
+	catch (exception e)
+	{
+		cout << "Error en la carga de SDL";
+		std::exit(1);
+	}
+	try {
+		for (uint i = 0; i < NUM_TEXTURES; i++) {
 
-	for (uint i = 0; i < NUM_TEXTURES; i++) {
-		
-		textures[i] = new Texture(renderer,TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
+			textures[i] = new Texture(renderer, TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
+		}
+	}
+
+	catch (exception e)
+	{
+		cout << "Error en la carga de texturas";
+		std::exit(1);
+
 	}
 	// We finally create the game objects
 
-	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0.5,-0.5),textures[0], this);
+	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0.1,0.1),textures[0], this);
 	paddle = new Paddle(Vector2D::Vector2D(400, 500), 120, 20, Vector2D::Vector2D(0, 0), textures[2]);
 	wallA = new Wall(0, 0, 800, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, 600, textures[3]);
 	wallD = new Wall(780, 0, 20, 600, textures[3]);
-	blocksMAP = new BlocksMAP("..\\maps\\level01.ark", textures[1], ELEM_SIZE);
+	try {
+		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
+	}
+	catch (exception e)
+	{
+		cout << "Error en la carga del mapa";
+		std::exit(1);
+	}
 }
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
@@ -71,14 +92,19 @@ void Game::handleEvents()
 		else if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
 			paddle->handleEvents(event);
 	}
-
-	//paddle->handleEvents(event);
 }
 
 void Game::update()
 {
+	if (blocksMAP->BlockNum() == 0)
+	{
+		blocksMAP->~BlocksMAP();
+		level++;
+		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
+	}
+		
 	ball->update();
-	paddle->update(WIN_WIDTH);
+	paddle->update();
 }
 
 bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
@@ -116,13 +142,16 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 			return true;						//CASO ABAJO - TESTEO
 		}
 
-	//caso paddle
-	if (paddle->collides(rect)) {				// PROVISIONAL
-		collVector = Vector2D(0, 1);			// PROVISIONAL
+	//caso paddle pelota
+	if (paddle->collides(rect)) {	
+
+		SDL_Rect cRect = paddle->rect();
+
+		if (rect.y < (cRect.y + cRect.h))
+			collVector = Vector2D(0, 1);
+
 		return true;
-	};											// PROVISIONAL
-
-
+	};											
 
 	return false;
 	

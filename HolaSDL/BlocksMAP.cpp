@@ -3,7 +3,6 @@
 #include <fstream>
 
 
-
 BlocksMAP::BlocksMAP()
 {
 }
@@ -36,13 +35,13 @@ uint BlocksMAP::BlockNum()
 	return numBlocks;
 }
 
-void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BLOCK)
+void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WIDTH)
 {
 	ifstream file;
 	file.open(filePath);
 
-	int x;
-	int y;
+	uint x;
+	uint y;
 
 	file >> x >> y;
 
@@ -50,7 +49,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint ELEM_BL
 	for (int i = 0; i < y; i++)
 		blocks[i] = new Block*[y];
 
-	BlockSize = ELEM_BLOCK / (x*0.1); // para que se adapte a todos los mapas
+	BlockSize = ((WIN_WIDTH-40)/x) / (x*0.1); // para que se adapte a todos los mapas
 	MapSizeX = x;
 	MapSizeY = y;
 	texture = textureD;

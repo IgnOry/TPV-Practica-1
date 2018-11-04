@@ -21,8 +21,9 @@ public:
 	Paddle(Vector2D pos, uint width, uint height, Vector2D direction, Texture* ptr);
 	~Paddle();
 	void render();
-	void update(int winWidth);
+	void update();
 	void handleEvents(SDL_Event event);
 	bool collides(const SDL_Rect& rect);
+	SDL_Rect rect();
 };
 

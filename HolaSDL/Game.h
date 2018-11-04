@@ -19,7 +19,7 @@ enum TextureName {BallTexture, BlocksTexure, PaddleTexture };
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
 const uint NUM_TEXTURES = 5;
-const uint FRAMERATE = 60; //¿?
+const uint FRAMERATE = 144; //¿?
 const uint ELEM_SIZE = 76;
 const string PATH_IMAGES = ""; //Path imágenes
 
@@ -36,6 +36,8 @@ class Game
 		bool exit = false;
 		bool gameover;
 		bool win;
+		int hits;
+		int level = 0;
 		Texture* textures[NUM_TEXTURES];
 		Ball* ball;
 		Paddle* paddle;
@@ -43,6 +45,7 @@ class Game
 		Wall* wallI;
 		Wall* wallD;
 		BlocksMAP* blocksMAP;
+		string levels[3] = { "..\\maps\\level01.ark", "..\\maps\\level02.ark", "..\\maps\\level03.ark" };
 		
 		TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
 		{
