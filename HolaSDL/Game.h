@@ -38,6 +38,7 @@ class Game
 		bool win;
 		int hits;
 		int level = 0;
+		int lives = 3;
 		Texture* textures[NUM_TEXTURES];
 		Ball* ball;
 		Paddle* paddle;

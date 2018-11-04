@@ -136,10 +136,17 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	{
 		collVector = Vector2D(-1, 0);
 		return true;
-	} else
-		if(rect.y >= WIN_HEIGHT){				//CASO ABAJO - TESTEO
-			collVector = Vector2D(0, 1);		//CASO ABAJO - TESTEO
+	} 
+	
+	else
+		if (rect.y >= WIN_HEIGHT) {				//CASO ABAJO - TESTEO
+			/*collVector = Vector2D(0, 1);		//CASO ABAJO - TESTEO
 			return true;						//CASO ABAJO - TESTEO
+		}*/
+
+			lives--;
+			//reset nivel (?) Destruir blocksmap, cargarlo de nuevo y devolver ball y paddle a su posicion original
+
 		}
 
 	//caso paddle pelota
