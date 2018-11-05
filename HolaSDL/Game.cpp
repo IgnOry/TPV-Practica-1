@@ -155,7 +155,8 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		SDL_Rect cRect = paddle->rect();
 
 		if (rect.y < (cRect.y + cRect.h))
-			collVector = Vector2D(0, 1);
+			paddle->ballHitsPaddle(rect, cRect, collVector);
+			//collVector = Vector2D(0, 1);
 
 		return true;
 	};											

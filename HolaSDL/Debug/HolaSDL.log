@@ -1,2 +1,15 @@
-﻿  Game.cpp
-  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
+﻿  Paddle.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(18): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(66): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(66): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(66): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(76): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(76): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(76): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(85): error C2296: '%': no es válido; el operando izquierdo es de tipo 'double'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(85): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'initializer list' (o bien no existe una conversión aceptable)
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\vector2d.h(22): note: puede ser 'Vector2D &Vector2D::operator =(Vector2D &&)'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\vector2d.h(22): note: o       'Vector2D &Vector2D::operator =(const Vector2D &)'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(85): note: al hacer coincidir la lista de argumentos '(Vector2D, initializer list)'

@@ -25,5 +25,6 @@ public:
 	void handleEvents(SDL_Event event);
 	bool collides(const SDL_Rect& rect);
 	SDL_Rect rect();
+	void ballHitsPaddle(const SDL_Rect & ballRect, const SDL_Rect & paddleRect, Vector2D& collVector);
 };
 

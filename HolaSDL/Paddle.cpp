@@ -77,3 +77,10 @@ SDL_Rect Paddle::rect()
 
 	return wallRect;
 }
+
+void Paddle::ballHitsPaddle(const SDL_Rect& ballRect, const SDL_Rect& paddleRect, Vector2D& collVector) {
+	int xPaddle = paddleRect.x + paddleRect.w / 2;
+	int xBall = ballRect.x + ballRect.w / 2;
+	double ang = ((double)(xPaddle - xBall)) / ((double)(paddleRect.w / 2)) / 2;
+	collVector = { ang,1 };
+}
