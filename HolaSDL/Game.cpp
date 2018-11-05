@@ -39,11 +39,11 @@ Game::Game() {
 	}
 	// Esto de abajo se puede sacar a un método aparte para facilitar la creación de un juego nuevo o la carga de una partida
 
-	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0.1,0.1),textures[0], this);
-	paddle = new Paddle(Vector2D::Vector2D(400, 500), 120, 20, Vector2D::Vector2D(0, 0), textures[2]);
-	wallA = new Wall(0, 0, 800, 20, textures[4]);
-	wallI = new Wall(0, 0, 20, 600, textures[3]);
-	wallD = new Wall(780, 0, 20, 600, textures[3]);
+	ball = new Ball(POS_START_BALL, 20, 20, DIR_START_BALL,textures[0], this);
+	paddle = new Paddle(POS_START_PADDLE, 120, 20, DIR_START_PADDLE, textures[2]);
+	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
+	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
+	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
 	try {
 		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
 	}
@@ -168,37 +168,44 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
 {
-	ofstream fs("save.ark");
+	ofstream saveFile("save.ark");
 
 	for (int i = 0; i < blocksMAP->MapX; i++) //metodos para obtener la X y la Y
 	{ 
 		for (int j = 0; j < blocksMAP->MapY; j++)
 		{
-			if (blocksmap) //acceso a blocksmap
+			if (true) //acceso a blocksmap
 			{
-				fs << blocks[i][j].getColour;
+				//fs << blocks* [i][j].getColour;
 			}
 			else
 			{
-				fs << 0;
+				saveFile << 0;
 			}
 		}
 
-		fs << endl;
+		saveFile << endl;
 	}
 
-	fs << paddle->getPosition() << endl;
-	fs << paddle->getDirection() << endl;
+	saveFile << paddle->getPosition() << endl;
+	saveFile << paddle->getDirection() << endl;
 
-	fs << ball->getPosition() << endl;
-	fs << ball->getDirection() << endl;
+	saveFile << ball->getPosition() << endl;
+	saveFile << ball->getDirection() << endl;
 
-	fs << level << endl;
-	fs << lives << endl;
+	saveFile << level << endl;
+	saveFile << lives << endl;
 
-	//time (?)
+	//time o rebotes (puntuacion) (?)
 
-	fs.close();
+	saveFile.close();
 
 }
 
+/*void Game::loadSave()
+{
+	ifstream loadFile;
+
+	loadFile >> x;
+	mismo orden que save file
+}*/
