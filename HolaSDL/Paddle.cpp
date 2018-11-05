@@ -84,3 +84,14 @@ void Paddle::ballHitsPaddle(const SDL_Rect& ballRect, const SDL_Rect& paddleRect
 	double ang = ((double)(xPaddle - xBall)) / ((double)(paddleRect.w / 2)) / 2;
 	collVector = { ang,1 };
 }
+
+Vector2D Paddle::getPosition()
+{
+	return position;
+}
+
+Vector2D Paddle::getDirection()
+{
+	return dirPos;
+}
+

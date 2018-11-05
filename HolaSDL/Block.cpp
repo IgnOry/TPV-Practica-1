@@ -52,3 +52,8 @@ uint Block::getW()
 {
 	return width;
 }
+
+int Block::getColour()
+{
+	return colour;
+}

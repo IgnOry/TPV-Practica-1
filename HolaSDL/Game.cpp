@@ -1,6 +1,7 @@
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
-
+#include <iostream>
+#include <fstream>
 #include <string>
 #include "Game.h"
 
@@ -36,7 +37,7 @@ Game::Game() {
 		std::exit(1);
 
 	}
-	// We finally create the game objects
+	// Esto de abajo se puede sacar a un método aparte para facilitar la creación de un juego nuevo o la carga de una partida
 
 	ball = new Ball(Vector2D::Vector2D(400, 300), 20, 20, Vector2D::Vector2D(0.1,0.1),textures[0], this);
 	paddle = new Paddle(Vector2D::Vector2D(400, 500), 120, 20, Vector2D::Vector2D(0, 0), textures[2]);
@@ -164,3 +165,40 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	return false;
 	
 }
+
+void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
+{
+	ofstream fs("save.ark");
+
+	for (int i = 0; i < blocksMAP->MapX; i++) //metodos para obtener la X y la Y
+	{ 
+		for (int j = 0; j < blocksMAP->MapY; j++)
+		{
+			if (blocksmap) //acceso a blocksmap
+			{
+				fs << blocks[i][j].getColour;
+			}
+			else
+			{
+				fs << 0;
+			}
+		}
+
+		fs << endl;
+	}
+
+	fs << paddle->getPosition() << endl;
+	fs << paddle->getDirection() << endl;
+
+	fs << ball->getPosition() << endl;
+	fs << ball->getDirection() << endl;
+
+	fs << level << endl;
+	fs << lives << endl;
+
+	//time (?)
+
+	fs.close();
+
+}
+

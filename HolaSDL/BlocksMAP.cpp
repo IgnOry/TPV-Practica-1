@@ -14,6 +14,8 @@ BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK)
 
 BlocksMAP::~BlocksMAP()
 {
+	delete[] blocks;
+	//no se si habría que borrar algo más
 }
 
 void BlocksMAP::render()
@@ -167,3 +169,16 @@ void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
 	blocks[blockToDestroy.colum()][blockToDestroy.row()] = nullptr;
 	numBlocks--;
 }
+
+uint BlocksMAP::MapX()
+{
+	return MapSizeY;
+}
+
+
+uint BlocksMAP::MapY()
+{
+	return MapSizeY;
+}
+
+

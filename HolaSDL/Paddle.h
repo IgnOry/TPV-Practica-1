@@ -26,5 +26,7 @@ public:
 	bool collides(const SDL_Rect& rect);
 	SDL_Rect rect();
 	void ballHitsPaddle(const SDL_Rect & ballRect, const SDL_Rect & paddleRect, Vector2D& collVector);
+	Vector2D getPosition();
+	Vector2D getDirection();
 };
 

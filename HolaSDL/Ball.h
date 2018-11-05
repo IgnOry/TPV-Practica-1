@@ -23,5 +23,7 @@ public:
 	~Ball();
 	void render();
 	void update();
+	Vector2D getPosition();
+	Vector2D getDirection();
 };
 

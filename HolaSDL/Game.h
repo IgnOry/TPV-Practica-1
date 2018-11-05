@@ -61,4 +61,5 @@ class Game
 			void handleEvents();
 			void update();
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
+			void saveGame(Ball * ball, Paddle * paddle, BlocksMAP * blocksmap);
 };

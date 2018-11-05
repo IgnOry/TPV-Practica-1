@@ -28,6 +28,7 @@ public:
 	uint getX();
 	uint getH();
 	uint getW();
+	int getColour();
 	uint row();
 	uint colum();
 };
