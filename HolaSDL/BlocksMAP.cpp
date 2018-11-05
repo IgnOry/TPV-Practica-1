@@ -14,6 +14,14 @@ BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK)
 
 BlocksMAP::~BlocksMAP()
 {
+	for (int r = 0; r < MapSizeX; r++)
+	{
+		for (int c = 0; c < MapSizeY; c++)
+		{
+			blocks[r][c] = nullptr;
+			delete blocks[r][c];
+		}
+	}
 	delete[] blocks;
 	//no se si habría que borrar algo más
 }
