@@ -249,7 +249,7 @@ void Game::newGame()
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(WIN_WIDTH-20, 0, 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D (0,0), 80, 80); //Rellenar
+	timer = new Timer(textures[5], Vector2D (20,0), 20, 20); //Rellenar
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);

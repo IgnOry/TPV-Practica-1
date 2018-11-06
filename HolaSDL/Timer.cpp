@@ -25,8 +25,23 @@ void Timer::update()
 
 void Timer::render()
 {
-	SDL_Rect srcRect = {position.getX(), position.getY(), width, height };
+	SDL_Rect srcRectDecMin = { position.getX(), position.getY(), width, height };	//decenas de minutos
+	SDL_Rect srcRectMin = { position.getX() + width, position.getY(), width, height };	//minutos
 
-	texture->renderFrame(srcRect, (currentTime%10) / texture->getNumCols(), 1);
+	SDL_Rect srcRectSeparador = { position.getX() + width * 2, position.getY(), width, height };	//:
+
+	SDL_Rect srcRectDecSec = {position.getX() + width * 3, position.getY(), width, height };	//decenas de segundo
+	SDL_Rect srcRectSec = { position.getX() + width * 4, position.getY(), width, height };	//segundos
+
+	texture->renderFrame(srcRectSec,0, (currentTime%10));	//segundos
+	texture->renderFrame(srcRectDecSec, 0, (currentTime / 10) % 6);	//decenas de segundo
+	texture->renderFrame(srcRectSeparador, 0, 10);	//:
+	texture->renderFrame(srcRectMin, 0, (currentTime / 60) % 10);	//minutos
+	texture->renderFrame(srcRectDecMin, 0, (currentTime / 600) % 10);	//decenas de minutos
+
+
+
+
+
 
 }

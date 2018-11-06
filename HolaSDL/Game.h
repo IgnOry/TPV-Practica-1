@@ -55,7 +55,7 @@ class Game
 		
 		TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
 		{
-			{"../images/ball.png",1,1}, {"../images/bricks.png",2,3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1}, {"../images/timer.png", 1, 10}
+			{"../images/ball.png",1,1}, {"../images/bricks.png",2,3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1}, {"../images/timer.png", 1, 11}
 		};
 
 		public:
