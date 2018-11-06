@@ -57,7 +57,7 @@ class Game
 		};
 
 		public:
-			Game();
+			Game(int x);
 			~Game();
 			void run();
 			void render() const;
@@ -65,4 +65,6 @@ class Game
 			void update();
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void saveGame(Ball * ball, Paddle * paddle, BlocksMAP * blocksmap);
+			void newGame();
+			void loadSave();
 };

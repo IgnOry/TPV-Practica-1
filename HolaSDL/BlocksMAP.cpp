@@ -64,6 +64,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 	MapSizeX = x;
 	MapSizeY = y;
 	texture = textureD;
+	numBlocks = 0;
 	
 	int colour;
 	for (int r = 0; r < x; r++) {
@@ -73,8 +74,8 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 				blocks[r][c] = nullptr;
 			else
 			{
-				blocks[r][c] = new Block(BlockSize * c + 20,(BlockSize/3) * r + 20, BlockSize, BlockSize/3, colour-1, c, r, textureD);
-				numBlocks++;			// se suma 20 porque es el ancho del muro
+				blocks[r][c] = new Block(BlockSize * c + 20,(BlockSize/3) * r + 20, BlockSize, BlockSize/3, colour-1, c, r, textureD); // se suma 20 porque es el ancho del muro
+				numBlocks++;			
 			}
 		}
 	}

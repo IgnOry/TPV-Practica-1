@@ -9,7 +9,7 @@ using namespace std;
 
 typedef unsigned int uint;
 
-Game::Game() {
+Game::Game(int x) {
 	try {
 		// We first initialize SDL
 		SDL_Init(SDL_INIT_EVERYTHING);
@@ -38,20 +38,27 @@ Game::Game() {
 
 	}
 	// Esto de abajo se puede sacar a un método aparte para facilitar la creación de un juego nuevo o la carga de una partida
+	
+	blocksMAP = new BlocksMAP();
 
-	ball = new Ball(POS_START_BALL, 20, 20, DIR_START_BALL,textures[0], this);
+	if (x == 0)
+	{
+		newGame();
+	}
+
+	else if (x == 1)
+	{
+		loadSave();
+	}
+	else
+		throw new exception ("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1");
+
+	/*ball = new Ball(POS_START_BALL, 20, 20, DIR_START_BALL,textures[0], this);
 	paddle = new Paddle(POS_START_PADDLE, 120, 20, DIR_START_PADDLE, textures[2]);
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
-	try {
-		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
-	}
-	catch (exception e)
-	{
-		cout << "Error en la carga del mapa";
-		std::exit(1);
-	}
+	blocksMAP = new BlocksMAP();*/
 }
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
@@ -90,8 +97,13 @@ void Game::handleEvents()
 	{
 		if (event.type == SDL_QUIT)
 			exit = true;
-		else if(event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
-			paddle->handleEvents(event);
+		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
+		{
+			if (event.type == SDLK_s)
+				saveGame(ball, paddle, blocksMAP);
+			else
+				paddle->handleEvents(event);
+		}
 	}
 }
 
@@ -141,14 +153,14 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	
 	else
 		if (rect.y >= WIN_HEIGHT) {				//CASO ABAJO - TESTEO
-			/*collVector = Vector2D(0, 1);		//CASO ABAJO - TESTEO
+			collVector = Vector2D(0, 1);		//CASO ABAJO - TESTEO
 			return true;						//CASO ABAJO - TESTEO
-		}*/
+		}/*
 
-			lives--;
+			//lives--;
 			//reset nivel (?) Destruir blocksmap, cargarlo de nuevo y devolver ball y paddle a su posicion original
 
-		}
+		//}*/
 
 	//caso paddle
 	if (paddle->collides(rect)) {	
@@ -156,7 +168,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		SDL_Rect cRect = paddle->rect();
 
 		if (rect.y + rect.h > cRect.y){
-			paddle->ballHitsPaddle(rect, cRect, collVector);
+			paddle->ballHitsPaddle(rect, collVector);
 
 		return true;
 		}
@@ -168,11 +180,11 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
 {
-	/*ofstream saveFile("save.ark");
+	ofstream saveFile("save.ark");
 
-	for (int i = 0; i < blocksMAP->MapX; i++) //metodos para obtener la X y la Y
+	for (int i = 0; i < blocksMAP->MapX(); i++)
 	{ 
-		for (int j = 0; j < blocksMAP->MapY; j++)
+		for (int j = 0; j < blocksMAP->MapY(); j++)
 		{
 			if (true) //acceso a blocksmap
 			{
@@ -198,14 +210,70 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 	//time o rebotes (puntuacion) (?)
 
-	saveFile.close();*/
+	saveFile.close();
 
 }
 
-/*void Game::loadSave()
+void Game::newGame()
 {
-	ifstream loadFile;
+	ball = new Ball(POS_START_BALL, 20, 20, DIR_START_BALL, textures[0], this);
+	paddle = new Paddle(POS_START_PADDLE, 120, 20, DIR_START_PADDLE, textures[2]);
+	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
+	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
+	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
 
-	loadFile >> x;
-	mismo orden que save file
-}*/
+	try {
+		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
+	}
+	catch (exception e)
+	{
+		cout << "Error en la carga del mapa";
+		std::exit(1);
+	}
+}
+
+void Game::loadSave()
+{
+	ifstream File ("save.ark");
+
+	blocksMAP->loadFile("save.ark", textures[1], WIN_WIDTH);
+	
+	//ver donde deja el punto de lectura de File
+
+	double padPosX;
+	double padPosY;
+	double padDirX;
+	double padDirY;
+
+	double ballPosX;
+	double ballPosY;
+	double ballDirX;
+	double ballDirY;
+
+	File >> padPosX;
+	File >> padPosY;
+	Vector2D startPaddle = Vector2D(padPosX, padPosY);
+	
+	File >> padDirX;
+	File >> padDirY;
+	Vector2D dirPaddle = Vector2D(padDirX, padDirY);
+
+
+	File >> ballPosX;
+	File >> ballPosY;
+	Vector2D startBall = Vector2D(ballPosX, ballPosY);
+
+	File >> ballDirX;
+	File >> ballDirY;
+	Vector2D dirBall = Vector2D(ballDirX, ballDirY);
+
+
+	File >> level;
+	File >> lives;
+
+	ball = new Ball(startBall, 20, 20, dirBall, textures[0], this);
+	paddle = new Paddle(startPaddle, 120, 20, dirPaddle, textures[2]);
+	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
+	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
+	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
+}

@@ -32,7 +32,7 @@ void Ball::update()
 	if (ptrGame->collides(ballRect, dirPos, collVector))
 	{
 		collVector.normalize();
-		dirPos = dirPos + (collVector *(dirPos * collVector) * -2);
+		dirPos = dirPos - (collVector *(dirPos * collVector)*2);
 		position = prevPos + dirPos;
 	}
 	else
