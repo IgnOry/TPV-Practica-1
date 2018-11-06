@@ -1,5 +1,6 @@
 #include "Block.h"
 
+
 Block::Block(double posX, double posY, int widthN, int heightN, int colourN, int rowN, int columnN, Texture * texture)
 {
 	position = Vector2D::Vector2D(posX, posY);

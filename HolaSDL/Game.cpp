@@ -150,17 +150,17 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 		}
 
-	//caso paddle pelota
+	//caso paddle
 	if (paddle->collides(rect)) {	
 
 		SDL_Rect cRect = paddle->rect();
 
-		if (rect.y < (cRect.y + cRect.h))
+		if (rect.y + rect.h > cRect.y){
 			paddle->ballHitsPaddle(rect, cRect, collVector);
-			//collVector = Vector2D(0, 1);
 
 		return true;
-	};											
+		}
+	}										
 
 	return false;
 	
@@ -168,7 +168,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
 {
-	ofstream saveFile("save.ark");
+	/*ofstream saveFile("save.ark");
 
 	for (int i = 0; i < blocksMAP->MapX; i++) //metodos para obtener la X y la Y
 	{ 
@@ -198,7 +198,7 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 	//time o rebotes (puntuacion) (?)
 
-	saveFile.close();
+	saveFile.close();*/
 
 }
 

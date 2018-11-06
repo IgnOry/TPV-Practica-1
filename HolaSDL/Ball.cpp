@@ -1,6 +1,7 @@
 #include "Ball.h"
 #include "Game.h"
 
+
 Ball::Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD)
 {
 	position = pos;
@@ -24,16 +25,19 @@ void Ball::render()
 void Ball::update()
 {
 	Vector2D prevPos = position;
-	position = position + dirPos;
 	Vector2D collVector = dirPos; // Vector2D(-position.getY(), position.getX());
 
 	SDL_Rect ballRect = {position.getX(), position.getY(), width, height };
 
 	if (ptrGame->collides(ballRect, dirPos, collVector))
 	{
+		collVector.normalize();
 		dirPos = dirPos + (collVector *(dirPos * collVector) * -2);
 		position = prevPos + dirPos;
 	}
+	else
+		position = position + dirPos;
+
 }
 
 Vector2D Ball::getPosition()

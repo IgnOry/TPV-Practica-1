@@ -5,6 +5,7 @@
 #include "SDL_image.h" // Windows
 #include "Texture.h"
 #include "Block.h"
+#include "checkML.h"
 
 class BlocksMAP
 {

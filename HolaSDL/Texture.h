@@ -5,6 +5,7 @@
 #include "SDL_image.h" // Windows
 
 #include <string>
+#include "checkML.h"
 
 using namespace std;
 

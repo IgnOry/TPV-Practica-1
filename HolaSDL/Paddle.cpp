@@ -81,8 +81,13 @@ SDL_Rect Paddle::rect()
 void Paddle::ballHitsPaddle(const SDL_Rect& ballRect, const SDL_Rect& paddleRect, Vector2D& collVector) {
 	int xPaddle = paddleRect.x + paddleRect.w / 2;
 	int xBall = ballRect.x + ballRect.w / 2;
-	double ang = ((double)(xPaddle - xBall)) / ((double)(paddleRect.w / 2)) / 2;
-	collVector = { ang,1 };
+
+	if(xBall - xPaddle < -(paddleRect.w / 6))	//izda
+		collVector = { -1,-1 };
+	else if (xBall - xPaddle > (paddleRect.w / 6))	//drcha
+		collVector = { 1,-1 };
+	else  collVector = { 0,-1 };	//centro
+		
 }
 
 Vector2D Paddle::getPosition()
