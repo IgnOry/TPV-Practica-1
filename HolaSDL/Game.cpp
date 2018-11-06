@@ -37,9 +37,9 @@ Game::Game(int x) {
 		std::exit(1);
 
 	}
-	// Esto de abajo se puede sacar a un método aparte para facilitar la creación de un juego nuevo o la carga de una partida
 	
 	blocksMAP = new BlocksMAP();
+
 
 	if (x == 0)
 	{
@@ -52,13 +52,6 @@ Game::Game(int x) {
 	}
 	else
 		throw new exception ("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1");
-
-	/*ball = new Ball(POS_START_BALL, 20, 20, DIR_START_BALL,textures[0], this);
-	paddle = new Paddle(POS_START_PADDLE, 120, 20, DIR_START_PADDLE, textures[2]);
-	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
-	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
-	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
-	blocksMAP = new BlocksMAP();*/
 }
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
@@ -85,6 +78,7 @@ void Game::render() const
 	wallI->render();
 	wallD->render();
 	blocksMAP->render();
+	timer->render();
 	
 	SDL_RenderPresent(renderer);
 }
@@ -118,6 +112,7 @@ void Game::update()
 		
 	ball->update();
 	paddle->update();
+	timer->update();
 }
 
 bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
@@ -152,22 +147,21 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	} 
 	
 	else
-		if (rect.y >= WIN_HEIGHT) {				//CASO ABAJO - TESTEO
+		if (rect.y >= WIN_HEIGHT) {	/*			//CASO ABAJO - TESTEO
 			collVector = Vector2D(0, 1);		//CASO ABAJO - TESTEO
 			return true;						//CASO ABAJO - TESTEO
-		}/*
+			*/
 
-			//lives--;
-			//reset nivel (?) Destruir blocksmap, cargarlo de nuevo y devolver ball y paddle a su posicion original
-
-		//}*/
+			Destroy();
+			newGame();
+		}
 
 	//caso paddle
 	if (paddle->collides(rect)) {	
 
 		SDL_Rect cRect = paddle->rect();
 
-		if (rect.y + rect.h > cRect.y){
+		if (!(((rect.x+rect.w) < cRect.x) && rect.x > (cRect.x + cRect.w))){
 			paddle->ballHitsPaddle(rect, collVector);
 
 		return true;
@@ -222,11 +216,29 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 
 	FileData << level << endl;
-	FileData << lives << endl;
-
 	//time o rebotes (puntuacion) (?)
 
 	FileData.close();
+
+}
+
+void Game::Destroy()
+{
+	delete ball;
+	delete paddle;
+	delete wallA;
+	delete wallI;
+	delete wallD;
+	delete timer;
+
+	blocksMAP->~BlocksMAP();
+
+	ball = nullptr;
+	paddle = nullptr;
+	wallA = nullptr;
+	wallI = nullptr;
+	wallD = nullptr;
+	timer = nullptr;
 
 }
 
@@ -236,7 +248,8 @@ void Game::newGame()
 	paddle = new Paddle(POS_START_PADDLE, 120, 20, DIR_START_PADDLE, textures[2]);
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
-	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
+	wallD = new Wall(WIN_WIDTH-20, 0, 20, WIN_HEIGHT, textures[3]);
+	timer = new Timer(textures[5], Vector2D (0,0), 80, 80); //Rellenar
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
@@ -286,7 +299,6 @@ void Game::loadSave()
 
 
 	FileData >> level;
-	FileData >> lives;
 
 	FileData.close();
 

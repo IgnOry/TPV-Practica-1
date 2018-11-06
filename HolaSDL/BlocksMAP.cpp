@@ -176,6 +176,7 @@ Block* BlocksMAP::blockAt(const Vector2D& p) {
 
 void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
 
+	//delete blocks[blockToDestroy.colum()][blockToDestroy.row()];
 	blocks[blockToDestroy.colum()][blockToDestroy.row()] = nullptr;
 	numBlocks--;
 }

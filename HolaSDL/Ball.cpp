@@ -24,7 +24,6 @@ void Ball::render()
 
 void Ball::update()
 {
-	Vector2D prevPos = position;
 	Vector2D collVector = dirPos; // Vector2D(-position.getY(), position.getX());
 
 	SDL_Rect ballRect = {position.getX(), position.getY(), width, height };
@@ -32,11 +31,10 @@ void Ball::update()
 	if (ptrGame->collides(ballRect, dirPos, collVector))
 	{
 		collVector.normalize();
-		dirPos = dirPos - (collVector *(dirPos * collVector)*2);
-		position = prevPos + dirPos;
+
+		dirPos = dirPos - (collVector *(dirPos * collVector) *2);
 	}
-	else
-		position = position + dirPos;
+	position = position + dirPos;
 
 }
 

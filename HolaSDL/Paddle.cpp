@@ -49,11 +49,11 @@ void  Paddle::handleEvents(SDL_Event event)
 		switch (event.key.keysym.sym)
 		{
 		case(SDLK_RIGHT):
-			dirPos = Vector2D(0.2, 0);
+			dirPos = Vector2D(0.4, 0);
 			break;
 
 		case (SDLK_LEFT):
-			dirPos = Vector2D(-0.2, 0);
+			dirPos = Vector2D(-0.4, 0);
 			break;
 		default:
 			break;
@@ -85,10 +85,10 @@ void Paddle::ballHitsPaddle(const SDL_Rect& ballRect, Vector2D& collVector) {
 	int xBall = ballRect.x + ballRect.w / 2;
 
 	if(xBall - xPaddle <= -(paddleRect.w / 6))	//izda
-		collVector = { -1,1 };
+		collVector = { -1,-5 };
 	else if (xBall - xPaddle >= (paddleRect.w / 6))	//drcha
-		collVector = { 1,1 };
-	else  collVector = { 0,1 };	//centro
+		collVector = { 1,-5 };
+	else  collVector = { 0,-2 };	//centro
 		
 }
 
