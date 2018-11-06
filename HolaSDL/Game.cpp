@@ -99,7 +99,7 @@ void Game::handleEvents()
 			exit = true;
 		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
 		{
-			if (event.type == SDLK_s)
+			if (event.key.keysym.sym == SDLK_s)
 				saveGame(ball, paddle, blocksMAP);
 			else
 				paddle->handleEvents(event);
@@ -180,37 +180,53 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
 {
-	ofstream saveFile("save.ark");
+	ofstream saveFile("..\\saves\\saveMap.ark");
+
+	Block*** blocks = blocksMAP->BlockStructure();
+
+	saveFile << blocksMAP->MapX() << endl;
+
+	saveFile << blocksMAP->MapY() << endl;
 
 	for (int i = 0; i < blocksMAP->MapX(); i++)
 	{ 
 		for (int j = 0; j < blocksMAP->MapY(); j++)
 		{
-			if (true) //acceso a blocksmap
+			if (blocks[i][j] != nullptr) //acceso a blocksmap
 			{
-				//fs << blocks* [i][j].getColour;
+				saveFile << (blocks[i][j]->getColour()+1) << " ";
 			}
 			else
 			{
-				saveFile << 0;
+				saveFile << 0 << " ";
 			}
 		}
 
 		saveFile << endl;
 	}
 
-	saveFile << paddle->getPosition() << endl;
-	saveFile << paddle->getDirection() << endl;
+	saveFile.close();
 
-	saveFile << ball->getPosition() << endl;
-	saveFile << ball->getDirection() << endl;
+	ofstream FileData("..\\saves\\save.ark");
 
-	saveFile << level << endl;
-	saveFile << lives << endl;
+	FileData << paddle->getPosition().getX() << endl;
+	FileData << paddle->getPosition().getY() << endl;
+
+	FileData << paddle->getDirection().getX() << endl;
+	FileData << paddle->getDirection().getY() << endl;
+
+	FileData << ball->getPosition().getX() << endl;
+	FileData << ball->getPosition().getY() << endl;
+	FileData << ball->getDirection().getX() << endl;
+	FileData << ball->getDirection().getY() << endl;
+
+
+	FileData << level << endl;
+	FileData << lives << endl;
 
 	//time o rebotes (puntuacion) (?)
 
-	saveFile.close();
+	FileData.close();
 
 }
 
@@ -234,9 +250,10 @@ void Game::newGame()
 
 void Game::loadSave()
 {
-	ifstream File ("save.ark");
+	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);
 
-	blocksMAP->loadFile("save.ark", textures[1], WIN_WIDTH);
+	ifstream FileData("..\\saves\\save.ark");
+
 	
 	//ver donde deja el punto de lectura de File
 
@@ -250,26 +267,28 @@ void Game::loadSave()
 	double ballDirX;
 	double ballDirY;
 
-	File >> padPosX;
-	File >> padPosY;
+	FileData >> padPosX;
+	FileData >> padPosY;
 	Vector2D startPaddle = Vector2D(padPosX, padPosY);
 	
-	File >> padDirX;
-	File >> padDirY;
+	FileData >> padDirX;
+	FileData >> padDirY;
 	Vector2D dirPaddle = Vector2D(padDirX, padDirY);
 
 
-	File >> ballPosX;
-	File >> ballPosY;
+	FileData >> ballPosX;
+	FileData >> ballPosY;
 	Vector2D startBall = Vector2D(ballPosX, ballPosY);
 
-	File >> ballDirX;
-	File >> ballDirY;
+	FileData >> ballDirX;
+	FileData >> ballDirY;
 	Vector2D dirBall = Vector2D(ballDirX, ballDirY);
 
 
-	File >> level;
-	File >> lives;
+	FileData >> level;
+	FileData >> lives;
+
+	FileData.close();
 
 	ball = new Ball(startBall, 20, 20, dirBall, textures[0], this);
 	paddle = new Paddle(startPaddle, 120, 20, dirPaddle, textures[2]);

@@ -191,4 +191,9 @@ uint BlocksMAP::MapY()
 	return MapSizeY;
 }
 
+Block*** BlocksMAP::BlockStructure()
+{
+	return blocks;
+}
+
 

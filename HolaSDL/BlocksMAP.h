@@ -30,5 +30,6 @@ public:
 	void ballHitsBlock(Block& block);
 	uint MapX();
 	uint MapY();
+	Block *** BlockStructure();
 };
 

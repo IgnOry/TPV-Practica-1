@@ -1,4 +1,4 @@
 ﻿  Game.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(185): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(187): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(191): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(193): warning C4018: '<': signed/unsigned mismatch
   HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
