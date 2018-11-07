@@ -61,7 +61,6 @@ class Game
 
 		public:
 			Game();
-			int Menu();
 			~Game();
 			void run();
 			void render() const;

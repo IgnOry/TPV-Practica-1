@@ -47,8 +47,6 @@ Game::Game() {
 
 	}
 	
-	blocksMAP = new BlocksMAP();
-
 	if (x == 0)
 	{
 		newGame();
@@ -77,50 +75,16 @@ Game::Game() {
 		{
 			cout << i << ". " << topScores[i] << endl;
 		}
+
+		FileData.close();
 	}
 	else
 		throw new exception ("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
 }
 
-/*int Game::Menu()
-{
-	int x;
-	SDL_Rect srcRect = { 0, 0, 800, 600 };
-	textures[6]->render(srcRect);
-
-	/*SDL_Event event;
-
-	while (SDL_PollEvent(&event) && !exit)
-	{
-		if (event.type == SDL_QUIT)
-			exit = true;
-		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
-		{
-			if (event.key.keysym.sym == SDLK_0)
-			{
-				x = 0;
-				return x;
-			}
-			else if (event.key.keysym.sym == SDLK_1)
-			{
-				x = 1;
-				return x;
-			}
-			else if (event.key.keysym.sym == SDLK_2)
-			{
-				x = 2;
-				return x;
-			}
-		}
-	}
-	
-	cout << "he pintado";
-	cin >> x;
-	return x;
-}*/
-
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
+	Destroy();
 	SDL_DestroyRenderer (renderer);
 	SDL_DestroyWindow( window);
 	SDL_Quit();
@@ -333,8 +297,7 @@ void Game::Destroy()
 	delete wallI;
 	delete wallD;
 	delete timer;
-
-	blocksMAP->~BlocksMAP();
+	delete blocksMAP;
 
 	ball = nullptr;
 	paddle = nullptr;
@@ -354,6 +317,7 @@ void Game::newGame()
 	wallI = new Wall(0, 0, ObjSize, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(WIN_WIDTH- ObjSize, 0, ObjSize, WIN_HEIGHT, textures[3]);
 	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, 0, SDL_GetTicks()/1000,  0);
+	blocksMAP = new BlocksMAP();
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
@@ -367,6 +331,7 @@ void Game::newGame()
 
 void Game::loadSave()
 {
+	blocksMAP = new BlocksMAP();
 	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);
 
 	ifstream FileData("..\\saves\\save.ark");

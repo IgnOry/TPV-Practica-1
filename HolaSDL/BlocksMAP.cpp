@@ -19,12 +19,13 @@ BlocksMAP::~BlocksMAP()
 	{
 		for (int c = 0; c < MapSizeY; c++)
 		{
-			blocks[r][c] = nullptr;
 			delete blocks[r][c];
+			//blocks[r][c] = nullptr;
 		}
+		delete blocks[r];
 	}
 	delete[] blocks;
-	//no se si habría que borrar algo más
+	blocks = nullptr;
 }
 
 void BlocksMAP::render()
