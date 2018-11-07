@@ -318,6 +318,8 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 	FileData << level << endl;
 	FileData << timer->time() << endl;
+	FileData << timer->timeFromDeath() << endl;
+	FileData << SDL_GetTicks() / 1000;
 
 	FileData.close();
 
@@ -345,12 +347,13 @@ void Game::Destroy()
 
 void Game::newGame()
 {
-	ball = new Ball(POS_START_BALL, 20, 20, DIR_START_BALL, textures[0], this);
-	paddle = new Paddle(POS_START_PADDLE, 120, 20, DIR_START_PADDLE, textures[2]);
-	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
-	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
-	wallD = new Wall(WIN_WIDTH-20, 0, 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D (20,580), 20, 20, 0); //Rellenar
+	int ObjSize = 20;
+	ball = new Ball(POS_START_BALL, ObjSize, ObjSize, DIR_START_BALL, textures[0], this);
+	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, DIR_START_PADDLE, textures[2]);
+	wallA = new Wall(0, 0, WIN_WIDTH, ObjSize, textures[4]);
+	wallI = new Wall(0, 0, ObjSize, WIN_HEIGHT, textures[3]);
+	wallD = new Wall(WIN_WIDTH- ObjSize, 0, ObjSize, WIN_HEIGHT, textures[3]);
+	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, 0, SDL_GetTicks()/1000,  0);
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
@@ -382,6 +385,8 @@ void Game::loadSave()
 	double ballDirY;
 
 	uint time;
+	int timeFromDeath;
+	int ticks;
 
 	FileData >> padPosX;
 	FileData >> padPosY;
@@ -403,6 +408,9 @@ void Game::loadSave()
 
 	FileData >> level;
 	FileData >> time;
+	FileData >> timeFromDeath;
+	FileData >> ticks;
+
 
 	FileData.close();
 
@@ -411,5 +419,5 @@ void Game::loadSave()
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, time); //Rellenar
+	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, time, timeFromDeath, ticks); 
 }

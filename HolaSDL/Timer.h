@@ -12,12 +12,16 @@ private:
 	Vector2D position;
 	uint width;
 	uint height;
+	int timeReset;
+	int ticks = 0;
 
 public:
-	Timer(Texture* textureD, Vector2D pos, uint width, uint height, uint lasttime);
+	Timer(Texture* textureD, Vector2D pos, uint width, uint height, uint lasttime, int timeReset, int ticks);
 	~Timer();
 	void update();
 	uint time();
+	int timeFromDeath();
 	void render();
+	void resetTime();
 };
 

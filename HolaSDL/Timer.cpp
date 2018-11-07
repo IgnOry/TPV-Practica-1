@@ -2,13 +2,15 @@
 
 
 
-Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height, uint lasttime)
+Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height, uint lasttime, int timereset, int tks)
 {
 	texture = textureD;
 	position = pos;
 	width = Width;
 	height = Height;
 	lastTime = lasttime;
+	timeReset = timereset;
+	ticks = tks;
 }
 
 
@@ -18,7 +20,7 @@ Timer::~Timer()
 
 void Timer::update()
 {
-	currentTime = SDL_GetTicks()/1000;
+	currentTime = (SDL_GetTicks()/1000) + ticks - timeReset;
 	if (currentTime > lastTime + 1000) {
 		lastTime = currentTime;
 	}
@@ -27,6 +29,10 @@ void Timer::update()
 uint Timer::time()
 {
 	return currentTime;
+}
+
+int Timer::timeFromDeath(){
+	return timeReset;
 }
 
 void Timer::render()
@@ -45,3 +51,10 @@ void Timer::render()
 	texture->renderFrame(srcRectMin, 0, (currentTime / 60) % 10);	//minutos
 	texture->renderFrame(srcRectDecMin, 0, (currentTime / 600) % 10);	//decenas de minutos
 }
+
+void Timer::resetTime()
+{
+	currentTime = 0;
+}
+
+
