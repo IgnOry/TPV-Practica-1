@@ -10,7 +10,7 @@ using namespace std;
 typedef unsigned int uint;
 
 Game::Game() {
-	
+	//menú
 	int x;
 
 	cout << "(0) - Partida normal" << endl;
@@ -59,7 +59,7 @@ Game::Game() {
 
 	else if (x == 2)
 	{
-		cout << "¿Qué nivel quieres consultar?" << endl;
+		cout << "¿Que nivel quieres consultar?" << endl;
 		cin >> x;
 
 		ifstream FileData(top[x]);
@@ -133,7 +133,7 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	if (blocksMAP->BlockNum() == 0)
+	if (blocksMAP->BlockNum() == 0)	// reset bloques
 	{
 		blocksMAP->~BlocksMAP();
 		bestPlayers(timer->time());
@@ -150,7 +150,7 @@ void Game::bestPlayers(uint time)
 {
 	ifstream FileData(top[level]);
 
-	int topScores[10];
+	int topScores[10];		//valor por defecto de los scores: -1
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -222,12 +222,12 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		}
 
 	//caso paddle
-	if (paddle->collides(rect)) {	
+	if (paddle->collides(rect)) {	// si colisiona
 
 		SDL_Rect cRect = paddle->rect();
 
-		if (!(((rect.x+rect.w) < cRect.x) && rect.x > (cRect.x + cRect.w))){
-			paddle->ballHitsPaddle(rect, collVector);
+		if (!(((rect.x+rect.w) < cRect.x) && rect.x > (cRect.x + cRect.w))){		//comprueba que colisiona por encima del paddle,
+			paddle->ballHitsPaddle(rect, collVector);								//y no por el lado
 
 		return true;
 		}
@@ -281,7 +281,6 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 
 	FileData << level << endl;
-	FileData << timer->time() << endl;
 	FileData << timer->timeFromDeath() << endl;
 	FileData << SDL_GetTicks() / 1000;
 
@@ -316,7 +315,7 @@ void Game::newGame()
 	wallA = new Wall(0, 0, WIN_WIDTH, ObjSize, textures[4]);
 	wallI = new Wall(0, 0, ObjSize, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(WIN_WIDTH- ObjSize, 0, ObjSize, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, 0, SDL_GetTicks()/1000,  0);
+	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, SDL_GetTicks()/1000,  0);
 	blocksMAP = new BlocksMAP();
 
 	try {
@@ -349,7 +348,6 @@ void Game::loadSave()
 	double ballDirX;
 	double ballDirY;
 
-	uint time;
 	int timeFromDeath;
 	int ticks;
 
@@ -372,7 +370,6 @@ void Game::loadSave()
 
 
 	FileData >> level;
-	FileData >> time;
 	FileData >> timeFromDeath;
 	FileData >> ticks;
 
@@ -384,5 +381,5 @@ void Game::loadSave()
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, time, timeFromDeath, ticks); 
+	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); 
 }

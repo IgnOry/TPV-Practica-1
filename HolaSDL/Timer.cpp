@@ -2,13 +2,12 @@
 
 
 
-Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height, uint lasttime, int timereset, int tks)
+Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height, int timereset, int tks)
 {
 	texture = textureD;
 	position = pos;
 	width = Width;
 	height = Height;
-	lastTime = lasttime;
 	timeReset = timereset;
 	ticks = tks;
 }
@@ -20,7 +19,7 @@ Timer::~Timer()
 
 void Timer::update()
 {
-	currentTime = (SDL_GetTicks()/1000) + ticks - timeReset;
+	currentTime = (SDL_GetTicks()/1000) + ticks - timeReset;		// tiempo del juego actual + tiempo de la partida guardada - tiempo desde que moriste
 	if (currentTime > lastTime + 1000) {
 		lastTime = currentTime;
 	}
