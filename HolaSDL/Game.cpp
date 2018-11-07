@@ -9,7 +9,16 @@ using namespace std;
 
 typedef unsigned int uint;
 
-Game::Game(int x) {
+Game::Game() {
+	
+	int x;
+
+	cout << "(0) - Partida normal" << endl;
+	cout << "(1) - Cargar partida" << endl;
+	cout << "(2) - Mejores jugadores" << endl;
+
+	cin >> x;
+
 	try {
 		// We first initialize SDL
 		SDL_Init(SDL_INIT_EVERYTHING);
@@ -40,7 +49,6 @@ Game::Game(int x) {
 	
 	blocksMAP = new BlocksMAP();
 
-
 	if (x == 0)
 	{
 		newGame();
@@ -50,9 +58,67 @@ Game::Game(int x) {
 	{
 		loadSave();
 	}
+
+	else if (x == 2)
+	{
+		cout << "¿Qué nivel quieres consultar?" << endl;
+		cin >> x;
+
+		ifstream FileData(top[x]);
+
+		int topScores[10];
+
+		for (int i = 0; i < 10; i++)
+		{
+			cin >> topScores[i];
+		}
+
+		for (int i = 0; i < 10; i++)
+		{
+			cout << i << ". " << topScores[i] << endl;
+		}
+	}
 	else
-		throw new exception ("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1");
+		throw new exception ("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
 }
+
+/*int Game::Menu()
+{
+	int x;
+	SDL_Rect srcRect = { 0, 0, 800, 600 };
+	textures[6]->render(srcRect);
+
+	/*SDL_Event event;
+
+	while (SDL_PollEvent(&event) && !exit)
+	{
+		if (event.type == SDL_QUIT)
+			exit = true;
+		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
+		{
+			if (event.key.keysym.sym == SDLK_0)
+			{
+				x = 0;
+				return x;
+			}
+			else if (event.key.keysym.sym == SDLK_1)
+			{
+				x = 1;
+				return x;
+			}
+			else if (event.key.keysym.sym == SDLK_2)
+			{
+				x = 2;
+				return x;
+			}
+		}
+	}
+	
+	cout << "he pintado";
+	cin >> x;
+	return x;
+}*/
+
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
 	SDL_DestroyRenderer (renderer);
@@ -106,6 +172,7 @@ void Game::update()
 	if (blocksMAP->BlockNum() == 0)
 	{
 		blocksMAP->~BlocksMAP();
+		bestPlayers(timer->time());
 		level++;
 		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
 	}
@@ -114,6 +181,40 @@ void Game::update()
 	paddle->update();
 	timer->update();
 }
+
+void Game::bestPlayers(uint time)
+{
+	ifstream FileData(top[level]);
+
+	int topScores[10];
+
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> topScores[i];
+	}
+
+	if (topScores[9] > 0)
+	{
+		int i = 0;
+
+		while (topScores[i] < time)
+			i++;
+
+		topScores[i] = time;
+	}
+
+	else
+	{
+		int i = 0;
+
+		while (topScores[i] < 0)
+			i++;
+
+		topScores[i] = time;
+	}
+}
+
+
 
 bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
@@ -216,7 +317,7 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 
 	FileData << level << endl;
-	//time o rebotes (puntuacion) (?)
+	FileData << timer->time() << endl;
 
 	FileData.close();
 
@@ -249,7 +350,7 @@ void Game::newGame()
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(WIN_WIDTH-20, 0, 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D (20,0), 20, 20); //Rellenar
+	timer = new Timer(textures[5], Vector2D (20,580), 20, 20, 0); //Rellenar
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
@@ -280,6 +381,8 @@ void Game::loadSave()
 	double ballDirX;
 	double ballDirY;
 
+	uint time;
+
 	FileData >> padPosX;
 	FileData >> padPosY;
 	Vector2D startPaddle = Vector2D(padPosX, padPosY);
@@ -299,6 +402,7 @@ void Game::loadSave()
 
 
 	FileData >> level;
+	FileData >> time;
 
 	FileData.close();
 
@@ -307,4 +411,5 @@ void Game::loadSave()
 	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
+	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, time); //Rellenar
 }

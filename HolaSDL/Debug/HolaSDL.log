@@ -1,15 +1,5 @@
-﻿  Ball.cpp
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(21): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(21): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(21): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(29): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(29): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(29): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  Game.cpp
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(185): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(187): warning C4018: '<': no coinciden signed/unsigned
-  main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
-  Generando código...
-  HolaSDL.vcxproj -> D:\Escritorio\2º Desarrollo de Videojuegos\TVP (Tecnología de la Programación de Videojuegos)\TVP P1\TPV-Practica-1\bin\HolaSDLDebug.exe
+﻿  Game.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(200): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(286): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(288): warning C4018: '<': no coinciden signed/unsigned
+  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

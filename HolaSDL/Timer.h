@@ -8,15 +8,16 @@ class Timer
 private:
 	Texture* texture;
 	uint currentTime;
-	uint lastTime = 0;
+	uint lastTime;
 	Vector2D position;
 	uint width;
 	uint height;
 
 public:
-	Timer(Texture* textureD, Vector2D pos, uint width, uint height);
+	Timer(Texture* textureD, Vector2D pos, uint width, uint height, uint lasttime);
 	~Timer();
 	void update();
+	uint time();
 	void render();
 };
 

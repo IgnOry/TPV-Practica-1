@@ -2,12 +2,13 @@
 
 
 
-Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height)
+Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height, uint lasttime)
 {
 	texture = textureD;
 	position = pos;
 	width = Width;
 	height = Height;
+	lastTime = lasttime;
 }
 
 
@@ -21,6 +22,11 @@ void Timer::update()
 	if (currentTime > lastTime + 1000) {
 		lastTime = currentTime;
 	}
+}
+
+uint Timer::time()
+{
+	return currentTime;
 }
 
 void Timer::render()
@@ -38,10 +44,4 @@ void Timer::render()
 	texture->renderFrame(srcRectSeparador, 0, 10);	//:
 	texture->renderFrame(srcRectMin, 0, (currentTime / 60) % 10);	//minutos
 	texture->renderFrame(srcRectDecMin, 0, (currentTime / 600) % 10);	//decenas de minutos
-
-
-
-
-
-
 }
