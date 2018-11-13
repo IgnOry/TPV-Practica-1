@@ -84,7 +84,7 @@ Game::Game() {
 
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	Destroy();
+	DeleteAll();
 	SDL_DestroyRenderer (renderer);
 	SDL_DestroyWindow( window);
 	SDL_Quit();
@@ -135,7 +135,7 @@ void Game::update()
 {
 	if (blocksMAP->BlockNum() == 0)	// reset bloques
 	{
-		blocksMAP->~BlocksMAP();
+		delete blocksMAP;
 		bestPlayers(timer->time());
 		level++;
 		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
@@ -217,7 +217,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 			return true;						//CASO ABAJO - TESTEO
 			*/
 
-			Destroy();
+			DeleteAll();
 			newGame();
 		}
 
@@ -288,7 +288,7 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 }
 
-void Game::Destroy()
+void Game::DeleteAll()
 {
 	delete ball;
 	delete paddle;

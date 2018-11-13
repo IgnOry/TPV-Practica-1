@@ -1,4 +1,5 @@
 #include "BlocksMAP.h"
+#include "Game.h"
 #include <iostream>
 #include <fstream>
 
@@ -61,7 +62,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 	for (int i = 0; i < y; i++)
 		blocks[i] = new Block*[y];
 
-	BlockSize = ((WIN_WIDTH-40)/x) / (x*0.1); // para que se adapte a todos los mapas
+	BlockSize = ((WIN_WIDTH-WALL_SIZE * 2)/x) / (x*0.1); // para que se adapte a todos los mapas
 	MapSizeX = x;
 	MapSizeY = y;
 	texture = textureD;
@@ -156,9 +157,17 @@ Block* BlocksMAP::collides(const SDL_Rect& ballRect, const Vector2D& ballVel, Ve
 	En caso de no haber bloque en ese punto (incluido el caso de que p esté fuera
 	del espacio del mapa) devuelve nullptr.
 */
-Block* BlocksMAP::blockAt(const Vector2D& p) {
+Block* BlocksMAP::blockAt(const Vector2D& p)
+{
+	int x = (p.getX() - WALL_SIZE) / BlockSize;
+	int y = (p.getY() - WALL_SIZE) / (BlockSize/3);
 
-	for (int i = 0; i < MapSizeX; i++)
+	if (x > MapSizeX || y > MapSizeY)
+		return nullptr;
+	else
+		return blocks[x][y];
+
+	/*for (int i = 0; i < MapSizeX; i++)
 	{
 		for (int j = 0; j < MapSizeY; j++)
 		{
@@ -172,7 +181,7 @@ Block* BlocksMAP::blockAt(const Vector2D& p) {
 			}
 		}
 	}
-	return nullptr; //si p está fuera del mapa o no ha encontrado ningún bloque distinto de nullptr devuelve nullptr
+	return nullptr; //si p está fuera del mapa o no ha encontrado ningún bloque distinto de nullptr devuelve nullptr*/
 }
 
 void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
