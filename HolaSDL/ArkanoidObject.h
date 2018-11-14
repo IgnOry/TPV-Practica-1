@@ -1,8 +1,11 @@
 #pragma once
 #include "Vector2D.h"
 #include "checkML.h"
+#include "GameObject.h"
+#include "Texture.h"
 
-class ArkanoidObject
+
+class ArkanoidObject: public GameObject
 {
 public:
 	ArkanoidObject();
@@ -10,10 +13,10 @@ public:
 	void loadFromFile();
 	void saveToFile();
 	void getRect();
-private: 
+protected: 
 	Vector2D position;
-//	uint width;
-	//uint height;
-//	Texture* texture;
+	uint width;
+	uint height;
+	Texture* texture;
 };
 

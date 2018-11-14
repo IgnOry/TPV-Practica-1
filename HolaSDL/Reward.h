@@ -1,7 +1,8 @@
 #pragma once
 #include "checkML.h"
+#include "MovingObject.h"
 
-class Reward
+class Reward: public MovingObject
 {
 public:
 	Reward();

@@ -7,8 +7,10 @@
 
 #include <string>
 #include "checkML.h"
+#include "MovingObject.h"
 
-class Paddle
+
+class Paddle: public MovingObject
 {
 
 private:

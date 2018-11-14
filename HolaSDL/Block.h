@@ -7,9 +7,11 @@
 
 #include <string>
 #include "checkML.h"
+#include "ArkanoidObject.h"
 
 
-class Block
+
+class Block: public ArkanoidObject
 {
 
 private:

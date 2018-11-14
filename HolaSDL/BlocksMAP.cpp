@@ -159,7 +159,7 @@ Block* BlocksMAP::collides(const SDL_Rect& ballRect, const Vector2D& ballVel, Ve
 */
 Block* BlocksMAP::blockAt(const Vector2D& p)
 {
-	int x = (p.getX() - WALL_SIZE) / BlockSize;
+	/*int x = (p.getX() - WALL_SIZE) / BlockSize;
 	int y = (p.getY() - WALL_SIZE) / (BlockSize/3);
 
 	if (x > MapSizeX || y > MapSizeY)
@@ -167,7 +167,7 @@ Block* BlocksMAP::blockAt(const Vector2D& p)
 	else
 		return blocks[x][y];
 
-	/*for (int i = 0; i < MapSizeX; i++)
+	*/for (int i = 0; i < MapSizeX; i++)
 	{
 		for (int j = 0; j < MapSizeY; j++)
 		{

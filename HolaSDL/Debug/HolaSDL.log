@@ -1,13 +1,12 @@
 ﻿  BlocksMAP.cpp
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(38): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(62): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(65): warning C4244: '=': conversion from 'double' to 'uint', possible loss of data
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(72): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(73): warning C4018: '<': signed/unsigned mismatch
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(162): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(163): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\hlocal\ligthseeker\tpv-practica-1\holasdl\blocksmap.cpp(165): warning C4018: '>': signed/unsigned mismatch
-  HolaSDL.vcxproj -> C:\hlocal\LigthSeeker\TPV-Practica-1\bin\HolaSDLDebug.exe
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(62): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(65): warning C4244: '=': conversion from 'double' to 'uint', possible loss of data
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(73): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(170): warning C4018: '<': signed/unsigned mismatch
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(172): warning C4018: '<': signed/unsigned mismatch
+  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

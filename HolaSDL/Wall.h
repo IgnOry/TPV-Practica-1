@@ -5,8 +5,10 @@
 #include "SDL_image.h" // Windows
 #include "Texture.h"
 #include "checkML.h"
+#include "ArkanoidObject.h"
 
-class Wall
+
+class Wall: public ArkanoidObject
 {
 
 private:

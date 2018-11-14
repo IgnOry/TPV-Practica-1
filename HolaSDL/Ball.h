@@ -6,10 +6,12 @@
 #include <string>
 #include "Vector2D.h"
 #include "checkML.h"
+#include "MovingObject.h"
+
 
 class Game;
 
-class Ball
+class Ball: public MovingObject
 {
 
 private:

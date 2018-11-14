@@ -6,8 +6,10 @@
 #include "Texture.h"
 #include "Block.h"
 #include "checkML.h"
+#include "ArkanoidObject.h"
 
-class BlocksMAP
+
+class BlocksMAP: public ArkanoidObject
 {
 private:
 	Block*** blocks;//Matriz dinámica de punteros a bloques
