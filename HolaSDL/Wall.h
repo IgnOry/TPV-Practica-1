@@ -11,14 +11,8 @@
 class Wall: public ArkanoidObject
 {
 
-private:
-	Vector2D position;
-	uint width;
-	uint height;
-	Texture* ptrTexture;
-
 public:
-	Wall(double posX, double posY, int width, int height, Texture* texture);
+	Wall(Vector2D pos, int width, int height, Texture* texture);
 	~Wall();
 	void render();
 	SDL_Rect rect();

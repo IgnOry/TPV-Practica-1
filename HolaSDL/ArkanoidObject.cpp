@@ -1,15 +1,22 @@
 #include "ArkanoidObject.h"
 
 
-
 ArkanoidObject::ArkanoidObject()
 {
+}
+
+ArkanoidObject::ArkanoidObject(Vector2D pos, int w, int h, Texture* tx)
+{
+	position = pos;
+	width = w;
+	height = h;
+	texture = tx;
 }
 
 
 ArkanoidObject::~ArkanoidObject()
 {
-
+	texture = nullptr;
 }
 
 void ArkanoidObject::loadFromFile() //ver si se puede pasar el nombre de archivo como constante, incluyendo Game.h en la clase, o se pone a mano

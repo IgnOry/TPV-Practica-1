@@ -1,15 +1,8 @@
 #include "Wall.h"
 
-
-
-Wall::Wall(double posX, double posY, int tamAncho, int tamAlto, Texture* textura)
+Wall::Wall(Vector2D pos, int width, int height, Texture * texture)
 {
-	position = Vector2D::Vector2D(posX, posY);
-	width = tamAncho;
-	height = tamAlto;
-	ptrTexture = textura;
 }
-
 
 Wall::~Wall()
 {

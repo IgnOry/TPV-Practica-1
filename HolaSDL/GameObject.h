@@ -6,8 +6,8 @@ class GameObject
 public:
 	GameObject();
 	~GameObject();
-	void render();
-	void update();
-	void handleEvents();
+	virtual void render();
+	virtual void update();
+	virtual void handleEvents();
 };
 

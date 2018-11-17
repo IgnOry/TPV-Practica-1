@@ -12,6 +12,7 @@ class ArkanoidObject: public GameObject
 {
 public:
 	ArkanoidObject();
+	ArkanoidObject(Vector2D pos, int w, int h, Texture *tx);
 	~ArkanoidObject();
 	void loadFromFile();
 	void saveToFile();
