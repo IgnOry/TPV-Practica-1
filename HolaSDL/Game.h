@@ -28,12 +28,14 @@ const uint NUM_TEXTURES = 6;
 const uint FRAMERATE = 144; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
+const uint ObjSize = 20;
 const Vector2D POS_START_BALL = Vector2D(400,300);
 const Vector2D POS_START_PADDLE = Vector2D (400,500);
 const Vector2D DIR_START_BALL = Vector2D(0.4, 0.4);
 const Vector2D DIR_START_PADDLE = Vector2D(0, 0);
 const struct TextureAttributes { string fileName; uint nRows; uint nCols; };
 
+#include <list>
 
 class Game
 {
@@ -48,13 +50,14 @@ class Game
 		int hits;
 		int level = 0;
 		uint lastTime = 0;
+		list<ArkanoidObject*> lista;
 		Texture* textures[NUM_TEXTURES];
-		Ball* ball;
-		Paddle* paddle;
-		Wall* wallA;
-		Wall* wallI;
-		Wall* wallD;
-		BlocksMAP* blocksMAP;
+		ArkanoidObject* ball;
+		ArkanoidObject* paddle;
+		ArkanoidObject* wallA;
+		ArkanoidObject* wallI;
+		ArkanoidObject* wallD;
+		ArkanoidObject* blocksMAP;
 		Timer* timer;
 		string levels[3] = { "..\\maps\\level01.ark", "..\\maps\\level02.ark", "..\\maps\\level03.ark" };
 		string top[3] = { "..\\saves\\best1.ark", "..\\saves\\best2.ark", "..\\saves\\best3.ark" };

@@ -3,6 +3,9 @@
 #include "checkML.h"
 #include "GameObject.h"
 #include "Texture.h"
+#include <iostream>
+#include <fstream>
+#include <string>
 
 
 class ArkanoidObject: public GameObject
@@ -12,7 +15,7 @@ public:
 	~ArkanoidObject();
 	void loadFromFile();
 	void saveToFile();
-	void getRect();
+	SDL_Rect getRect();
 protected: 
 	Vector2D position;
 	uint width;

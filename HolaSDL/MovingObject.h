@@ -8,6 +8,7 @@ class MovingObject: public ArkanoidObject
 public:
 	MovingObject();
 	~MovingObject();
+	void updateClass();
 protected:
 	Vector2D dir;
 };

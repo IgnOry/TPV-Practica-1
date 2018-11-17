@@ -309,14 +309,20 @@ void Game::DeleteAll()
 
 void Game::newGame()
 {
-	int ObjSize = 20;
 	ball = new Ball(POS_START_BALL, ObjSize, ObjSize, DIR_START_BALL, textures[0], this);
+	lista.push_back(ball);
 	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, DIR_START_PADDLE, textures[2]);
+	lista.push_back(paddle);
 	wallA = new Wall(0, 0, WIN_WIDTH, ObjSize, textures[4]);
+	lista.push_back(wallA);
 	wallI = new Wall(0, 0, ObjSize, WIN_HEIGHT, textures[3]);
+	lista.push_back(wallI);
 	wallD = new Wall(WIN_WIDTH- ObjSize, 0, ObjSize, WIN_HEIGHT, textures[3]);
+	lista.push_back(wallD);
 	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, SDL_GetTicks()/1000,  0);
+	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
 	blocksMAP = new BlocksMAP();
+	lista.push_back(blocksMAP);
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
@@ -331,6 +337,8 @@ void Game::newGame()
 void Game::loadSave()
 {
 	blocksMAP = new BlocksMAP();
+	lista.push_back(blocksMAP);
+
 	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);
 
 	ifstream FileData("..\\saves\\save.ark");
@@ -382,4 +390,11 @@ void Game::loadSave()
 	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
 	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); 
+
+	lista.push_back(ball);
+	lista.push_back(paddle);
+	lista.push_back(wallA);
+	lista.push_back(wallI);
+	lista.push_back(wallD);
+	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
 }
