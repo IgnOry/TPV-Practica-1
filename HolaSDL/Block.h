@@ -13,15 +13,12 @@
 
 class Block: public ArkanoidObject
 {
+	//hereda todos los atributos restantes de ArkanoidObject y MovingObject
 
 private:
-	Vector2D position;
-	uint width;
-	uint height;
 	uint colour;
 	uint rows;
 	uint columns;
-	Texture* ptrTexture;
 
 public:
 	Block(double posX, double posY, int widthN, int heightN, int colourN, int columnN, int rowN, Texture* texture);

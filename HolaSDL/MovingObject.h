@@ -9,7 +9,9 @@ public:
 	MovingObject();
 	~MovingObject();
 	void updateClass();
+	Vector2D getDirection();
+
 protected:
-	Vector2D dir;
+	Vector2D dirPos;
 };
 

@@ -11,10 +11,11 @@
 class Wall: public ArkanoidObject
 {
 
+	//hereda todos los atributos de ArkanoidObject
+
 public:
 	Wall(Vector2D pos, int width, int height, Texture* texture);
 	~Wall();
 	void render();
-	SDL_Rect rect();
 };
 

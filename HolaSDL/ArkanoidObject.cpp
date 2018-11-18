@@ -10,13 +10,13 @@ ArkanoidObject::ArkanoidObject(Vector2D pos, int w, int h, Texture* tx)
 	position = pos;
 	width = w;
 	height = h;
-	texture = tx;
+	ptrTexture = tx;
 }
 
 
 ArkanoidObject::~ArkanoidObject()
 {
-	texture = nullptr;
+	ptrTexture = nullptr;
 }
 
 void ArkanoidObject::loadFromFile() //ver si se puede pasar el nombre de archivo como constante, incluyendo Game.h en la clase, o se pone a mano
@@ -50,4 +50,9 @@ SDL_Rect ArkanoidObject::getRect()
 {
 	SDL_Rect rect = { position.getX(), position.getY(), width, height };
 	return rect;
+}
+
+Vector2D ArkanoidObject::getPosition()
+{
+	return position;
 }

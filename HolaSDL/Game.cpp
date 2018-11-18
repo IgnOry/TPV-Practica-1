@@ -195,17 +195,17 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	
 
 	//casos muros
-	if (SDL_HasIntersection(&rect, &wallA->rect()))
+	if (SDL_HasIntersection(&rect, &wallA->getRect()))
 	{
 		collVector = Vector2D(0, -1);
 		return true;
 	} else 
-	if (SDL_HasIntersection(&rect, &wallI->rect()))
+	if (SDL_HasIntersection(&rect, &wallI->getRect()))
 	{
 		collVector = Vector2D(1, 0);
 		return true;
 	} else
-	if (SDL_HasIntersection(&rect, &wallD->rect()))
+	if (SDL_HasIntersection(&rect, &wallD->getRect()))
 	{
 		collVector = Vector2D(-1, 0);
 		return true;
@@ -224,7 +224,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	//caso paddle
 	if (paddle->collides(rect)) {	// si colisiona
 
-		SDL_Rect cRect = paddle->rect();
+		SDL_Rect cRect = paddle->getRect();
 
 		if (!(((rect.x+rect.w) < cRect.x) && rect.x > (cRect.x + cRect.w))){		//comprueba que colisiona por encima del paddle,
 			paddle->ballHitsPaddle(rect, collVector);								//y no por el lado
@@ -237,7 +237,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	
 }
 
-void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
+void Game::saveGame(ArkanoidObject* ball, ArkanoidObject* paddle, ArkanoidObject* blocksmap) //puntero a ball, paddle y blocksmap
 {
 	ofstream saveFile("..\\saves\\saveMap.ark");
 
@@ -268,9 +268,9 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 
 	ofstream FileData("..\\saves\\save.ark");
 
+	
 	FileData << paddle->getPosition().getX() << endl;
 	FileData << paddle->getPosition().getY() << endl;
-
 	FileData << paddle->getDirection().getX() << endl;
 	FileData << paddle->getDirection().getY() << endl;
 
@@ -278,7 +278,7 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 	FileData << ball->getPosition().getY() << endl;
 	FileData << ball->getDirection().getX() << endl;
 	FileData << ball->getDirection().getY() << endl;
-
+ball.
 
 	FileData << level << endl;
 	FileData << timer->timeFromDeath() << endl;
@@ -313,11 +313,11 @@ void Game::newGame()
 	lista.push_back(ball);
 	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, DIR_START_PADDLE, textures[2]);
 	lista.push_back(paddle);
-	wallA = new Wall(0, 0, WIN_WIDTH, ObjSize, textures[4]);
+	wallA = new Wall(Vector2D(0, 0), WIN_WIDTH, ObjSize, textures[4]);
 	lista.push_back(wallA);
-	wallI = new Wall(0, 0, ObjSize, WIN_HEIGHT, textures[3]);
+	wallI = new Wall(Vector2D(0, 0), ObjSize, WIN_HEIGHT, textures[3]);
 	lista.push_back(wallI);
-	wallD = new Wall(WIN_WIDTH- ObjSize, 0, ObjSize, WIN_HEIGHT, textures[3]);
+	wallD = new Wall(Vector2D(WIN_WIDTH- ObjSize, 0), ObjSize, WIN_HEIGHT, textures[3]);
 	lista.push_back(wallD);
 	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, SDL_GetTicks()/1000,  0);
 	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
@@ -386,9 +386,9 @@ void Game::loadSave()
 
 	ball = new Ball(startBall, 20, 20, dirBall, textures[0], this);
 	paddle = new Paddle(startPaddle, 120, 20, dirPaddle, textures[2]);
-	wallA = new Wall(0, 0, WIN_WIDTH, 20, textures[4]);
-	wallI = new Wall(0, 0, 20, WIN_HEIGHT, textures[3]);
-	wallD = new Wall(780, 0, 20, WIN_HEIGHT, textures[3]);
+	wallA = new Wall( Vector2D(0, 0), WIN_WIDTH, 20, textures[4]);
+	wallI = new Wall( Vector2D(0, 0), 20, WIN_HEIGHT, textures[3]);
+	wallD = new Wall( Vector2D (780, 0), 20, WIN_HEIGHT, textures[3]);
 	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); 
 
 	lista.push_back(ball);

@@ -3,7 +3,7 @@
 #include "Texture.h"
 #include "Vector2D.h"
 
-class Timer
+class Timer //ver como se hace la herencia
 {
 private:
 	Texture* texture;

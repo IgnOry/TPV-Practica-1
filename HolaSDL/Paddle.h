@@ -12,14 +12,7 @@
 
 class Paddle: public MovingObject
 {
-
-private:
-	Vector2D position;
-	uint width;
-	uint height;
-	Vector2D dirPos;
-	Texture* ptrTexture;
-
+	//hereda todos los atributos de ArkanoidObject y MovingObject
 public:
 	Paddle(Vector2D pos, uint width, uint height, Vector2D direction, Texture* ptr);
 	~Paddle();
@@ -29,7 +22,5 @@ public:
 	bool collides(const SDL_Rect& rect);
 	SDL_Rect rect();
 	void ballHitsPaddle(const SDL_Rect & ballRect, Vector2D& collVector);
-	Vector2D getPosition();
-	Vector2D getDirection();
 };
 

@@ -13,20 +13,15 @@ class Game;
 
 class Ball: public MovingObject
 {
+	//hereda todos los atributos restantes de ArkanoidObject y MovingObject
+
 
 private:
-		Vector2D position;
-		uint width;
-		uint height;
-		Vector2D dirPos;
-		Texture* ptrTexture;
 		Game* ptrGame;
 public:
 	Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD);
 	~Ball();
 	void render();
 	void update();
-	Vector2D getPosition();
-	Vector2D getDirection();
 };
 

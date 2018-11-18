@@ -17,3 +17,8 @@ void MovingObject::updateClass()
 
 	ArkanoidObject::saveToFile(); //+ (dir...)
 }
+
+Vector2D MovingObject::getDirection()
+{
+	return dirPos;
+}

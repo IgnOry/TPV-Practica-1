@@ -92,13 +92,3 @@ void Paddle::ballHitsPaddle(const SDL_Rect& ballRect, Vector2D& collVector) {
 		
 }
 
-Vector2D Paddle::getPosition()
-{
-	return position;
-}
-
-Vector2D Paddle::getDirection()
-{
-	return dirPos;
-}
-

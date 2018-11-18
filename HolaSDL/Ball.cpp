@@ -39,14 +39,4 @@ void Ball::update()
 
 }
 
-Vector2D Ball::getPosition()
-{
-	return position;
-}
-
-Vector2D Ball::getDirection()
-{
-	return dirPos;
-}
-
 

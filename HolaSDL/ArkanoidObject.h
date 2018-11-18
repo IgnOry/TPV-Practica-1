@@ -17,10 +17,12 @@ public:
 	void loadFromFile();
 	void saveToFile();
 	SDL_Rect getRect();
+	Vector2D getPosition();
+
 protected: 
 	Vector2D position;
 	uint width;
 	uint height;
-	Texture* texture;
+	Texture* ptrTexture;
 };
 

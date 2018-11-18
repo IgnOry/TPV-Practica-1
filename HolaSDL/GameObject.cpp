@@ -19,6 +19,6 @@ void GameObject::update() {
 
 }
 
-void GameObject::handleEvents() {
+void GameObject::handleEvents(SDL_Event event) {
 
 }
