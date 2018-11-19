@@ -21,7 +21,7 @@ private:
 public:
 	Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD);
 	~Ball();
-	void render();
-	void update();
+	virtual void render();
+	virtual void update();
 };
 

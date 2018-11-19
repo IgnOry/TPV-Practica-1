@@ -278,7 +278,7 @@ void Game::saveGame(ArkanoidObject* ball, ArkanoidObject* paddle, ArkanoidObject
 	FileData << ball->getPosition().getY() << endl;
 	FileData << ball->getDirection().getX() << endl;
 	FileData << ball->getDirection().getY() << endl;
-ball.
+
 
 	FileData << level << endl;
 	FileData << timer->timeFromDeath() << endl;

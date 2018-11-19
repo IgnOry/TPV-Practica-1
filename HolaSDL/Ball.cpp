@@ -36,7 +36,6 @@ void Ball::update()
 		dirPos = dirPos - (collVector *(dirPos * collVector) *2);
 	}
 	position = position + dirPos;
-
 }
 
 

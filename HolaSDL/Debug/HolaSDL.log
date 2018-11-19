@@ -1,4 +1,22 @@
-﻿  Game.cpp
+﻿  Ball.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(22): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(22): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(22): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(30): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(30): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\ball.cpp(30): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+  BlocksMAP.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(38): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(62): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(65): warning C4244: '=': conversión de 'double' a 'uint'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(72): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(73): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(170): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(172): warning C4018: '<': no coinciden signed/unsigned
+  Game.cpp
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(136): error C2039: 'BlockNum': no es un miembro de 'ArkanoidObject'
   c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(164): warning C4018: '<': no coinciden signed/unsigned
@@ -34,6 +52,9 @@ c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(328): error C203
   c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(342): error C2039: 'loadFile': no es un miembro de 'ArkanoidObject'
   c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
+  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
   Paddle.cpp
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
@@ -41,10 +62,7 @@ c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(18): warning C
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(66): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(66): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(66): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(76): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(76): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(76): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(82): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(82): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(82): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(75): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(75): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(75): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
   Generando código...

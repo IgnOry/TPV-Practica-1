@@ -41,7 +41,7 @@ void Paddle::update()
 
 
 
-void  Paddle::handleEvents(SDL_Event event)
+void Paddle::handleEvents(SDL_Event event)
 {
 	if(event.type == SDL_KEYUP)
 		dirPos = Vector2D(0, 0);
@@ -69,13 +69,6 @@ bool Paddle::collides(const SDL_Rect& rect)
 		return true;
 	else
 		return false;
-}
-
-SDL_Rect Paddle::rect()
-{
-	SDL_Rect wallRect = { position.getX(), position.getY(), width, height };
-
-	return wallRect;
 }
 
 void Paddle::ballHitsPaddle(const SDL_Rect& ballRect, Vector2D& collVector) {
