@@ -1,48 +1,166 @@
-﻿  BlocksMAP.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(38): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(62): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(65): warning C4244: '=': conversión de 'double' a 'uint'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(72): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(73): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(170): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(172): warning C4018: '<': no coinciden signed/unsigned
+﻿  Ball.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2059: error de sintaxis: ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(14): error C2059: error de sintaxis: '<encabezado de clase>'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(15): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(16): error C2059: error de sintaxis: 'private'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(19): error C2059: error de sintaxis: 'public'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(21): error C3861: 'Ball': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(22): error C2575: 'update': solo las funciones miembro y las bases pueden ser virtuales
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2143: error de sintaxis: falta ';' delante de '*'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2238: símbolos (token) inesperados delante de ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(79): error C2061: error de sintaxis: identificador 'Ball'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(6): error C2653: 'Ball': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(6): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(7): error C2550: 'Ball': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(8): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(9): warning C4508: 'Ball': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(11): error C2653: 'Ball': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(11): error C2523: '<Desconocido>::~Ball': etiqueta de destructor sin correspondencia
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(12): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(13): warning C4508: 'Ball': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(15): error C2653: 'Ball': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(17): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(19): error C3861: 'getRect': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(21): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(21): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(25): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.cpp(27): error C2352: 'MovingObject::update': llamada no válida de función miembro no estática
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(15): note: vea la declaración de 'MovingObject::update'
+  BlocksMAP.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2059: error de sintaxis: ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(14): error C2059: error de sintaxis: '<encabezado de clase>'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(15): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(16): error C2059: error de sintaxis: 'private'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(19): error C2059: error de sintaxis: 'public'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(21): error C3861: 'Ball': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(22): error C2575: 'update': solo las funciones miembro y las bases pueden ser virtuales
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2143: error de sintaxis: falta ';' delante de '*'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2238: símbolos (token) inesperados delante de ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(79): error C2061: error de sintaxis: identificador 'Ball'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(34): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(60): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(63): warning C4244: '=': conversión de 'double' a 'uint'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(70): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(71): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(168): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(170): warning C4018: '<': no coinciden signed/unsigned
   Game.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(136): error C2039: 'BlockNum': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(164): warning C4018: '<': no coinciden signed/unsigned
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(186): error C2039: 'size': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(188): error C2039: 'collides': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(191): error C2039: 'ballHitsBlock': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(225): error C2039: 'collides': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(230): error C2039: 'ballHitsPaddle': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(244): error C2039: 'BlockStructure': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(246): error C2039: 'MapX': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(248): error C2039: 'MapY': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(250): error C2039: 'MapX': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(252): error C2039: 'MapY': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(274): error C2039: 'getDirection': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(275): error C2039: 'getDirection': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(279): error C2039: 'getDirection': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(280): error C2039: 'getDirection': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(328): error C2039: 'loadFile': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(342): error C2039: 'loadFile': no es un miembro de 'ArkanoidObject'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoidobject.h(11): note: vea la declaración de 'ArkanoidObject'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2059: error de sintaxis: ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(14): error C2059: error de sintaxis: '<encabezado de clase>'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(15): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(16): error C2059: error de sintaxis: 'private'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(19): error C2059: error de sintaxis: 'public'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(21): error C3861: 'Ball': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(22): error C2575: 'update': solo las funciones miembro y las bases pueden ser virtuales
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2143: error de sintaxis: falta ';' delante de '*'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2238: símbolos (token) inesperados delante de ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(79): error C2061: error de sintaxis: identificador 'Ball'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(105): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(127): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(144): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(164): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(240): error C2065: 'Ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(240): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(240): error C2275: 'Paddle': uso no válido de este tipo como expresión
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(13): note: vea la declaración de 'Paddle'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(240): error C2065: 'blocksmap': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(240): error C2275: 'BlocksMAP': uso no válido de este tipo como expresión
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.h(12): note: vea la declaración de 'BlocksMAP'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(240): error C2761: "void Game::saveGame(void)": no se permite la nueva declaración del miembro
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(241): error C2448: 'Game::saveGame': el inicializador de estilo de función parece ser una definición de función
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(293): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(293): error C2541: 'delete': no se pueden eliminar objetos que no sean punteros
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(301): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(312): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(312): error C2061: error de sintaxis: identificador 'Ball'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(313): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(387): error C2065: 'ball': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(387): error C2061: error de sintaxis: identificador 'Ball'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(394): error C2065: 'ball': identificador no declarado
+  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2059: error de sintaxis: ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(12): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(14): error C2059: error de sintaxis: '<encabezado de clase>'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(15): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(16): error C2059: error de sintaxis: 'private'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(19): error C2059: error de sintaxis: 'public'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(21): error C3861: 'Ball': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\ball.h(22): error C2575: 'update': solo las funciones miembro y las bases pueden ser virtuales
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2143: error de sintaxis: falta ';' delante de '*'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(55): error C2238: símbolos (token) inesperados delante de ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.h(79): error C2061: error de sintaxis: identificador 'Ball'
+  MovingObject.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.cpp(5): error C2275: 'Vector2D': uso no válido de este tipo como expresión
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\vector2d.h(7): note: vea la declaración de 'Vector2D'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.cpp(5): error C2146: error de sintaxis: falta ')' delante del identificador 'pos'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.cpp(5): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.cpp(5): error C2612: ':' final no válido en la lista de inicializadores de base/miembro
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.cpp(38): fatal error C1004: se encontró un final de archivo no esperado
+  Paddle.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(13): error C2059: error de sintaxis: '<encabezado de clase>'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(14): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(17): error C2059: error de sintaxis: 'public'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(19): error C3861: 'Paddle': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(20): error C2575: 'update': solo las funciones miembro y las bases pueden ser virtuales
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.h(21): error C2575: 'handleEvents': solo las funciones miembro y las bases pueden ser virtuales
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(3): error C2653: 'Paddle': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(3): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(4): error C2550: 'Paddle': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(5): warning C4508: 'Paddle': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(7): error C2653: 'Paddle': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(7): error C2523: '<Desconocido>::~Paddle': etiqueta de destructor sin correspondencia
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(8): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(9): warning C4508: 'Paddle': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(11): error C2653: 'Paddle': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(13): error C2065: 'position': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(14): error C2352: 'MovingObject::update': llamada no válida de función miembro no estática
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(15): note: vea la declaración de 'MovingObject::update'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(18): error C2065: 'position': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(20): error C2065: 'position': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(21): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(23): error C2065: 'position': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(25): error C2065: 'position': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(26): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(33): error C2653: 'Paddle': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(36): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(41): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(45): error C2065: 'dirPos': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(53): error C2653: 'Paddle': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(55): error C3861: 'getRect': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(63): error C2653: 'Paddle': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(64): error C2065: 'position': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(64): error C2065: 'width': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(64): error C2065: 'height': identificador no declarado
+  Reward.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\movingobject.h(11): error C2969: error de sintaxis: ';': se esperaba que la definición de función miembro finalizase con '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(5): error C2059: error de sintaxis: '<encabezado de clase>'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(6): error C2630: ';' se ha encontrado en lo que debería ser una lista separada por comas
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(7): error C2059: error de sintaxis: 'public'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(9): error C3861: 'Reward': no se encontró el identificador
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(3): error C2653: 'Reward': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(3): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(4): error C2550: 'Reward': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(5): warning C4508: 'Reward': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(8): error C2653: 'Reward': no es un nombre de clase o espacio de nombres
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(8): error C2523: '<Desconocido>::~Reward': etiqueta de destructor sin correspondencia
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(9): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(10): warning C4508: 'Reward': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
   Generando código...

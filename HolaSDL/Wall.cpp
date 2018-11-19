@@ -8,9 +8,4 @@ Wall::~Wall()
 {
 }
 
-void Wall::render()
-{			
-	ptrTexture->render(getRect());		// renderiza el de la izda
-}
-
 

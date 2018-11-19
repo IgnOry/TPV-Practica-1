@@ -16,9 +16,9 @@ BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK):Arkano
 
 BlocksMAP::~BlocksMAP()
 {
-	for (int r = 0; r < MapSizeX; r++)
+	for (int r = 0; r < colums; r++)
 	{
-		for (int c = 0; c < MapSizeY; c++)
+		for (int c = 0; c < rows; c++)
 		{
 			delete blocks[r][c];
 			//blocks[r][c] = nullptr;
@@ -31,11 +31,9 @@ BlocksMAP::~BlocksMAP()
 
 void BlocksMAP::render()
 {
-	uint rows = MapSizeX;
-	uint columns = MapSizeY;
-	for (int r = 0; r < rows; r++)
+	for (int r = 0; r < colums; r++)
 	{
-		for (int c = 0; c < columns; c++)
+		for (int c = 0; c < rows; c++)
 		{
 			if (blocks[r][c] != nullptr)
 			blocks[r][c]->render();
@@ -63,8 +61,8 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 		blocks[i] = new Block*[y];
 
 	BlockSize = ((WIN_WIDTH-WALL_SIZE * 2)/x) / (x*0.1); // para que se adapte a todos los mapas
-	MapSizeX = x;
-	MapSizeY = y;
+	colums = x;
+	rows = y;
 	texture = textureD;
 	numBlocks = 0;
 	
@@ -76,14 +74,14 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 				blocks[r][c] = nullptr;
 			else
 			{
-				blocks[r][c] = new Block(BlockSize * c + 20,(BlockSize/3) * r + 20, BlockSize, BlockSize/3, colour-1, c, r, textureD); // se suma 20 porque es el ancho del muro
+				blocks[r][c] = new Block(Vector2D (BlockSize * c + 20,(BlockSize/3) * r + 20), BlockSize, BlockSize/3, colour-1, c, r, textureD); // se suma 20 porque es el ancho del muro
 				numBlocks++;			
 			}
 		}
 	}
 }
 int BlocksMAP::size() {
-	return MapSizeY * (BlockSize/3);
+	return rows * (BlockSize/3);
 }
 
 /* Dados el rectángulo y vector de dirección de la pelota, devuelve un puntero al
@@ -167,9 +165,9 @@ Block* BlocksMAP::blockAt(const Vector2D& p)
 	else
 		return blocks[x][y];
 
-	*/for (int i = 0; i < MapSizeX; i++)
+	*/for (int i = 0; i < colums; i++)
 	{
-		for (int j = 0; j < MapSizeY; j++)
+		for (int j = 0; j < rows; j++)
 		{
 			Block* block = blocks[i][j];
 			if (block != nullptr) {
@@ -193,13 +191,13 @@ void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
 
 uint BlocksMAP::MapX()
 {
-	return MapSizeY;
+	return rows;
 }
 
 
 uint BlocksMAP::MapY()
 {
-	return MapSizeY;
+	return rows;
 }
 
 Block*** BlocksMAP::BlockStructure()

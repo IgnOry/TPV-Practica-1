@@ -237,7 +237,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	
 }
 
-void Game::saveGame(ArkanoidObject* ball, ArkanoidObject* paddle, ArkanoidObject* blocksmap) //puntero a ball, paddle y blocksmap
+void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
 {
 	ofstream saveFile("..\\saves\\saveMap.ark");
 
@@ -309,9 +309,9 @@ void Game::DeleteAll()
 
 void Game::newGame()
 {
-	ball = new Ball(POS_START_BALL, ObjSize, ObjSize, DIR_START_BALL, textures[0], this);
+	ball = new Ball(POS_START_BALL, ObjSize, ObjSize, textures[0], DIR_START_BALL, this);
 	lista.push_back(ball);
-	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, DIR_START_PADDLE, textures[2]);
+	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, textures[2],DIR_START_PADDLE);
 	lista.push_back(paddle);
 	wallA = new Wall(Vector2D(0, 0), WIN_WIDTH, ObjSize, textures[4]);
 	lista.push_back(wallA);
@@ -384,8 +384,8 @@ void Game::loadSave()
 
 	FileData.close();
 
-	ball = new Ball(startBall, 20, 20, dirBall, textures[0], this);
-	paddle = new Paddle(startPaddle, 120, 20, dirPaddle, textures[2]);
+	ball = new Ball(startBall, 20, 20, textures[0], dirBall,  this);
+	paddle = new Paddle(startPaddle, 120, 20, textures[2], dirPaddle);
 	wallA = new Wall( Vector2D(0, 0), WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall( Vector2D(0, 0), 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall( Vector2D (780, 0), 20, WIN_HEIGHT, textures[3]);

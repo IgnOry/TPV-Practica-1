@@ -19,20 +19,14 @@ ArkanoidObject::~ArkanoidObject()
 	ptrTexture = nullptr;
 }
 
-void ArkanoidObject::loadFromFile() //ver si se puede pasar el nombre de archivo como constante, incluyendo Game.h en la clase, o se pone a mano
+void ArkanoidObject::loadFromFile(ifstream file) // dependiendo del objeto, será llamado desde movingobject o "a pelo"
 {
-	ifstream FileData("..\\saves\\save.ark");
-
 	double PosX;
 	double PosY;
 
-	FileData >> PosX;
-	FileData >> PosY;
+	file >> PosX;
+	file >> PosY;
 	position = Vector2D(PosX, PosY);
-
-	//Actualizar en MovingObject y demás el método para cargar más datos
-
-	FileData.close();
 }
 
 void ArkanoidObject::saveToFile() //ver si se puede pasar el nombre de archivo como constante, incluyendo Game.h en la clase, o se pone a mano
@@ -55,4 +49,9 @@ SDL_Rect ArkanoidObject::getRect()
 Vector2D ArkanoidObject::getPosition()
 {
 	return position;
+}
+
+void ArkanoidObject::render()
+{
+	ptrTexture->render(getRect());
 }

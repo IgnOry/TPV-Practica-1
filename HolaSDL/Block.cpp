@@ -1,15 +1,11 @@
 #include "Block.h"
 
 
-Block::Block(double posX, double posY, int widthN, int heightN, int colourN, int rowN, int columnN, Texture * texture):ArkanoidObject(Vector2D(posX,posY),widthN,heightN,texture)
+Block::Block(Vector2D pos, int widthN, int heightN, int colourN, int rowN, int columnN, Texture * texture):ArkanoidObject(pos,widthN,heightN,texture)
 {
-	position = Vector2D::Vector2D(posX, posY);
-	width = widthN;
-	height = heightN;
 	colour = colourN;
 	columns = columnN;
 	rows = rowN;
-	ptrTexture = texture;
 }
 
 Block::~Block()
@@ -24,14 +20,6 @@ uint Block::row()
 uint Block::colum() 
 {
 	return columns;
-}
-
-void Block::render()
-{	
-	SDL_Rect destRect = {position.getX(), position.getY(),width, height};
-
-	ptrTexture->renderFrame(destRect,colour/ptrTexture->getNumCols(),colour%ptrTexture->getNumCols());
-		
 }
 
 uint Block::getY()

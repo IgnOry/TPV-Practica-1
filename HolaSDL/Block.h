@@ -21,9 +21,8 @@ private:
 	uint columns;
 
 public:
-	Block(double posX, double posY, int widthN, int heightN, int colourN, int columnN, int rowN, Texture* texture);
+	Block(Vector2D pos, int widthN, int heightN, int colourN, int columnN, int rowN, Texture* texture);
 	~Block();
-	void render();
 	uint getY();
 	uint getX();
 	uint getH();

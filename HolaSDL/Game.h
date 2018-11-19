@@ -52,12 +52,12 @@ class Game
 		uint lastTime = 0;
 		list<ArkanoidObject*> lista;
 		Texture* textures[NUM_TEXTURES];
-		ArkanoidObject* ball;
-		ArkanoidObject* paddle;
-		ArkanoidObject* wallA;
-		ArkanoidObject* wallI;
-		ArkanoidObject* wallD;
-		ArkanoidObject* blocksMAP;
+		Ball* ball;
+		Paddle* paddle;
+		Wall* wallA;
+		Wall* wallI;
+		Wall* wallD;
+		BlocksMAP* blocksMAP;
 		Timer* timer;
 		string levels[3] = { "..\\maps\\level01.ark", "..\\maps\\level02.ark", "..\\maps\\level03.ark" };
 		string top[3] = { "..\\saves\\best1.ark", "..\\saves\\best2.ark", "..\\saves\\best3.ark" };
@@ -76,7 +76,7 @@ class Game
 			void update();
 			void bestPlayers(uint time);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
-			void saveGame(ArkanoidObject* ball, ArkanoidObject* paddle, ArkanoidObject * blocksmap);
+			void saveGame(Ball* ball, Paddle* paddle, BlocksMAP * blocksmap);
 			void DeleteAll();
 			void newGame();
 			void loadSave();

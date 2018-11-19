@@ -5,7 +5,7 @@
 class Reward: public MovingObject
 {
 public:
-	Reward();
+	Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction);
 	~Reward();
 };
 

@@ -16,6 +16,5 @@ class Wall: public ArkanoidObject
 public:
 	Wall(Vector2D pos, int width, int height, Texture* texture);
 	~Wall();
-	void render();
 };
 

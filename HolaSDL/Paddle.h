@@ -15,9 +15,8 @@ class Paddle: public MovingObject
 	//hereda todos los atributos de ArkanoidObject y MovingObject
 
 public:
-	Paddle(Vector2D pos, uint width, uint height, Vector2D direction, Texture* ptr);
+	Paddle(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction);
 	~Paddle();
-	virtual void render();
 	virtual void update();
 	virtual void handleEvents(SDL_Event event);
 	bool collides(const SDL_Rect& rect);

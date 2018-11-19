@@ -3,13 +3,8 @@
 #include "Texture.h"
 
 
-Ball::Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD):MovingObject()
+Ball::Ball(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, Game* ptrGameD):MovingObject(pos, wid, heightD, ptr, direction)
 {
-	position = pos;
-	width = widthN;
-	height = heightN;
-	dirPos = direction;
-	ptrTexture = ptrTextureD;
 	ptrGame = ptrGameD;
 }
 
@@ -17,17 +12,11 @@ Ball::~Ball()
 {
 }
 
-void Ball::render()
-{
-	SDL_Rect srcRect = {position.getX(), position.getY(), width, height};
-	ptrTexture->render(srcRect);
-}
-
 void Ball::update()
 {
 	Vector2D collVector = dirPos; // Vector2D(-position.getY(), position.getX());
 
-	SDL_Rect ballRect = {position.getX(), position.getY(), width, height };
+	SDL_Rect ballRect = getRect();
 
 	if (ptrGame->collides(ballRect, dirPos, collVector))
 	{
@@ -35,7 +24,7 @@ void Ball::update()
 
 		dirPos = dirPos - (collVector *(dirPos * collVector) *2);
 	}
-	position = position + dirPos;
+	MovingObject::update();
 }
 
 

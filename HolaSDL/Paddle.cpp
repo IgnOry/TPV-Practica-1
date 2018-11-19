@@ -1,28 +1,17 @@
 #include "Paddle.h"
 
-Paddle::Paddle(Vector2D pos, uint wid, uint heightD, Vector2D direction, Texture* ptr):MovingObject()
+Paddle::Paddle(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction):MovingObject(pos, wid, heightD, ptr, direction)
 {
-	position = pos;
-	width = wid;
-	height = heightD;
-	dirPos = direction;
-	ptrTexture = ptr;
 }
 
 Paddle::~Paddle()
 {
 }
 
-void Paddle::render()
-{
-	SDL_Rect srcRect = {position.getX(), position.getY(), width, height };
-	ptrTexture->render(srcRect);
-}
-
 void Paddle::update()
 {
 	if (position.getX() >= 20 && position.getX() <= 660)
-		position = position + dirPos;
+		MovingObject::update();
 
 	else
 	{
@@ -63,7 +52,7 @@ void Paddle::handleEvents(SDL_Event event)
 
 bool Paddle::collides(const SDL_Rect& rect) 
 {
-	SDL_Rect wallRect = {position.getX(), position.getY(), width, height};
+	SDL_Rect wallRect = getRect();
 	
 	if (SDL_HasIntersection(&rect, &wallRect))
 		return true;

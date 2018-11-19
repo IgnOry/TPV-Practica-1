@@ -2,8 +2,9 @@
 
 
 
-MovingObject::MovingObject()
+MovingObject::MovingObject(Vector2D pos, int width, int height, Texture * texture, Vector2D dir):ArkanoidObject(pos, width, height, texture)
 {
+	dirPos = dir;
 }
 
 
@@ -11,14 +12,26 @@ MovingObject::~MovingObject()
 {
 }
 
-void MovingObject::updateClass()
-{
-	ArkanoidObject::loadFromFile(); //+ (dir = Vector2D(0,0));
+	//ArkanoidObject::saveToFile(); //+ (dir...)
 
-	ArkanoidObject::saveToFile(); //+ (dir...)
-}
 
 Vector2D MovingObject::getDirection()
 {
 	return dirPos;
+}
+
+void MovingObject::loadFromFile(ifstream file)
+{
+	ArkanoidObject::loadFromFile(file);
+	double dirPosX;
+	double dirPosY;
+
+	file >> dirPosX;
+	file >> dirPosY;
+	position = Vector2D(dirPosX, dirPosY);
+}
+
+void MovingObject::update()
+{
+	position = position + dirPos;
 }
