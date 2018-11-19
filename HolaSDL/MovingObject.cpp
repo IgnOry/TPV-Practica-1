@@ -1,7 +1,5 @@
 #include "MovingObject.h"
 
-
-
 MovingObject::MovingObject(Vector2D pos, int width, int height, Texture * texture, Vector2D dir):ArkanoidObject(pos, width, height, texture)
 {
 	dirPos = dir;
@@ -20,9 +18,10 @@ Vector2D MovingObject::getDirection()
 	return dirPos;
 }
 
-void MovingObject::loadFromFile(ifstream file)
+void MovingObject::loadFromFile(string filepath)
 {
-	ArkanoidObject::loadFromFile(file);
+	ifstream file(filepath);
+	ArkanoidObject::loadFromFile(file); //Error al pasar file como parámetro
 	double dirPosX;
 	double dirPosY;
 

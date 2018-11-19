@@ -19,7 +19,7 @@ ArkanoidObject::~ArkanoidObject()
 	ptrTexture = nullptr;
 }
 
-void ArkanoidObject::loadFromFile(ifstream file) // dependiendo del objeto, será llamado desde movingobject o "a pelo"
+void ArkanoidObject::loadFromFile(ifstream& file) // dependiendo del objeto, será llamado desde movingobject o "a pelo"
 {
 	double PosX;
 	double PosY;

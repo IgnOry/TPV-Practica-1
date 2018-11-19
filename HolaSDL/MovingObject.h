@@ -4,14 +4,16 @@
 #include "ArkanoidObject.h"
 #include <iostream>
 #include <fstream>
+#include <string>
+
 
 class MovingObject: public ArkanoidObject
 {
 public:
-	MovingObject(Vector2D pos, int width, int height, Texture * texture,Vector2D dirPos):ArkanoidObject(pos, width, height, texture);
+	MovingObject(Vector2D pos, int width, int height, Texture * texture, Vector2D dirPos);
 	~MovingObject();
 	Vector2D getDirection();
-	void loadFromFile(ifstream file);
+	void loadFromFile(string filepath);
 	void update();
 
 protected:
