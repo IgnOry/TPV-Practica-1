@@ -5,11 +5,11 @@
 
 
 
-BlocksMAP::BlocksMAP()
+BlocksMAP::BlocksMAP():ArkanoidObject()
 {
 }
 
-BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK)
+BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK):ArkanoidObject()
 {
 	loadFile(filepath, textureD, ELEM_BLOCK);
 }

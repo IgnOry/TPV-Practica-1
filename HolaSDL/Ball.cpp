@@ -3,7 +3,7 @@
 #include "Texture.h"
 
 
-Ball::Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD)
+Ball::Ball(Vector2D pos, uint widthN, uint heightN, Vector2D direction, Texture* ptrTextureD, Game* ptrGameD):MovingObject()
 {
 	position = pos;
 	width = widthN;

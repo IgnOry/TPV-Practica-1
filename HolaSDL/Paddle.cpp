@@ -1,6 +1,6 @@
 #include "Paddle.h"
 
-Paddle::Paddle(Vector2D pos, uint wid, uint heightD, Vector2D direction, Texture* ptr)
+Paddle::Paddle(Vector2D pos, uint wid, uint heightD, Vector2D direction, Texture* ptr):MovingObject()
 {
 	position = pos;
 	width = wid;
