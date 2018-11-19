@@ -8,6 +8,11 @@ Block::Block(Vector2D pos, int widthN, int heightN, int colourN, int rowN, int c
 	rows = rowN;
 }
 
+void Block::render() 
+{
+	ptrTexture->renderFrame(getRect(), colour / ptrTexture->getNumCols(), colour%ptrTexture->getNumCols());
+}
+
 Block::~Block()
 {
 }

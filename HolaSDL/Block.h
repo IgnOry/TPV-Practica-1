@@ -22,6 +22,7 @@ private:
 
 public:
 	Block(Vector2D pos, int widthN, int heightN, int colourN, int columnN, int rowN, Texture* texture);
+	void render();
 	~Block();
 	uint getY();
 	uint getX();

@@ -18,7 +18,7 @@ public:
 	void saveToFile();
 	SDL_Rect getRect();
 	Vector2D getPosition();
-	void render();
+	virtual void render();
 
 protected: 
 	Vector2D position;

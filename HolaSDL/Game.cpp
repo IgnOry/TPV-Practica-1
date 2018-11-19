@@ -102,12 +102,16 @@ void Game::run()
 void Game::render() const
 {
 	SDL_RenderClear(renderer);
-	ball->render();
+
+	for (ArkanoidObject* o : lista)
+		o->render();
+
+	/*ball->render();
 	paddle->render();
 	wallA->render();
 	wallI->render();
 	wallD->render();
-	blocksMAP->render();
+	blocksMAP->render();*/
 	timer->render();
 	
 	SDL_RenderPresent(renderer);
@@ -304,6 +308,8 @@ void Game::DeleteAll()
 	wallI = nullptr;
 	wallD = nullptr;
 	timer = nullptr;
+
+	lista.clear();
 
 }
 
