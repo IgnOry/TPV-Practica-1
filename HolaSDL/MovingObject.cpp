@@ -21,7 +21,7 @@ Vector2D MovingObject::getDirection()
 void MovingObject::loadFromFile(string filepath)
 {
 	ifstream file(filepath);
-	ArkanoidObject::loadFromFile(file); //Error al pasar file como parámetro
+	ArkanoidObject::loadFromFile(file);
 	double dirPosX;
 	double dirPosY;
 
