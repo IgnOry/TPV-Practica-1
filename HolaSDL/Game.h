@@ -76,7 +76,7 @@ class Game
 			void update();
 			void bestPlayers(uint time);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
-			void saveGame(Ball* ball, Paddle* paddle, BlocksMAP * blocksmap);
+			void saveGame();
 			void DeleteAll();
 			void newGame();
 			void loadSave();

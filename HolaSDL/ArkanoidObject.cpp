@@ -29,15 +29,12 @@ void ArkanoidObject::loadFromFile(ifstream& file) // dependiendo del objeto, ser
 	position = Vector2D(PosX, PosY);
 }
 
-void ArkanoidObject::saveToFile() //ver si se puede pasar el nombre de archivo como constante, incluyendo Game.h en la clase, o se pone a mano
+void ArkanoidObject::saveToFile(ofstream& file) //ver si se puede pasar el nombre de archivo como constante, incluyendo Game.h en la clase, o se pone a mano
 {
-	ofstream saveFile("..\\saves\\save.ark");
-	saveFile << position.getX() << endl;
-	saveFile << position.getY() << endl;
+	file << position.getX() << endl;
+	file << position.getY() << endl;
 
 	//Actualizar en MovingObject y demás el método para guardar más datos
-
-	saveFile.close();
 }
 
 SDL_Rect ArkanoidObject::getRect()

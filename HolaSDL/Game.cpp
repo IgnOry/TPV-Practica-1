@@ -106,12 +106,6 @@ void Game::render() const
 	for (ArkanoidObject* o : lista)
 		o->render();
 
-	/*ball->render();
-	paddle->render();
-	wallA->render();
-	wallI->render();
-	wallD->render();
-	blocksMAP->render();*/
 	timer->render();
 	
 	SDL_RenderPresent(renderer);
@@ -128,7 +122,7 @@ void Game::handleEvents()
 		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
 		{
 			if (event.key.keysym.sym == SDLK_s)
-				saveGame(ball, paddle, blocksMAP);
+				saveGame();
 			else
 				paddle->handleEvents(event);
 		}
@@ -144,10 +138,17 @@ void Game::update()
 		level++;
 		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
 	}
-		
-	ball->update();
-	paddle->update();
+	else {
+		for (ArkanoidObject* o : lista)
+			o->update();
+	}
 	timer->update();
+
+	if (lista.front()->getRect().y >= WIN_HEIGHT) 
+	{
+		DeleteAll();
+		newGame();
+	}
 }
 
 void Game::bestPlayers(uint time)
@@ -214,16 +215,6 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		collVector = Vector2D(-1, 0);
 		return true;
 	} 
-	
-	else
-		if (rect.y >= WIN_HEIGHT) {	/*			//CASO ABAJO - TESTEO
-			collVector = Vector2D(0, 1);		//CASO ABAJO - TESTEO
-			return true;						//CASO ABAJO - TESTEO
-			*/
-
-			DeleteAll();
-			newGame();
-		}
 
 	//caso paddle
 	if (paddle->collides(rect)) {	// si colisiona
@@ -241,11 +232,11 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	
 }
 
-void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero a ball, paddle y blocksmap
+void Game::saveGame() //puntero a ball, paddle y blocksmap
 {
-	ofstream saveFile("..\\saves\\saveMap.ark");
+	//ofstream saveFile("..\\saves\\saveMap.ark");
 
-	Block*** blocks = blocksMAP->BlockStructure();
+	/*Block*** blocks = blocksMAP->BlockStructure();
 
 	saveFile << blocksMAP->MapX() << endl;
 
@@ -266,14 +257,16 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 		}
 
 		saveFile << endl;
-	}
+	}*/
 
-	saveFile.close();
+	//saveFile.close();
 
+	//datos del juego
 	ofstream FileData("..\\saves\\save.ark");
-
+	for (ArkanoidObject* o : lista)
+		o->saveToFile(FileData);
 	
-	FileData << paddle->getPosition().getX() << endl;
+	/*FileData << paddle->getPosition().getX() << endl;
 	FileData << paddle->getPosition().getY() << endl;
 	FileData << paddle->getDirection().getX() << endl;
 	FileData << paddle->getDirection().getY() << endl;
@@ -287,7 +280,7 @@ void Game::saveGame(Ball* ball, Paddle* paddle, BlocksMAP* blocksmap) //puntero 
 	FileData << level << endl;
 	FileData << timer->timeFromDeath() << endl;
 	FileData << SDL_GetTicks() / 1000;
-
+	*/
 	FileData.close();
 
 }
@@ -342,17 +335,19 @@ void Game::newGame()
 
 void Game::loadSave()
 {
-	blocksMAP = new BlocksMAP();
+	/*blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 
-	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);
+	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);*/
 
 	ifstream FileData("..\\saves\\save.ark");
 
+	for (ArkanoidObject* o : lista)
+		o->loadFromFile(FileData);
 	
 	//ver donde deja el punto de lectura de File
 
-	double padPosX;
+	/*double padPosX;
 	double padPosY;
 	double padDirX;
 	double padDirY;
@@ -361,9 +356,6 @@ void Game::loadSave()
 	double ballPosY;
 	double ballDirX;
 	double ballDirY;
-
-	int timeFromDeath;
-	int ticks;
 
 	FileData >> padPosX;
 	FileData >> padPosY;
@@ -383,19 +375,23 @@ void Game::loadSave()
 	Vector2D dirBall = Vector2D(ballDirX, ballDirY);
 
 
-	FileData >> level;
+	FileData >> level;*/
+
+	//timer
+	int timeFromDeath;
+	int ticks;
 	FileData >> timeFromDeath;
 	FileData >> ticks;
 
 
 	FileData.close();
 
-	ball = new Ball(startBall, 20, 20, textures[0], dirBall,  this);
+	/*ball = new Ball(startBall, 20, 20, textures[0], dirBall,  this);
 	paddle = new Paddle(startPaddle, 120, 20, textures[2], dirPaddle);
 	wallA = new Wall( Vector2D(0, 0), WIN_WIDTH, 20, textures[4]);
 	wallI = new Wall( Vector2D(0, 0), 20, WIN_HEIGHT, textures[3]);
 	wallD = new Wall( Vector2D (780, 0), 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); 
+	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); */
 
 	lista.push_back(ball);
 	lista.push_back(paddle);

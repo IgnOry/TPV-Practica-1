@@ -205,4 +205,28 @@ Block*** BlocksMAP::BlockStructure()
 	return blocks;
 }
 
+void BlocksMAP::saveToFile(ofstream& file) {
+
+	file << MapX() << endl;
+
+	file << MapY() << endl;
+
+	for (int i = 0; i < MapX(); i++)
+	{
+		for (int j = 0; j < MapY(); j++)
+		{
+			if (blocks[i][j] != nullptr) //acceso a blocksmap
+			{
+				file << (blocks[i][j]->getColour() + 1) << " ";
+			}
+			else
+			{
+				file << 0 << " ";
+			}
+		}
+
+		file << endl;
+	}
+}
+
 

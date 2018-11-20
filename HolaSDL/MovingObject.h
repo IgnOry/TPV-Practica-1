@@ -13,7 +13,8 @@ public:
 	MovingObject(Vector2D pos, int width, int height, Texture * texture, Vector2D dirPos);
 	~MovingObject();
 	Vector2D getDirection();
-	void loadFromFile(string filepath);
+	void loadFromFile(ifstream& file);
+	void saveToFile(ofstream& file);
 	void update();
 
 protected:

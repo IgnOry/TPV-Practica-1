@@ -33,5 +33,6 @@ public:
 	uint MapX();
 	uint MapY();
 	Block *** BlockStructure();
+	void saveToFile(ofstream& file);
 };
 
