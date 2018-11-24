@@ -133,10 +133,9 @@ void Game::update()
 {
 	if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
-		delete blocksMAP;
 		bestPlayers(timer->time());
 		level++;
-		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
+		reset();
 	}
 	else {	// se llama a los updates de todos los objetos de la lista
 		for (ArkanoidObject* o : lista)
@@ -146,17 +145,21 @@ void Game::update()
 
 	if (lista.front()->getRect().y >= WIN_HEIGHT) 
 	{
-		// Destruye el mapa de 
-		lista.pop_back();
-		delete blocksMAP;
-		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
-		lista.push_back(blocksMAP);
-
-		// Resetea la pelota, el paddle y el tiempo
-		ball->reset(POS_START_BALL,DIR_START_BALL);
-		paddle->reset(POS_START_PADDLE,DIR_START_PADDLE);
-		timer->reset();
+		reset();
 	}
+}
+
+void Game::reset() {
+	// Destruye el mapa de 
+	lista.pop_back();
+	delete blocksMAP;
+	blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
+	lista.push_back(blocksMAP);
+
+	// Resetea la pelota, el paddle y el tiempo
+	ball->reset(POS_START_BALL, DIR_START_BALL);
+	paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
+	timer->reset();
 }
 
 void Game::bestPlayers(uint time)
@@ -326,8 +329,8 @@ void Game::newGame()
 	lista.push_back(wallI);
 	wallD = new Wall(Vector2D(WIN_WIDTH- ObjSize, 0), ObjSize, WIN_HEIGHT, textures[3]);
 	lista.push_back(wallD);
-	timer = new Timer(textures[5], Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, SDL_GetTicks()/1000,  0);
-	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
+	timer = new Timer(Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks()/1000,  0);
+	//lista.push_back(timer); Hacer que timer herede también de arkanoid objectf?? (Preguntar)
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 

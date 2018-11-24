@@ -74,6 +74,7 @@ class Game
 			void render() const;
 			void handleEvents();
 			void update();
+			void reset();
 			void bestPlayers(uint time);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void saveGame();

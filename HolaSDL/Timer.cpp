@@ -2,12 +2,8 @@
 
 
 
-Timer::Timer(Texture* textureD, Vector2D pos, uint Width, uint Height, int timereset, int tks)
+Timer::Timer(Vector2D pos, uint Width, uint Height, Texture* textureD, int timereset, int tks):ArkanoidObject(pos, Width, Height, textureD)
 {
-	texture = textureD;
-	position = pos;
-	width = Width;
-	height = Height;
 	timeReset = timereset;
 	ticks = tks;
 }

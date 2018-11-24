@@ -3,8 +3,9 @@
 
 #include "Texture.h"
 #include "Vector2D.h"
+#include "ArkanoidObject.h"
 
-class Timer //ver como se hace la herencia
+class Timer: public ArkanoidObject //ver como se hace la herencia
 {
 private:
 	Texture* texture;
@@ -17,7 +18,7 @@ private:
 	int ticks = 0;				// ticks totales de la partida, sin contar las muertes (para guardar partida y cargarla)
 
 public:
-	Timer(Texture* textureD, Vector2D pos, uint width, uint height, int timeReset, int ticks);
+	Timer(Vector2D pos, uint width, uint height, Texture* textureD, int timeReset, int ticks);
 	~Timer();
 	void update();
 	uint time();				// devuelve el tiempo (para los scores)
