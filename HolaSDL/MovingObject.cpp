@@ -40,3 +40,8 @@ void MovingObject::update()
 {
 	position = position + dirPos;
 }
+
+void MovingObject::reset(Vector2D pos, Vector2D dir) {
+	position = pos;
+	dirPos = dir;
+}

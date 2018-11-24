@@ -23,6 +23,6 @@ public:
 	uint time();				// devuelve el tiempo (para los scores)
 	int timeFromDeath();
 	void render();
-	void resetTime();
+	void reset();
 };
 

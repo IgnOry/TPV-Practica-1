@@ -131,14 +131,14 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	if (blocksMAP->BlockNum() == 0)	// reset bloques
+	if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
 		delete blocksMAP;
 		bestPlayers(timer->time());
 		level++;
 		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
 	}
-	else {
+	else {	// se llama a los updates de todos los objetos de la lista
 		for (ArkanoidObject* o : lista)
 			o->update();
 	}
@@ -146,8 +146,16 @@ void Game::update()
 
 	if (lista.front()->getRect().y >= WIN_HEIGHT) 
 	{
-		DeleteAll();
-		newGame();
+		// Destruye el mapa de 
+		lista.pop_back();
+		delete blocksMAP;
+		blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
+		lista.push_back(blocksMAP);
+
+		// Resetea la pelota, el paddle y el tiempo
+		ball->reset(POS_START_BALL,DIR_START_BALL);
+		paddle->reset(POS_START_PADDLE,DIR_START_PADDLE);
+		timer->reset();
 	}
 }
 

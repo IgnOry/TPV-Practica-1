@@ -51,9 +51,9 @@ void Timer::render()
 	texture->renderFrame(srcRectDecMin, 0, (currentTime / 600) % 10);	//decenas de minutos
 }
 
-void Timer::resetTime()
+void Timer::reset()
 {
-	currentTime = 0;
+	timeReset = SDL_GetTicks() / 1000;
 }
 
 
