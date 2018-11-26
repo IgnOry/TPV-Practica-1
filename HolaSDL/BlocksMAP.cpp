@@ -45,6 +45,27 @@ uint BlocksMAP::BlockNum()
 {
 	return numBlocks;
 }
+void BlocksMAP::loadFromFile(ifstream& file) {
+	loadBlocks(file);
+}
+
+void BlocksMAP::loadBlocks(ifstream& file) {
+	numBlocks = 0;
+
+	int colour;
+	for (int r = 0; r < colums; r++) {
+		for (int c = 0; c < rows; c++) {
+			file >> colour;
+			if (colour == 0)
+				blocks[r][c] = nullptr;
+			else
+			{
+				blocks[r][c] = new Block(Vector2D(BlockSize * c + 20, (BlockSize / 3) * r + 20), BlockSize, BlockSize / 3, colour - 1, c, r, texture); // se suma 20 porque es el ancho del muro
+				numBlocks++;
+			}
+		}
+	}
+}
 
 void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WIDTH)
 {
@@ -67,8 +88,8 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 	numBlocks = 0;
 	
 	int colour;
-	for (int r = 0; r < x; r++) {
-		for (int c = 0; c < y; c++) {
+	for (int r = 0; r < colums; r++) {
+		for (int c = 0; c < rows; c++) {
 			file >> colour;
 			if (colour == 0)
 				blocks[r][c] = nullptr;

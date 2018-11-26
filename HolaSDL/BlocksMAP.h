@@ -25,6 +25,8 @@ public:
 	~BlocksMAP();
 	void render();
 	uint BlockNum();
+	void loadFromFile(ifstream & file);
+	void loadBlocks(ifstream& file);
 	void loadFile(const string& filePath, Texture* texture, uint ELEM_BLOCK);
 	int size();
 	Block * collides(const SDL_Rect & ballRect, const Vector2D & ballVel, Vector2D & collVector);
