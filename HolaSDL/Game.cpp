@@ -105,8 +105,6 @@ void Game::render() const
 
 	for (ArkanoidObject* o : lista)
 		o->render();
-
-	timer->render();
 	
 	SDL_RenderPresent(renderer);
 }
@@ -114,7 +112,7 @@ void Game::render() const
 void Game::handleEvents()
 {
 	SDL_Event event;
-	
+
 	while (SDL_PollEvent(&event) && !exit)
 	{
 		if (event.type == SDL_QUIT)
@@ -141,7 +139,6 @@ void Game::update()
 		for (ArkanoidObject* o : lista)
 			o->update();
 	}
-	timer->update();
 
 	if (lista.front()->getRect().y >= WIN_HEIGHT) 
 	{
@@ -329,8 +326,8 @@ void Game::newGame()
 	lista.push_back(wallI);
 	wallD = new Wall(Vector2D(WIN_WIDTH- ObjSize, 0), ObjSize, WIN_HEIGHT, textures[3]);
 	lista.push_back(wallD);
-	timer = new Timer(Vector2D (ObjSize,WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks()/1000,  0);
-	//lista.push_back(timer); Hacer que timer herede también de arkanoid objectf?? (Preguntar)
+	timer = new Timer(Vector2D(ObjSize, WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks() / 1000, 0);
+	lista.push_back(timer);
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 
@@ -350,7 +347,8 @@ void Game::loadSave()
 	lista.push_back(blocksMAP);
 
 	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);*/
-
+	newGame();
+	
 	ifstream FileData("..\\saves\\save.ark");
 
 	for (ArkanoidObject* o : lista)
@@ -389,11 +387,11 @@ void Game::loadSave()
 	FileData >> level;*/
 
 	//timer
-	int timeFromDeath;
+	/*int timeFromDeath;
 	int ticks;
 	FileData >> timeFromDeath;
 	FileData >> ticks;
-
+	*/
 
 	FileData.close();
 
@@ -404,10 +402,11 @@ void Game::loadSave()
 	wallD = new Wall( Vector2D (780, 0), 20, WIN_HEIGHT, textures[3]);
 	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); */
 
-	lista.push_back(ball);
+	/*lista.push_back(ball);
 	lista.push_back(paddle);
 	lista.push_back(wallA);
 	lista.push_back(wallI);
 	lista.push_back(wallD);
+	lista.push_back(timer);*/
 	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
 }

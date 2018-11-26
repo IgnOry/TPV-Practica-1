@@ -40,11 +40,11 @@ void Timer::render()
 	SDL_Rect srcRectDecSec = {position.getX() + width * 3, position.getY(), width, height };	//decenas de segundo
 	SDL_Rect srcRectSec = { position.getX() + width * 4, position.getY(), width, height };	//segundos
 
-	texture->renderFrame(srcRectSec,0, (currentTime%10));	//segundos
-	texture->renderFrame(srcRectDecSec, 0, (currentTime / 10) % 6);	//decenas de segundo
-	texture->renderFrame(srcRectSeparador, 0, 10);	//:
-	texture->renderFrame(srcRectMin, 0, (currentTime / 60) % 10);	//minutos
-	texture->renderFrame(srcRectDecMin, 0, (currentTime / 600) % 10);	//decenas de minutos
+	ptrTexture->renderFrame(srcRectSec,0, (currentTime%10));	//segundos
+	ptrTexture->renderFrame(srcRectDecSec, 0, (currentTime / 10) % 6);	//decenas de segundo
+	ptrTexture->renderFrame(srcRectSeparador, 0, 10);	//:
+	ptrTexture->renderFrame(srcRectMin, 0, (currentTime / 60) % 10);	//minutos
+	ptrTexture->renderFrame(srcRectDecMin, 0, (currentTime / 600) % 10);	//decenas de minutos
 }
 
 void Timer::reset()
@@ -52,4 +52,13 @@ void Timer::reset()
 	timeReset = SDL_GetTicks() / 1000;
 }
 
+void Timer::saveToFile(ofstream& file) {
+	file << timeReset << endl;
+	file << SDL_GetTicks() / 1000 << endl;
+}
+
+void Timer::loadFromFile(ifstream& file) {
+	file >> timeReset;
+	file >> ticks;
+}
 

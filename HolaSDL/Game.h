@@ -25,7 +25,7 @@ enum TextureName {BallTexture, BlocksTexure, PaddleTexture };
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
 const uint NUM_TEXTURES = 6;
-const uint FRAMERATE = 144; //¿?
+const uint FRAMERATE = 10; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
 const uint ObjSize = 20;

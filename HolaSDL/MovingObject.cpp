@@ -23,7 +23,7 @@ void MovingObject::loadFromFile(ifstream& file)
 
 	file >> dirPosX;
 	file >> dirPosY;
-	position = Vector2D(dirPosX, dirPosY);
+	dirPos = Vector2D(dirPosX, dirPosY);
 }
 
 void MovingObject::saveToFile(ofstream& file)
@@ -31,9 +31,6 @@ void MovingObject::saveToFile(ofstream& file)
 	ArkanoidObject::saveToFile(file);
 	file << dirPos.getX() << endl;
 	file << dirPos.getY() << endl;
-
-	//Actualizar en MovingObject y demás el método para guardar más datos
-
 }
 
 void MovingObject::update()

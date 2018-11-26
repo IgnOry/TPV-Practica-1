@@ -14,8 +14,8 @@ public:
 	ArkanoidObject();
 	ArkanoidObject(Vector2D pos, int w, int h, Texture *tx);
 	~ArkanoidObject();
-	void loadFromFile(ifstream& file);
-	void saveToFile(ofstream& file);
+	virtual void loadFromFile(ifstream& file);
+	virtual void saveToFile(ofstream& file);
 	SDL_Rect getRect();
 	Vector2D getPosition();
 	virtual void render();
