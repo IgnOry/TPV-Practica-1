@@ -96,6 +96,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 			else
 			{
 				blocks[r][c] = new Block(Vector2D (BlockSize * c + 20,(BlockSize/3) * r + 20), BlockSize, BlockSize/3, colour-1, c, r, textureD); // se suma 20 porque es el ancho del muro
+				//Deja basura
 				numBlocks++;			
 			}
 		}

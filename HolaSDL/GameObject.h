@@ -6,7 +6,7 @@ class GameObject
 {
 public:
 	GameObject();
-	~GameObject();
+	virtual ~GameObject();
 	virtual void render();
 	virtual void update();
 	virtual void handleEvents(SDL_Event event);

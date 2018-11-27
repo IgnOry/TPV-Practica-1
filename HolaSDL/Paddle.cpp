@@ -38,11 +38,11 @@ void Paddle::handleEvents(SDL_Event event)
 		switch (event.key.keysym.sym)
 		{
 		case(SDLK_RIGHT):
-			dirPos = Vector2D(0.8, 0);
+			dirPos = Vector2D(0.4, 0);
 			break;
 
 		case (SDLK_LEFT):
-			dirPos = Vector2D(-0.8, 0);
+			dirPos = Vector2D(-0.4, 0);
 			break;
 		default:
 			break;

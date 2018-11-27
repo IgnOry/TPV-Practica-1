@@ -11,7 +11,7 @@ class MovingObject: public ArkanoidObject
 {
 public:
 	MovingObject(Vector2D pos, int width, int height, Texture * texture, Vector2D dirPos);
-	~MovingObject();
+	virtual ~MovingObject();
 	Vector2D getDirection();
 	void loadFromFile(ifstream& file);
 	void saveToFile(ofstream& file);

@@ -1,16 +1,20 @@
 ﻿  BlocksMAP.cpp
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(34): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(56): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(57): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(81): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(84): warning C4244: '=': conversión de 'double' a 'uint'; posible pérdida de datos
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(91): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(92): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(190): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(192): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(236): warning C4018: '<': no coinciden signed/unsigned
-d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(238): warning C4018: '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> D:\Escritorio\2º Desarrollo de Videojuegos\TVP (Tecnología de la Programación de Videojuegos)\TVP P1\TPV-Practica-1\bin\HolaSDLDebug.exe
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(34): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(56): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(57): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(82): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(85): warning C4244: '=': conversión de 'double' a 'uint'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(92): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(93): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(191): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(193): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(237): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(239): warning C4018: '<': no coinciden signed/unsigned
+  Game.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(177): warning C4018: '<': no coinciden signed/unsigned
+  Reward.cpp
+  Generando código...
+  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

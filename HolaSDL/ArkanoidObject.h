@@ -13,7 +13,7 @@ class ArkanoidObject: public GameObject
 public:
 	ArkanoidObject();
 	ArkanoidObject(Vector2D pos, int w, int h, Texture *tx);
-	~ArkanoidObject();
+	virtual ~ArkanoidObject();
 	virtual void loadFromFile(ifstream& file);
 	virtual void saveToFile(ofstream& file);
 	SDL_Rect getRect();

@@ -191,7 +191,14 @@ void Game::bestPlayers(uint time)
 	}
 }
 
-
+bool Game::Random()
+{
+	uint prob = rand() % 100 + 1;
+	if (prob > RewardProb)
+		return true;
+	else
+		return false;
+}
 
 bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
@@ -202,6 +209,9 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		if (block != nullptr)
 		{
 			blocksMAP->ballHitsBlock(*block);
+			//if (Random)
+				//Crear reward
+				//Añadir a la lista, meter iterador?
 			return true;
 		}
 	}
@@ -212,13 +222,13 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	{
 		collVector = Vector2D(0, -1);
 		return true;
-	} else 
-	if (SDL_HasIntersection(&rect, &wallI->getRect()))
+	} 
+	else if (SDL_HasIntersection(&rect, &wallI->getRect()))
 	{
 		collVector = Vector2D(1, 0);
 		return true;
-	} else
-	if (SDL_HasIntersection(&rect, &wallD->getRect()))
+	} 
+	else if (SDL_HasIntersection(&rect, &wallD->getRect()))
 	{
 		collVector = Vector2D(-1, 0);
 		return true;
@@ -242,60 +252,17 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 void Game::saveGame() //puntero a ball, paddle y blocksmap
 {
-	//ofstream saveFile("..\\saves\\saveMap.ark");
-
-	/*Block*** blocks = blocksMAP->BlockStructure();
-
-	saveFile << blocksMAP->MapX() << endl;
-
-	saveFile << blocksMAP->MapY() << endl;
-
-	for (int i = 0; i < blocksMAP->MapX(); i++)
-	{ 
-		for (int j = 0; j < blocksMAP->MapY(); j++)
-		{
-			if (blocks[i][j] != nullptr) //acceso a blocksmap
-			{
-				saveFile << (blocks[i][j]->getColour()+1) << " ";
-			}
-			else
-			{
-				saveFile << 0 << " ";
-			}
-		}
-
-		saveFile << endl;
-	}*/
-
-	//saveFile.close();
-
-	//datos del juego
 	ofstream FileData("..\\saves\\save.ark");
 	FileData << level << endl;
 
 	for (ArkanoidObject* o : lista)
 		o->saveToFile(FileData);
 	
-	/*FileData << paddle->getPosition().getX() << endl;
-	FileData << paddle->getPosition().getY() << endl;
-	FileData << paddle->getDirection().getX() << endl;
-	FileData << paddle->getDirection().getY() << endl;
-
-	FileData << ball->getPosition().getX() << endl;
-	FileData << ball->getPosition().getY() << endl;
-	FileData << ball->getDirection().getX() << endl;
-	FileData << ball->getDirection().getY() << endl;
-
-
-	FileData << level << endl;
-	FileData << timer->timeFromDeath() << endl;
-	FileData << SDL_GetTicks() / 1000;
-	*/
 	FileData.close();
 
 }
 
-void Game::DeleteAll()
+void Game::DeleteAll() //hacerlo también con listas?
 {
 	delete ball;
 	delete paddle;
@@ -345,12 +312,6 @@ void Game::newGame()
 
 void Game::loadSave()
 {
-	
-	/*blocksMAP = new BlocksMAP();
-	lista.push_back(blocksMAP);
-
-	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);*/
-	
 	ifstream FileData("..\\saves\\save.ark");
 	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
 	FileData.close();
@@ -360,60 +321,7 @@ void Game::loadSave()
 	file >> level;
 	for (ArkanoidObject* o : lista)
 		o->loadFromFile(file);
-	
-	//ver donde deja el punto de lectura de File
 
-	/*double padPosX;
-	double padPosY;
-	double padDirX;
-	double padDirY;
-
-	double ballPosX;
-	double ballPosY;
-	double ballDirX;
-	double ballDirY;
-
-	FileData >> padPosX;
-	FileData >> padPosY;
-	Vector2D startPaddle = Vector2D(padPosX, padPosY);
-	
-	FileData >> padDirX;
-	FileData >> padDirY;
-	Vector2D dirPaddle = Vector2D(padDirX, padDirY);
-
-
-	FileData >> ballPosX;
-	FileData >> ballPosY;
-	Vector2D startBall = Vector2D(ballPosX, ballPosY);
-
-	FileData >> ballDirX;
-	FileData >> ballDirY;
-	Vector2D dirBall = Vector2D(ballDirX, ballDirY);
-
-
-	FileData >> level;*/
-
-	//timer
-	/*int timeFromDeath;
-	int ticks;
-	FileData >> timeFromDeath;
-	FileData >> ticks;
-	*/
 
 	file.close();
-
-	/*ball = new Ball(startBall, 20, 20, textures[0], dirBall,  this);
-	paddle = new Paddle(startPaddle, 120, 20, textures[2], dirPaddle);
-	wallA = new Wall( Vector2D(0, 0), WIN_WIDTH, 20, textures[4]);
-	wallI = new Wall( Vector2D(0, 0), 20, WIN_HEIGHT, textures[3]);
-	wallD = new Wall( Vector2D (780, 0), 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); */
-
-	/*lista.push_back(ball);
-	lista.push_back(paddle);
-	lista.push_back(wallA);
-	lista.push_back(wallI);
-	lista.push_back(wallD);
-	lista.push_back(timer);*/
-	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
 }

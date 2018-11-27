@@ -25,13 +25,14 @@ enum TextureName {BallTexture, BlocksTexure, PaddleTexture };
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
 const uint NUM_TEXTURES = 6;
-const uint FRAMERATE = 10; //¿?
+//const uint FRAMERATE = 10; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
 const uint ObjSize = 20;
+const uint RewardProb = (1 / 6);
 const Vector2D POS_START_BALL = Vector2D(400,300);
 const Vector2D POS_START_PADDLE = Vector2D (400,500);
-const Vector2D DIR_START_BALL = Vector2D(0.4, 0.4);
+const Vector2D DIR_START_BALL = Vector2D(0.1, 0.1);
 const Vector2D DIR_START_PADDLE = Vector2D(0, 0);
 const struct TextureAttributes { string fileName; uint nRows; uint nCols; };
 
@@ -76,6 +77,7 @@ class Game
 			void update();
 			void reset();
 			void bestPlayers(uint time);
+			bool Random();
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void saveGame();
 			void DeleteAll();
