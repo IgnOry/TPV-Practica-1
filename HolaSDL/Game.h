@@ -78,8 +78,10 @@ class Game
 			void update();
 			void reset();
 			void bestPlayers(uint time);
-			void createReward(const SDL_Rect & ballRect);
+			void createReward(Reward* reward);
+			bool rewardCollides(const SDL_Rect & rect);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
+			void deleteList(list<ArkanoidObject*>::iterator it);
 			void saveGame();
 			void DeleteAll();
 			void newGame();

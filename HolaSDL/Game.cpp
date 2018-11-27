@@ -127,6 +127,14 @@ void Game::handleEvents()
 	}
 }
 
+void Game::deleteList (list<ArkanoidObject*>::iterator it)
+{
+	if (it == firstReward)
+		++firstReward;
+	delete *it;
+	lista.erase(it);
+}
+
 void Game::update()
 {
 	if (blocksMAP->BlockNum() == 0)	// paso de nivel
@@ -199,12 +207,17 @@ void Game::bestPlayers(uint time)
 	}
 }
 
-void Game::createReward(const SDL_Rect& ballRect) {
-	Reward *reward = new Reward(Vector2D(ballRect.x, ballRect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05));
+void Game::createReward(Reward* reward) {
 	lista.push_back(reward);
 	auto itFR = --(lista.end());
 	if (firstReward == lista.end())
 		firstReward = itFR;
+	reward->it = itFR; // igual no va
+}
+bool Game::rewardCollides(const SDL_Rect& rect)
+{
+	if (paddle->collides(rect)) return true;
+	else return false;
 }
 
 
@@ -217,7 +230,24 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		if (block != nullptr)
 		{
 			blocksMAP->ballHitsBlock(*block);
-			createReward(rect);
+
+			uint p = rand() % 5;
+			Reward *reward;
+			switch (p)
+			{
+			case 0:
+				reward = new Reward1(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
+				break;
+			case 1:
+				reward = new Reward2(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
+				break;
+			case 2:
+				reward = new Reward3(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
+				break;
+			default:
+				return true;
+			}
+			createReward(reward);
 			return true;
 		}
 	}
