@@ -271,6 +271,8 @@ void Game::saveGame() //puntero a ball, paddle y blocksmap
 
 	//datos del juego
 	ofstream FileData("..\\saves\\save.ark");
+	FileData << level << endl;
+
 	for (ArkanoidObject* o : lista)
 		o->saveToFile(FileData);
 	
@@ -343,16 +345,21 @@ void Game::newGame()
 
 void Game::loadSave()
 {
+	
 	/*blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 
 	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);*/
-	newGame();
 	
 	ifstream FileData("..\\saves\\save.ark");
+	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
+	FileData.close();
+	newGame();
 
+	ifstream file("..\\saves\\save.ark");
+	file >> level;
 	for (ArkanoidObject* o : lista)
-		o->loadFromFile(FileData);
+		o->loadFromFile(file);
 	
 	//ver donde deja el punto de lectura de File
 
@@ -393,7 +400,7 @@ void Game::loadSave()
 	FileData >> ticks;
 	*/
 
-	FileData.close();
+	file.close();
 
 	/*ball = new Ball(startBall, 20, 20, textures[0], dirBall,  this);
 	paddle = new Paddle(startPaddle, 120, 20, textures[2], dirPaddle);

@@ -100,6 +100,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 			}
 		}
 	}
+	file.close();
 }
 int BlocksMAP::size() {
 	return rows * (BlockSize/3);
@@ -228,9 +229,9 @@ Block*** BlocksMAP::BlockStructure()
 
 void BlocksMAP::saveToFile(ofstream& file) {
 
-	file << MapX() << endl;
+	//file << MapX() << endl;
 
-	file << MapY() << endl;
+	//file << MapY() << endl;
 
 	for (int i = 0; i < MapX(); i++)
 	{
