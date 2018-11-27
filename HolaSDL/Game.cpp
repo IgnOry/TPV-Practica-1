@@ -147,6 +147,14 @@ void Game::update()
 }
 
 void Game::reset() {
+	// antes de destruir el mapa de bloques hay que destruir las rewards
+	//lista.pop_back();
+	for (auto it = firstReward; it != lista.end(); ++it) {
+		delete *it;
+		it = lista.erase(it);
+	}
+	firstReward = lista.end();
+
 	// Destruye el mapa de 
 	lista.pop_back();
 	delete blocksMAP;
@@ -191,6 +199,13 @@ void Game::bestPlayers(uint time)
 	}
 }
 
+void Game::createReward(const SDL_Rect& ballRect) {
+	Reward *reward = new Reward(Vector2D(ballRect.x, ballRect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05));
+	lista.push_back(reward);
+	auto itFR = --(lista.end());
+	if (firstReward == lista.end())
+		firstReward = itFR;
+}
 
 
 bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
@@ -202,6 +217,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		if (block != nullptr)
 		{
 			blocksMAP->ballHitsBlock(*block);
+			createReward(rect);
 			return true;
 		}
 	}
@@ -234,7 +250,7 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 		return true;
 		}
-	}										
+	}
 
 	return false;
 	
@@ -332,6 +348,8 @@ void Game::newGame()
 	lista.push_back(timer);
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
+	//iterador
+	firstReward = lista.end();
 
 	try {
 		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);

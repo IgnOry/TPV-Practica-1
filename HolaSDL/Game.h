@@ -24,14 +24,14 @@ enum TextureName {BallTexture, BlocksTexure, PaddleTexture };
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-const uint NUM_TEXTURES = 6;
-const uint FRAMERATE = 10; //¿?
+const uint NUM_TEXTURES = 7;
+const uint FRAMERATE = 200; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
 const uint ObjSize = 20;
 const Vector2D POS_START_BALL = Vector2D(400,300);
 const Vector2D POS_START_PADDLE = Vector2D (400,500);
-const Vector2D DIR_START_BALL = Vector2D(0.4, 0.4);
+const Vector2D DIR_START_BALL = Vector2D(0.1, 0.1);
 const Vector2D DIR_START_PADDLE = Vector2D(0, 0);
 const struct TextureAttributes { string fileName; uint nRows; uint nCols; };
 
@@ -51,6 +51,7 @@ class Game
 		int level = 0;
 		uint lastTime = 0;
 		list<ArkanoidObject*> lista;
+		list<ArkanoidObject*>::iterator firstReward;
 		Texture* textures[NUM_TEXTURES];
 		Ball* ball;
 		Paddle* paddle;
@@ -64,7 +65,8 @@ class Game
 
 		TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
 		{
-			{"../images/ball.png",1,1}, {"../images/bricks.png",2,3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1}, {"../images/timer.png", 1, 11}
+			{"../images/ball.png",1,1}, {"../images/bricks.png",2,3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1},
+			{"../images/timer.png", 1, 11},{"../images/rewards.png", 10, 8}
 		};
 
 		public:
@@ -76,6 +78,7 @@ class Game
 			void update();
 			void reset();
 			void bestPlayers(uint time);
+			void createReward(const SDL_Rect & ballRect);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void saveGame();
 			void DeleteAll();
