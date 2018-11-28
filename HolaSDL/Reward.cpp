@@ -18,10 +18,10 @@ void Reward::render() {
 
 void Reward::update()
 {
+	MovingObject::update();
+
 	if (ptrGame->rewardCollides(getRect()))
 		behavior();
-
-	MovingObject::update();
 }
 
 void Reward::behavior()

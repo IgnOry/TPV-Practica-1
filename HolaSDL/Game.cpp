@@ -129,9 +129,9 @@ void Game::handleEvents()
 
 void Game::deleteList (list<ArkanoidObject*>::iterator it)
 {
+	delete* it;
 	if (it == firstReward)
-		++firstReward;
-	delete *it;
+		firstReward++;
 	lista.erase(it);
 }
 
