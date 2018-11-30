@@ -1,7 +1,9 @@
 #pragma once
 #include "checkML.h"
+#include "ArkanoidError.h"
 
-class SDLError
+
+class SDLError: public ArkanoidError
 {
 public:
 	SDLError();

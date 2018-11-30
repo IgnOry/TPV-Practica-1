@@ -9,16 +9,8 @@ using namespace std;
 
 typedef unsigned int uint;
 
-Game::Game() {
-	//menú
-	int x;
-
-	cout << "(0) - Partida normal" << endl;
-	cout << "(1) - Cargar partida" << endl;
-	cout << "(2) - Mejores jugadores" << endl;
-
-	cin >> x;
-
+Game::Game(int x) {
+	
 	try {
 		// We first initialize SDL
 		SDL_Init(SDL_INIT_EVERYTHING);
@@ -47,39 +39,22 @@ Game::Game() {
 
 	}
 	
-	if (x == 0)
+	switch (x)
 	{
+	case 0:
 		newGame();
-	}
-
-	else if (x == 1)
-	{
+		break;
+	case 1:
 		loadSave();
+		break;
+	case 2:
+		//BestPlayers
+
+		break;
+	default:
+		throw new exception("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
+		break;
 	}
-
-	else if (x == 2)
-	{
-		cout << "¿Que nivel quieres consultar?" << endl;
-		cin >> x;
-
-		ifstream FileData(top[x]);
-
-		int topScores[10];
-
-		for (int i = 0; i < 10; i++)
-		{
-			cin >> topScores[i];
-		}
-
-		for (int i = 0; i < 10; i++)
-		{
-			cout << i << ". " << topScores[i] << endl;
-		}
-
-		FileData.close();
-	}
-	else
-		throw new exception ("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
 }
 
 Game::~Game() {
@@ -139,7 +114,7 @@ void Game::update()
 {
 	if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
-		bestPlayers(timer->time());
+		//bestPlayers(timer->time()); //cambiar a clase BestPlayers
 		level++;
 		reset();
 	}
@@ -175,7 +150,7 @@ void Game::reset() {
 	timer->reset();
 }
 
-void Game::bestPlayers(uint time)
+/*void Game::bestPlayers(uint time)
 {
 	ifstream FileData(top[level]);
 
@@ -205,7 +180,7 @@ void Game::bestPlayers(uint time)
 
 		topScores[i] = time;
 	}
-}
+}*/
 
 void Game::createReward(Reward* reward) {
 	lista.push_back(reward);

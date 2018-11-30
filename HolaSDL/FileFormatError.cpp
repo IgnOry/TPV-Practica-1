@@ -2,7 +2,7 @@
 
 
 
-FileFormatError::FileFormatError()
+FileFormatError::FileFormatError():ArkanoidError()
 {
 }
 

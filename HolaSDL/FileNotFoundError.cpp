@@ -2,7 +2,7 @@
 
 
 
-FileNotFoundError::FileNotFoundError()
+FileNotFoundError::FileNotFoundError():ArkanoidError()
 {
 }
 

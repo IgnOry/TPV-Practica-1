@@ -2,7 +2,7 @@
 
 
 
-SDLError::SDLError()
+SDLError::SDLError():ArkanoidError()
 {
 }
 

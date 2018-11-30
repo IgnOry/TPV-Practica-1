@@ -1,6 +1,9 @@
 #pragma once
 #include "checkML.h"
-class FileFormatError
+#include "ArkanoidError.h"
+
+
+class FileFormatError: public ArkanoidError
 {
 public:
 	FileFormatError();

@@ -42,7 +42,6 @@ class Game
 	private:
 		SDL_Window* window = nullptr;
 		SDL_Renderer* renderer = nullptr;	
-		// uint winWidth, winHeight; // También podrían estar aquí
 
 		bool exit = false;
 		bool gameover;
@@ -70,14 +69,13 @@ class Game
 		};
 
 		public:
-			Game();
+			Game(int x);
 			~Game();
 			void run();
 			void render() const;
 			void handleEvents();
 			void update();
 			void reset();
-			void bestPlayers(uint time);
 			void createReward(Reward* reward);
 			bool rewardCollides(const SDL_Rect & rect);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
