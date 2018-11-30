@@ -48,8 +48,13 @@ Game::Game(int x) {
 		loadSave();
 		break;
 	case 2:
-		//BestPlayers
+		bestplayers = new BestPlayers(levels);
+		bestplayers->PrintList();
 
+		delete bestplayers;
+		bestplayers = nullptr;
+		
+		newGame(); //paso a partida
 		break;
 	default:
 		throw new exception("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
@@ -125,7 +130,7 @@ void Game::update()
 {
 	if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
-		//bestPlayers(timer->time()); //cambiar a clase BestPlayers
+		bestplayers->CompareTimes(timer->time());
 		level++;
 		reset();
 	}
@@ -158,43 +163,22 @@ void Game::reset() {
 	blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
 	lista.push_back(blocksMAP);
 
-	// Resetea la pelota, el paddle y el tiempo
-	ball->reset(POS_START_BALL, DIR_START_BALL);
-	paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
-	timer->reset();
-}
-
-/*void Game::bestPlayers(uint time)
-{
-	ifstream FileData(top[level]);
-
-	int topScores[10];		//valor por defecto de los scores: -1
-
-	for (int i = 0; i < 10; i++)
+	if (lives->current() > 0)
 	{
-		cin >> topScores[i];
-	}
-
-	if (topScores[9] > 0)
-	{
-		int i = 0;
-
-		while (topScores[i] < time)
-			i++;
-
-		topScores[i] = time;
+		lives->less();
+		// Resetea la pelota, el paddle y el tiempo
+		ball->reset(POS_START_BALL, DIR_START_BALL);
+		paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
+		timer->reset();
 	}
 
 	else
 	{
-		int i = 0;
-
-		while (topScores[i] < 0)
-			i++;
-
-		topScores[i] = time;
+		exit = true;
+		DeleteAll();
+		cout << "Gameover";
 	}
-}*/
+}
 
 void Game::createReward(Reward* reward) {
 	lista.push_back(reward);
@@ -298,6 +282,7 @@ void Game::DeleteAll()
 	delete timer;
 	delete blocksMAP;
 	delete bestplayers;
+	delete lives;
 
 	ball = nullptr;
 	paddle = nullptr;
@@ -306,6 +291,7 @@ void Game::DeleteAll()
 	wallD = nullptr;
 	timer = nullptr;
 	bestplayers = nullptr;
+	lives = nullptr;
 
 	lista.clear();
 
@@ -325,8 +311,10 @@ void Game::newGame()
 	lista.push_back(wallD);
 	timer = new Timer(Vector2D(ObjSize, WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks() / 1000, 0);
 	lista.push_back(timer);
-	bestplayers = new BestPlayers(3);
+	bestplayers = new BestPlayers(levels);
 	lista.push_back(bestplayers);
+	lives = new Lives();
+	lista.push_back(lives);
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 	//iterador

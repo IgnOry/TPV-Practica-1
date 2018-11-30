@@ -21,3 +21,8 @@ void Lives::less()
 {
 	lives--;
 }
+
+void Lives::render()
+{
+	//redefinir, estilo Timer ?
+}

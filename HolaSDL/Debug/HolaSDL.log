@@ -1,6 +1,5 @@
 ﻿  ArkanoidError.cpp
   Ball.cpp
-  BestPlayers.cpp
   BlocksMAP.cpp
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
@@ -19,10 +18,10 @@ c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(238): warni
   FileFormatError.cpp
   FileNotFoundError.cpp
   Game.cpp
+  Reward.cpp
+  SDLError.cpp
   main.cpp
 c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
   c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
-  Reward.cpp
-  SDLError.cpp
   Generando código...
   HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

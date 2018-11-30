@@ -8,8 +8,11 @@ public:
 	BestPlayers(const int levs);
 	~BestPlayers();
 	void PrintList();
-	void CompareTimes(const int time);
+	virtual void saveToFile();
+	virtual void loadFromFile();
+	void CompareTimes(const uint time);
 private:
 	int levels;
+	int topScores[10];		//valor por defecto de los scores: -1
 };
 
