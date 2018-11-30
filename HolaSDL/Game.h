@@ -15,6 +15,7 @@
 #include "ArkanoidObject.h"
 #include "MovingObject.h"
 #include "Reward.h"
+#include "BestPlayers.h"
 
 using namespace std;
 
@@ -44,10 +45,8 @@ class Game
 		SDL_Renderer* renderer = nullptr;	
 
 		bool exit = false;
-		bool gameover;
-		bool win;
-		int hits;
-		int level = 0;
+		bool pause = false;
+		int level = 1;
 		uint lastTime = 0;
 		list<ArkanoidObject*> lista;
 		list<ArkanoidObject*>::iterator firstReward;
@@ -59,7 +58,8 @@ class Game
 		Wall* wallD;
 		BlocksMAP* blocksMAP;
 		Timer* timer;
-		string levels[3] = { "..\\maps\\level01.ark", "..\\maps\\level02.ark", "..\\maps\\level03.ark" };
+		BestPlayers* bestplayers;
+		//levels[3] = { "..\\maps\\level1.ark", "..\\maps\\level2.ark", "..\\maps\\level3.ark" };
 		string top[3] = { "..\\saves\\best1.ark", "..\\saves\\best2.ark", "..\\saves\\best3.ark" };
 
 		TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
@@ -80,8 +80,9 @@ class Game
 			bool rewardCollides(const SDL_Rect & rect);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void deleteList(list<ArkanoidObject*>::iterator it);
-			void saveGame();
+			void saveGame(uint code);
 			void DeleteAll();
 			void newGame();
 			void loadSave();
+			string nextLevel();
 };

@@ -8,7 +8,6 @@ class ArkanoidError: public logic_error
 {
 public:
 	ArkanoidError();
-	//logic_error::what
 	~ArkanoidError();
 
 protected:

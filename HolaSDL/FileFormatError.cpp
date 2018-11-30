@@ -2,8 +2,9 @@
 
 
 
-FileFormatError::FileFormatError():ArkanoidError()
+FileFormatError::FileFormatError(string filename):ArkanoidError()
 {
+	message =  "El archivo " + filename + " no tiene el formato correcto";
 }
 
 

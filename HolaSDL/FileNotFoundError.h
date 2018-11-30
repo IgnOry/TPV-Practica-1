@@ -5,7 +5,7 @@
 class FileNotFoundError: public ArkanoidError
 {
 public:
-	FileNotFoundError();
+	FileNotFoundError(string filename);
 	~FileNotFoundError();
 };
 

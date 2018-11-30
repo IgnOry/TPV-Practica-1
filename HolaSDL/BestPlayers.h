@@ -1,7 +1,8 @@
 #pragma once
 #include "checkML.h"
+#include "ArkanoidObject.h"
 
-class BestPlayers
+class BestPlayers: public ArkanoidObject
 {
 public:
 	BestPlayers(const int levs);

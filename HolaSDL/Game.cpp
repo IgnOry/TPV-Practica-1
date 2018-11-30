@@ -95,7 +95,18 @@ void Game::handleEvents()
 		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
 		{
 			if (event.key.keysym.sym == SDLK_s)
-				saveGame();
+				{
+				if (!pause)
+				{
+					pause = true;
+					uint code;
+					cin >> code;
+					saveGame(code);
+					cout << "Vuelve a pulsar S para reanudar la partida";
+				}
+				else
+					pause = false;
+				}
 			else
 				paddle->handleEvents(event);
 		}
@@ -119,8 +130,11 @@ void Game::update()
 		reset();
 	}
 	else {	// se llama a los updates de todos los objetos de la lista
-		for (ArkanoidObject* o : lista)
-			o->update();
+		if (!pause)
+		{
+			for (ArkanoidObject* o : lista)
+				o->update();
+		}
 	}
 
 	if (lista.front()->getRect().y >= WIN_HEIGHT) 
@@ -141,7 +155,7 @@ void Game::reset() {
 	// Destruye el mapa de 
 	lista.pop_back();
 	delete blocksMAP;
-	blocksMAP = new BlocksMAP(levels[level], textures[1], WIN_WIDTH);
+	blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
 	lista.push_back(blocksMAP);
 
 	// Resetea la pelota, el paddle y el tiempo
@@ -261,57 +275,15 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	
 }
 
-void Game::saveGame() //puntero a ball, paddle y blocksmap
+void Game::saveGame(uint code) //puntero a ball, paddle y blocksmap
 {
-	//ofstream saveFile("..\\saves\\saveMap.ark");
-
-	/*Block*** blocks = blocksMAP->BlockStructure();
-
-	saveFile << blocksMAP->MapX() << endl;
-
-	saveFile << blocksMAP->MapY() << endl;
-
-	for (int i = 0; i < blocksMAP->MapX(); i++)
-	{ 
-		for (int j = 0; j < blocksMAP->MapY(); j++)
-		{
-			if (blocks[i][j] != nullptr) //acceso a blocksmap
-			{
-				saveFile << (blocks[i][j]->getColour()+1) << " ";
-			}
-			else
-			{
-				saveFile << 0 << " ";
-			}
-		}
-
-		saveFile << endl;
-	}*/
-
-	//saveFile.close();
-
-	//datos del juego
-	ofstream FileData("..\\saves\\save.ark");
+	string filename = std::to_string(code);
+	ofstream FileData("..\\saves\\" + filename + ".ark");
 	FileData << level << endl;
 
 	for (ArkanoidObject* o : lista)
 		o->saveToFile(FileData);
 	
-	/*FileData << paddle->getPosition().getX() << endl;
-	FileData << paddle->getPosition().getY() << endl;
-	FileData << paddle->getDirection().getX() << endl;
-	FileData << paddle->getDirection().getY() << endl;
-
-	FileData << ball->getPosition().getX() << endl;
-	FileData << ball->getPosition().getY() << endl;
-	FileData << ball->getDirection().getX() << endl;
-	FileData << ball->getDirection().getY() << endl;
-
-
-	FileData << level << endl;
-	FileData << timer->timeFromDeath() << endl;
-	FileData << SDL_GetTicks() / 1000;
-	*/
 	FileData.close();
 
 }
@@ -325,6 +297,7 @@ void Game::DeleteAll()
 	delete wallD;
 	delete timer;
 	delete blocksMAP;
+	delete bestplayers;
 
 	ball = nullptr;
 	paddle = nullptr;
@@ -332,6 +305,7 @@ void Game::DeleteAll()
 	wallI = nullptr;
 	wallD = nullptr;
 	timer = nullptr;
+	bestplayers = nullptr;
 
 	lista.clear();
 
@@ -351,13 +325,15 @@ void Game::newGame()
 	lista.push_back(wallD);
 	timer = new Timer(Vector2D(ObjSize, WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks() / 1000, 0);
 	lista.push_back(timer);
+	bestplayers = new BestPlayers(3);
+	lista.push_back(bestplayers);
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 	//iterador
 	firstReward = lista.end();
 
 	try {
-		blocksMAP->loadFile(levels[level], textures[1], WIN_WIDTH);
+		blocksMAP->loadFile(nextLevel(), textures[1], WIN_WIDTH);
 	}
 	catch (exception e)
 	{
@@ -368,75 +344,30 @@ void Game::newGame()
 
 void Game::loadSave()
 {
-	
-	/*blocksMAP = new BlocksMAP();
-	lista.push_back(blocksMAP);
+	cout << "Introduce código de la partida";
 
-	blocksMAP->loadFile("..\\saves\\saveMap.ark", textures[1], WIN_WIDTH);*/
+	uint code;
+	cin >> code;
 	
-	ifstream FileData("..\\saves\\save.ark");
+	string filename = std::to_string(code);
+	ifstream FileData("..\\saves\\" + filename +  ".ark");
 	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
 	FileData.close();
 	newGame();
 
-	ifstream file("..\\saves\\save.ark");
+	
+	ifstream file("..\\saves\\" + filename +  ".ark");
 	file >> level;
 	for (ArkanoidObject* o : lista)
 		o->loadFromFile(file);
 	
-	//ver donde deja el punto de lectura de File
-
-	/*double padPosX;
-	double padPosY;
-	double padDirX;
-	double padDirY;
-
-	double ballPosX;
-	double ballPosY;
-	double ballDirX;
-	double ballDirY;
-
-	FileData >> padPosX;
-	FileData >> padPosY;
-	Vector2D startPaddle = Vector2D(padPosX, padPosY);
-	
-	FileData >> padDirX;
-	FileData >> padDirY;
-	Vector2D dirPaddle = Vector2D(padDirX, padDirY);
-
-
-	FileData >> ballPosX;
-	FileData >> ballPosY;
-	Vector2D startBall = Vector2D(ballPosX, ballPosY);
-
-	FileData >> ballDirX;
-	FileData >> ballDirY;
-	Vector2D dirBall = Vector2D(ballDirX, ballDirY);
-
-
-	FileData >> level;*/
-
-	//timer
-	/*int timeFromDeath;
-	int ticks;
-	FileData >> timeFromDeath;
-	FileData >> ticks;
-	*/
 
 	file.close();
 
-	/*ball = new Ball(startBall, 20, 20, textures[0], dirBall,  this);
-	paddle = new Paddle(startPaddle, 120, 20, textures[2], dirPaddle);
-	wallA = new Wall( Vector2D(0, 0), WIN_WIDTH, 20, textures[4]);
-	wallI = new Wall( Vector2D(0, 0), 20, WIN_HEIGHT, textures[3]);
-	wallD = new Wall( Vector2D (780, 0), 20, WIN_HEIGHT, textures[3]);
-	timer = new Timer(textures[5], Vector2D(20, 580), 20, 20, timeFromDeath, ticks); */
+}
 
-	/*lista.push_back(ball);
-	lista.push_back(paddle);
-	lista.push_back(wallA);
-	lista.push_back(wallI);
-	lista.push_back(wallD);
-	lista.push_back(timer);*/
-	//lista.push_back(timer); Hacer que timer herede también de arkanoid object?? (Preguntar)
+string Game::nextLevel()
+{
+	string nextLevelst = "..\\maps\\level" + std::to_string(level) + ".ark";
+	return nextLevelst;
 }

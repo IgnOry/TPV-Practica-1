@@ -6,7 +6,7 @@
 class FileFormatError: public ArkanoidError
 {
 public:
-	FileFormatError();
+	FileFormatError(string filename);
 	~FileFormatError();
 };
 
