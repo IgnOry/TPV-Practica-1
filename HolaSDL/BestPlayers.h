@@ -2,7 +2,7 @@
 #include "checkML.h"
 #include "ArkanoidObject.h"
 
-class BestPlayers: public ArkanoidObject
+class BestPlayers
 {
 public:
 	BestPlayers(const int levs);

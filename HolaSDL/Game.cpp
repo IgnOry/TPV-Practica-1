@@ -64,7 +64,7 @@ Game::Game(int x) {
 
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	DeleteAll();
+	//DeleteAll();	//se hacía dos veces
 	SDL_DestroyRenderer (renderer);
 	SDL_DestroyWindow( window);
 	SDL_Quit();
@@ -75,7 +75,7 @@ void Game::run()
 	while (!exit) {
 		handleEvents();
 		update();
-		render();
+		render();	//PELIGRO: cuando se acaba el juego se llama a render con una lista vacía, porque se borra dentro de update
 	}
 }
 
@@ -124,9 +124,9 @@ void Game::moreLives() {
 
 void Game::deleteList (list<ArkanoidObject*>::iterator it)
 {
-	delete* it;
 	if (it == firstReward)
 		firstReward++;
+	delete* it;
 	lista.erase(it);
 }
 
@@ -139,8 +139,15 @@ void Game::update()
 		reset();
 	}
 	else if (!pause)	// se llama a los updates de todos los objetos de la lista
-			for (ArkanoidObject* o : lista)
-				o->update();
+		for (auto o = lista.begin(); o != lista.end();)
+		{
+			auto next = o;
+			++next;
+			(*o)->update();
+			o = next;
+		}
+			/*for (ArkanoidObject* o : lista)
+				o->update();*/
 		
 	if (lista.front()->getRect().y >= WIN_HEIGHT) 
 		reset();
@@ -155,26 +162,24 @@ void Game::reset() {
 	}
 	firstReward = lista.end();
 
-	// Destruye el mapa de 
-	lista.pop_back();
-	delete blocksMAP;
-	blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
-	lista.push_back(blocksMAP);
-
-	if (lives->getLives() > 0)
-	{
+	if (lives->getLives() > 0) {
 		lives->less();
+		// Destruye el mapa de 
+		lista.pop_back();
+		delete blocksMAP;
+		blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
+		lista.push_back(blocksMAP);
+
 		// Resetea la pelota, el paddle y el tiempo
 		ball->reset(POS_START_BALL, DIR_START_BALL);
 		paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
 		timer->reset();
 	}
 
-	else
-	{
+	else {
 		exit = true;
-		DeleteAll();
 		cout << "Gameover";
+		DeleteAll();
 	}
 }
 
@@ -309,7 +314,7 @@ void Game::newGame()
 	lista.push_back(wallD);
 	timer = new Timer(Vector2D(ObjSize, WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks() / 1000, 0);
 	lista.push_back(timer);
-	//bestplayers = new BestPlayers(levels);
+	bestplayers = new BestPlayers(levels);
 	//lista.push_back(bestplayers);
 	lives = new Lives(Vector2D(WIN_WIDTH - (ObjSize* 3 + ObjSize), WIN_HEIGHT - (ObjSize / 2)), ObjSize * 3, ObjSize / 2, textures[2]); // ojbsize = ancho del muro
 	lista.push_back(lives);																							  //objsize * 3 = ancho del minipaddle
