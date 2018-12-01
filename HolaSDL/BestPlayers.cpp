@@ -5,7 +5,7 @@
 
 
 
-BestPlayers::BestPlayers(const int levs): ArkanoidObject()
+BestPlayers::BestPlayers(const int levs)//: ArkanoidObject()
 {
 	levels = levs;
 }

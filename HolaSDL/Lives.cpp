@@ -2,7 +2,7 @@
 
 
 
-Lives::Lives(): ArkanoidObject()
+Lives::Lives(Vector2D pos, int width, int height, Texture * texture) :ArkanoidObject(pos, width, height, texture)
 {
 	lives = 3;
 }
@@ -12,7 +12,7 @@ Lives::~Lives()
 {
 }
 
-uint Lives::current()
+uint Lives::getLives()
 {
 	return lives;
 }
@@ -24,5 +24,9 @@ void Lives::less()
 
 void Lives::render()
 {
-	//redefinir, estilo Timer ?
+	for (int i = 0; i - lives; i++) {
+		SDL_Rect rect = getRect();
+		rect.x -= rect.w * i;
+		ptrTexture->render(rect);
+	}
 }

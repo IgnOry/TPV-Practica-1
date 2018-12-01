@@ -4,9 +4,9 @@
 class Lives: public ArkanoidObject
 {
 public:
-	Lives();
+	Lives(Vector2D pos, int width, int height, Texture* texture);
 	~Lives();
-	uint current();
+	uint getLives();
 	void less();
 	virtual void render();
 private:

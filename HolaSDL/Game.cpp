@@ -134,18 +134,12 @@ void Game::update()
 		level++;
 		reset();
 	}
-	else {	// se llama a los updates de todos los objetos de la lista
-		if (!pause)
-		{
+	else if (!pause)	// se llama a los updates de todos los objetos de la lista
 			for (ArkanoidObject* o : lista)
 				o->update();
-		}
-	}
-
+		
 	if (lista.front()->getRect().y >= WIN_HEIGHT) 
-	{
 		reset();
-	}
 }
 
 void Game::reset() {
@@ -163,7 +157,7 @@ void Game::reset() {
 	blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
 	lista.push_back(blocksMAP);
 
-	if (lives->current() > 0)
+	if (lives->getLives() > 0)
 	{
 		lives->less();
 		// Resetea la pelota, el paddle y el tiempo
@@ -311,10 +305,10 @@ void Game::newGame()
 	lista.push_back(wallD);
 	timer = new Timer(Vector2D(ObjSize, WIN_HEIGHT - ObjSize), ObjSize, ObjSize, textures[5], SDL_GetTicks() / 1000, 0);
 	lista.push_back(timer);
-	bestplayers = new BestPlayers(levels);
-	lista.push_back(bestplayers);
-	lives = new Lives();
-	lista.push_back(lives);
+	//bestplayers = new BestPlayers(levels);
+	//lista.push_back(bestplayers);
+	lives = new Lives(Vector2D(WIN_WIDTH - (ObjSize* 3 + ObjSize), WIN_HEIGHT - (ObjSize / 2)), ObjSize * 3, ObjSize / 2, textures[2]); // ojbsize = ancho del muro
+	lista.push_back(lives);																							  //objsize * 3 = ancho del minipaddle
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 	//iterador
