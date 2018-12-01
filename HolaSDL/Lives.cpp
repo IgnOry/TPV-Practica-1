@@ -22,6 +22,10 @@ void Lives::less()
 	lives--;
 }
 
+void Lives::more() {
+	lives++;
+}
+
 void Lives::render()
 {
 	for (int i = 0; i - lives; i++) {

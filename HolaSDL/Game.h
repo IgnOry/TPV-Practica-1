@@ -77,6 +77,7 @@ class Game
 			void run();
 			void render() const;
 			void handleEvents();
+			void moreLives();
 			void update();
 			void reset();
 			void createReward(Reward* reward);

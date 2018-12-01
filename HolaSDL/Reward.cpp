@@ -40,8 +40,8 @@ Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 
 void Reward1::behavior()
 {
-	Reward::behavior();
 	cout << "1" << endl;
+	Reward::behavior();
 }
 
 Reward1::~Reward1()
@@ -55,8 +55,9 @@ Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 
 void Reward2::behavior()
 {
-	Reward::behavior();
 	cout << "2" << endl;
+	ptrGame->moreLives();
+	Reward::behavior();
 }
 
 Reward2::~Reward2()
@@ -70,8 +71,8 @@ Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 
 void Reward3::behavior()
 {
-	Reward::behavior();
 	cout << "3" << endl;
+	Reward::behavior();
 }
 
 Reward3::~Reward3()

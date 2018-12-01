@@ -16,8 +16,6 @@ public:
 	list<ArkanoidObject*>::iterator it;
 protected:
 	int frame = 0;
-
-private:
 	Game* ptrGame;
 };
 

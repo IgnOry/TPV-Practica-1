@@ -8,6 +8,7 @@ public:
 	~Lives();
 	uint getLives();
 	void less();
+	void more();
 	virtual void render();
 private:
 	uint lives;

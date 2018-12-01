@@ -118,6 +118,10 @@ void Game::handleEvents()
 	}
 }
 
+void Game::moreLives() {
+	lives->more();
+}
+
 void Game::deleteList (list<ArkanoidObject*>::iterator it)
 {
 	delete* it;
