@@ -2,11 +2,9 @@
 
 
 
-SDLError::SDLError():ArkanoidError()
+SDLError::SDLError(string _message):ArkanoidError(_message)
 {
-	message += IMG_GetError();
-	message += SDL_GetError();
-	//message = TTF_GetError();
+
 }
 
 

@@ -6,7 +6,7 @@
 class SDLError: public ArkanoidError
 {
 public:
-	SDLError();
+	SDLError(string _message);
 	~SDLError();
 };
 

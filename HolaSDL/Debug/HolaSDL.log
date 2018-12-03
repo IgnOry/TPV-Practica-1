@@ -1,2 +1,3 @@
 ﻿  Game.cpp
-  HolaSDL.vcxproj -> D:\Escritorio\2º Desarrollo de Videojuegos\TVP (Tecnología de la Programación de Videojuegos)\TVP P1\TPV-Practica-1\bin\HolaSDLDebug.exe
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(19): warning C4390: ';': se encontró una instrucción controlada vacía; ¿es esa la intención?
+  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

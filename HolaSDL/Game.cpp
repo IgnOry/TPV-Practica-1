@@ -16,14 +16,17 @@ Game::Game(int x) {
 		SDL_Init(SDL_INIT_EVERYTHING);
 		window = SDL_CreateWindow("Arkanoid", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-		if (window == nullptr || renderer == nullptr) throw "Error loading the SDL window or renderer";
-		// We now create the textures
+		if (window == nullptr || renderer == nullptr); throw "Error loading the SDL window or renderer";
+		{
+			/*messageerror = "test";
+			SDLError SDLErrorX = SDLError(messageerror);
+			throw new exception(SDLErrorX); */
+		}
 	}
 
 	catch (exception e)
 	{
-		cout << "Error en la carga de SDL";
-		std::exit(1);
+		
 	}
 	try {
 		for (uint i = 0; i < NUM_TEXTURES; i++) {

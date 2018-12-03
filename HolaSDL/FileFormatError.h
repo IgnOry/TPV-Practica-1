@@ -2,10 +2,9 @@
 #include "checkML.h"
 #include "ArkanoidError.h"
 
-
 class FileFormatError: public ArkanoidError
 {
-public:
+	public:
 	FileFormatError(string filename);
 	~FileFormatError();
 };

@@ -1,16 +1,18 @@
 #pragma once
 
 #include "checkML.h"
-#include "Game.h"
+#include <stdexcept>
+using namespace std;
 
 
 class ArkanoidError: public logic_error
 {
-public:
-	ArkanoidError();
-	~ArkanoidError();
+	protected:
+		ArkanoidError(string _message) :logic_error(_message)
+		{};
+		~ArkanoidError();
 
-protected:
-	string message;
+	public:
+		string what();
 };
 

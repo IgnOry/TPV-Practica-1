@@ -17,6 +17,10 @@
 #include "Reward.h"
 #include "BestPlayers.h"
 #include "Lives.h"
+#include "ArkanoidError.h"
+#include "FileFormatError.h"
+#include "FileNotFoundError.h"
+#include "SDLError.h"
 
 using namespace std;
 
@@ -62,6 +66,7 @@ class Game
 		Timer* timer;
 		BestPlayers* bestplayers;
 		Lives* lives;
+		string messageerror = "";
 		//levels[3] = { "..\\maps\\level1.ark", "..\\maps\\level2.ark", "..\\maps\\level3.ark" };
 		string top[3] = { "..\\saves\\best1.ark", "..\\saves\\best2.ark", "..\\saves\\best3.ark" };
 

@@ -2,9 +2,8 @@
 
 
 
-FileNotFoundError::FileNotFoundError(string filename):ArkanoidError()
+FileNotFoundError::FileNotFoundError(string _message):ArkanoidError(_message)
 {
-	message = "No se ha podido encontrar el archivo" + filename;
 }
 
 

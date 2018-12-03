@@ -1,12 +1,10 @@
 #include "ArkanoidError.h"
 
-ArkanoidError::ArkanoidError():logic_error(message)
-{
-
-}
-
-
-
 ArkanoidError::~ArkanoidError()
 {
+}
+
+string ArkanoidError::what()
+{
+	return string();
 }
