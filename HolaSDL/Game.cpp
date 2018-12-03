@@ -45,7 +45,7 @@ Game::Game(int x) {
 		newGame(); //paso a partida
 		break;
 	default:
-		throw new exception("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
+		throw SDLError("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
 		break;
 	}
 }
@@ -341,7 +341,7 @@ void Game::loadSave()
 	string filename = std::to_string(code);
 	ifstream FileData("..\\saves\\" + filename +  ".ark");
 	if (!FileData.good())
-		throw new FileNotFoundError("El archivo ..\\saves\\" + filename + ".ark" + " no se ha encontrado");
+		throw FileNotFoundError("El archivo ..\\saves\\" + filename + ".ark" + " no se ha encontrado");
 
 	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
 	FileData.close();
@@ -367,7 +367,7 @@ string Game::nextLevel()
 
 	ifstream FileData(nextLevelst);
 	if (!FileData.good())
-		throw new FileNotFoundError("El archivo " + nextLevelst + " no se ha encontrado");
+		throw FileNotFoundError("El archivo " + nextLevelst + " no se ha encontrado");
 	FileData.close();
 
 	return nextLevelst;

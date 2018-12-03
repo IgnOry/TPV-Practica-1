@@ -73,7 +73,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 	file.open(filePath);
 	if (!file.good())
 	{
-		throw new FileNotFoundError("El archivo " + filePath + " no se ha encontrado");
+		throw FileNotFoundError("El archivo " + filePath + " no se ha encontrado");
 	}
 
 	uint x;
@@ -96,7 +96,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 		for (int c = 0; c < rows; c++) {
 			file >> colour;
 			if (colour > 5 || colour < 0)
-				throw new FileFormatError("Error en los colores del mapa de bloques del nivel");
+				throw FileFormatError("Error en los colores del mapa de bloques del nivel");
 			if (colour == 0)
 				blocks[r][c] = nullptr;
 			else
