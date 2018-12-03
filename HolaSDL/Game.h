@@ -83,10 +83,12 @@ class Game
 			void render() const;
 			void handleEvents();
 			void moreLives();
+			void paddleLonger();
+			void paddleShorter();
 			void update();
 			void reset();
 			void createReward(Reward* reward);
-			bool rewardCollides(const SDL_Rect & rect);
+			bool rewardCollides(const SDL_Rect & rect, list<ArkanoidObject*>::iterator it);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void deleteList(list<ArkanoidObject*>::iterator it);
 			void saveGame(uint code);

@@ -16,17 +16,14 @@ Game::Game(int x) {
 		SDL_Init(SDL_INIT_EVERYTHING);
 		window = SDL_CreateWindow("Arkanoid", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-		if (window == nullptr || renderer == nullptr); throw "Error loading the SDL window or renderer";
-		{
-			/*messageerror = "test";
-			SDLError SDLErrorX = SDLError(messageerror);
-			throw new exception(SDLErrorX); */
-		}
+		if (window == nullptr || renderer == nullptr)
+			throw "Error loading the SDL window or renderer";
 	}
 
 	catch (exception e)
 	{
-		
+		cout << "Error en la carga de SDL";
+		std::exit(1);
 	}
 	try {
 		for (uint i = 0; i < NUM_TEXTURES; i++) {
@@ -125,12 +122,21 @@ void Game::moreLives() {
 	lives->more();
 }
 
+void Game::paddleLonger() {
+	paddle->longer();
+}
+
+void Game::paddleShorter() {
+	paddle->shorter();
+}
+
 void Game::deleteList (list<ArkanoidObject*>::iterator it)
 {
 	if (it == firstReward)
 		firstReward++;
-	delete* it;
+	//delete* it;
 	lista.erase(it);
+	cout << "borro reward";
 }
 
 void Game::update()
@@ -160,7 +166,7 @@ void Game::reset() {
 	// antes de destruir el mapa de bloques hay que destruir las rewards
 	//lista.pop_back();
 	for (auto it = firstReward; it != lista.end(); ++it) {
-		delete *it;
+		//delete *it;
 		it = lista.erase(it);
 	}
 	firstReward = lista.end();
@@ -193,10 +199,12 @@ void Game::createReward(Reward* reward) {
 		firstReward = itFR;
 	reward->it = itFR; // igual no va
 }
-bool Game::rewardCollides(const SDL_Rect& rect)
+bool Game::rewardCollides(const SDL_Rect& rect, list<ArkanoidObject*>::iterator it)
 {
 	if (paddle->collides(rect)) return true;
-	else return false;
+	else if (rect.y > WIN_HEIGHT)
+		deleteList(it);
+		return false;
 }
 
 

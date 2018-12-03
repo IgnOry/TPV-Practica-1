@@ -12,7 +12,7 @@ Reward::~Reward()
 }
 
 void Reward::render() {
-	ptrTexture->renderFrame(getRect(), 0, (frame/ 80) % 8);
+	ptrTexture->renderFrame(getRect(), numReward -1, (frame/ 80) % 8);
 	frame++;
 }
 
@@ -20,7 +20,7 @@ void Reward::update()
 {
 	MovingObject::update();
 
-	if (ptrGame->rewardCollides(getRect()))
+	if (ptrGame->rewardCollides(getRect(),it))
 		behavior();
 }
 
@@ -36,11 +36,13 @@ void Reward::behavior()
 // Reward1
 Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD):Reward(pos, wid, heightD,ptr, direction, ptrGameD)
 {
+	numReward = 1;
 }
 
 void Reward1::behavior()
 {
-	cout << "1" << endl;
+	cout << "1 shorter paddle" << endl;
+	ptrGame->paddleLonger();
 	Reward::behavior();
 }
 
@@ -51,12 +53,13 @@ Reward1::~Reward1()
 // Reward2
 Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
 {
+	numReward = 2;
 }
 
 void Reward2::behavior()
 {
-	cout << "2" << endl;
 	ptrGame->moreLives();
+	cout << "2 +vidas" << endl;
 	Reward::behavior();
 }
 
@@ -67,11 +70,13 @@ Reward2::~Reward2()
 // Reward3
 Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
 {
+	numReward = 3;
 }
 
 void Reward3::behavior()
 {
-	cout << "3" << endl;
+	cout << "3 longer paddle" << endl;
+	ptrGame->paddleLonger();
 	Reward::behavior();
 }
 

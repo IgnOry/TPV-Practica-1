@@ -15,6 +15,7 @@ public:
 	virtual void behavior();
 	list<ArkanoidObject*>::iterator it;
 protected:
+	int numReward = 0;
 	int frame = 0;
 	Game* ptrGame;
 };

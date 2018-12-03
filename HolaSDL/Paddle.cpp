@@ -2,6 +2,7 @@
 
 Paddle::Paddle(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction):MovingObject(pos, wid, heightD, ptr, direction)
 {
+	originalSize = wid;
 }
 
 Paddle::~Paddle()
@@ -48,6 +49,20 @@ void Paddle::handleEvents(SDL_Event event)
 			break;
 		}
 	}
+}
+
+void Paddle::longer() {
+	width += 20;
+} 
+
+void Paddle::shorter() {
+	width -= 20;
+}
+
+void Paddle::reset(Vector2D pos, Vector2D dir)
+{
+	width = originalSize;
+	MovingObject::reset(pos, dir);
 }
 
 bool Paddle::collides(const SDL_Rect& rect) 

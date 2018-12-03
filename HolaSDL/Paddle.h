@@ -21,5 +21,10 @@ public:
 	virtual void handleEvents(SDL_Event event);
 	bool collides(const SDL_Rect& rect);
 	void ballHitsPaddle(const SDL_Rect & ballRect, Vector2D& collVector);
+	void longer();
+	void shorter();
+	void reset(Vector2D pos, Vector2D dir);
+private:
+	int originalSize;
 };
 
