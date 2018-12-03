@@ -47,3 +47,12 @@ public:
 	~Reward3();
 };
 
+class Reward4 : public Reward
+{
+public:
+	Reward4(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, Game* ptrGameD);
+	virtual void behavior();
+
+	~Reward4();
+};
+

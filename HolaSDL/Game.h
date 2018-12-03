@@ -66,7 +66,6 @@ class Game
 		Timer* timer;
 		BestPlayers* bestplayers;
 		Lives* lives;
-		string messageerror = "";
 		//levels[3] = { "..\\maps\\level1.ark", "..\\maps\\level2.ark", "..\\maps\\level3.ark" };
 		string top[3] = { "..\\saves\\best1.ark", "..\\saves\\best2.ark", "..\\saves\\best3.ark" };
 
@@ -85,6 +84,7 @@ class Game
 			void moreLives();
 			void paddleLonger();
 			void paddleShorter();
+			void PassLevel();
 			void update();
 			void reset();
 			void createReward(Reward* reward);

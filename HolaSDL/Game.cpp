@@ -11,33 +11,21 @@ typedef unsigned int uint;
 
 Game::Game(int x) {
 	
-	try {
 		// We first initialize SDL
 		SDL_Init(SDL_INIT_EVERYTHING);
 		window = SDL_CreateWindow("Arkanoid", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGHT, SDL_WINDOW_SHOWN);
 		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 		if (window == nullptr || renderer == nullptr)
-			throw "Error loading the SDL window or renderer";
-	}
-
-	catch (exception e)
-	{
-		cout << "Error en la carga de SDL";
-		std::exit(1);
-	}
-	try {
-		for (uint i = 0; i < NUM_TEXTURES; i++) {
-
-			textures[i] = new Texture(renderer, TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
+		{
+			throw SDLError(SDL_GetError());
 		}
-	}
 
-	catch (exception e)
-	{
-		cout << "Error en la carga de texturas";
-		std::exit(1);
-
-	}
+		for (uint i = 0; i < NUM_TEXTURES; i++) 
+		{
+			textures[i] = new Texture(renderer, TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
+			if (textures[i] == nullptr)
+				throw SDLError(IMG_GetError());
+		}
 	
 	switch (x)
 	{
@@ -64,7 +52,6 @@ Game::Game(int x) {
 
 Game::~Game() {
 	for( uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
-	//DeleteAll();	//se hacía dos veces
 	SDL_DestroyRenderer (renderer);
 	SDL_DestroyWindow( window);
 	SDL_Quit();
@@ -130,22 +117,27 @@ void Game::paddleShorter() {
 	paddle->shorter();
 }
 
+void Game::PassLevel()
+{
+	bestplayers->CompareTimes(timer->time());
+	level++;
+	reset();
+}
+
 void Game::deleteList (list<ArkanoidObject*>::iterator it)
 {
 	if (it == firstReward)
 		firstReward++;
 	//delete* it;
 	lista.erase(it);
-	cout << "borro reward";
+	cout << "borro reward" << endl;
 }
 
 void Game::update()
 {
 	if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
-		bestplayers->CompareTimes(timer->time());
-		level++;
-		reset();
+		PassLevel();
 	}
 	else if (!pause)	// se llama a los updates de todos los objetos de la lista
 		for (auto o = lista.begin(); o != lista.end();)
@@ -187,7 +179,7 @@ void Game::reset() {
 
 	else {
 		exit = true;
-		cout << "Gameover";
+		cout << "Gameover" << endl;
 		DeleteAll();
 	}
 }
@@ -206,7 +198,6 @@ bool Game::rewardCollides(const SDL_Rect& rect, list<ArkanoidObject*>::iterator 
 		deleteList(it);
 		return false;
 }
-
 
 bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector)
 {
@@ -231,6 +222,9 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 			case 2:
 				reward = new Reward3(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
 				break;
+			case 3:
+				reward = new Reward3(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
+				break;
 			default:
 				return true;
 			}
@@ -239,7 +233,6 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		}
 	}
 	
-
 	//casos muros
 	if (SDL_HasIntersection(&rect, &wallA->getRect()))
 	{
@@ -270,7 +263,6 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 	}
 
 	return false;
-	
 }
 
 void Game::saveGame(uint code) //puntero a ball, paddle y blocksmap
@@ -280,10 +272,11 @@ void Game::saveGame(uint code) //puntero a ball, paddle y blocksmap
 	FileData << level << endl;
 
 	for (ArkanoidObject* o : lista)
+	{
 		o->saveToFile(FileData);
-	
-	FileData.close();
+	}
 
+	FileData.close();
 }
 
 void Game::DeleteAll()
@@ -334,14 +327,8 @@ void Game::newGame()
 	//iterador
 	firstReward = lista.end();
 
-	try {
-		blocksMAP->loadFile(nextLevel(), textures[1], WIN_WIDTH);
-	}
-	catch (exception e)
-	{
-		cout << "Error en la carga del mapa";
-		std::exit(1);
-	}
+	blocksMAP->loadFile(nextLevel(), textures[1], WIN_WIDTH);
+	
 }
 
 void Game::loadSave()
@@ -353,16 +340,22 @@ void Game::loadSave()
 	
 	string filename = std::to_string(code);
 	ifstream FileData("..\\saves\\" + filename +  ".ark");
+	if (!FileData.good())
+		throw new FileNotFoundError("El archivo ..\\saves\\" + filename + ".ark" + " no se ha encontrado");
+
 	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
 	FileData.close();
 	newGame();
 
 	
-	ifstream file("..\\saves\\" + filename +  ".ark");
+	ifstream file("..\\saves\\" + filename +  ".ark"); //Con una sola comprobación basta
 	file >> level;
 	for (ArkanoidObject* o : lista)
+	{
 		o->loadFromFile(file);
-	
+		if (o == nullptr)
+			throw FileFormatError("Error en la lectura del archivo");
+	}
 
 	file.close();
 
@@ -371,5 +364,11 @@ void Game::loadSave()
 string Game::nextLevel()
 {
 	string nextLevelst = "..\\maps\\level" + std::to_string(level) + ".ark";
+
+	ifstream FileData(nextLevelst);
+	if (!FileData.good())
+		throw new FileNotFoundError("El archivo " + nextLevelst + " no se ha encontrado");
+	FileData.close();
+
 	return nextLevelst;
 }

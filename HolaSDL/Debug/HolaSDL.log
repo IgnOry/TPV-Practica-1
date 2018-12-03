@@ -1,28 +1,7 @@
-﻿  Ball.cpp
-  BlocksMAP.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(34): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(36): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(56): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(57): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(81): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(84): warning C4244: '=': conversion from 'double' to 'uint', possible loss of data
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(91): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(92): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(190): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(192): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(236): warning C4018: '<': signed/unsigned mismatch
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(238): warning C4018: '<': signed/unsigned mismatch
+﻿  ArkanoidError.cpp
   Game.cpp
-  MovingObject.cpp
-  Paddle.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(79): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(79): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(79): warning C4838: conversion from 'uint' to 'int' requires a narrowing conversion
-  Reward.cpp
-  main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': macro redefinition
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: see previous definition of '_malloca'
-  Generating Code...
-  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(23): error C2440: 'inicializando': no se puede realizar la conversión de 'std::string' a 'char *'
+  c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(23): note: No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(24): error C2061: error de sintaxis: identificador 'characters'
+  Generando código...
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoiderror.cpp(10): warning C4717: 'ArkanoidError::what': recursiva para todas las rutas de acceso de control; la función provocará el desbordamiento de la pila en tiempo de ejecución

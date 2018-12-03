@@ -6,5 +6,5 @@ ArkanoidError::~ArkanoidError()
 
 string ArkanoidError::what()
 {
-	return string();
+	return what();
 }

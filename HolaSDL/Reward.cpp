@@ -83,3 +83,19 @@ void Reward3::behavior()
 Reward3::~Reward3()
 {
 }
+
+Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+{
+	numReward = 4;
+}
+
+void Reward4::behavior()
+{
+	cout << "Next Level" << endl;
+	ptrGame->PassLevel();
+	Reward::behavior();
+}
+
+Reward4::~Reward4()
+{
+}
