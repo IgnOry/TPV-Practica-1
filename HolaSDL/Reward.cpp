@@ -93,7 +93,7 @@ void Reward4::behavior()
 {
 	cout << "Next Level" << endl;
 	Reward::behavior();
-	ptrGame->PassLevel();
+	ptrGame->pass();
 }
 
 Reward4::~Reward4()

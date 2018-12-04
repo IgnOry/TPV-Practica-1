@@ -94,7 +94,7 @@ void Game::handleEvents()
 					uint code;
 					cin >> code;
 					saveGame(code);
-					cout << "Vuelve a pulsar S para reanudar la partida";
+					cout << "Partida guardada";
 				}
 				else
 					pause = false;
@@ -130,7 +130,7 @@ void Game::PassLevel()
 void Game::resetRewards() {
 	// antes de destruir el mapa de bloques hay que destruir las rewards
 	//lista.pop_back();
-	for (auto it = firstReward; it != lista.end(); ++it) {
+	for (auto it = firstReward; it != lista.end(); ) {
 		//delete *it;
 		it = lista.erase(it);
 	}
@@ -159,10 +159,15 @@ void Game::deleteList (list<ArkanoidObject*>::iterator it)
 	cout << "borro reward" << endl;
 }
 
+void Game::pass() {
+	nxtLevel = true;
+}
+
 void Game::update()
 {
-	if (blocksMAP->BlockNum() == 0)	// paso de nivel
+	if (blocksMAP->BlockNum() == 0 || nxtLevel)	// paso de nivel
 	{
+		nxtLevel = false;
 		PassLevel();
 	}
 	else {
@@ -183,8 +188,6 @@ void Game::update()
 }
 
 void Game::reset() {
-
-	resetRewards();
 
 	if (lives->getLives() > 0) {
 		lives->less();

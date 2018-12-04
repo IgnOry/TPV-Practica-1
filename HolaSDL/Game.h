@@ -51,6 +51,7 @@ class Game
 		SDL_Window* window = nullptr;
 		SDL_Renderer* renderer = nullptr;	
 
+		bool nxtLevel = false;
 		bool exit = false;
 		bool pause = false;
 		int level = 1;
@@ -92,6 +93,7 @@ class Game
 			bool rewardCollides(const SDL_Rect & rect, list<ArkanoidObject*>::iterator it);
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void deleteList(list<ArkanoidObject*>::iterator it);
+			void pass();
 			void saveGame(uint code);
 			void DeleteAll();
 			void newGame();
