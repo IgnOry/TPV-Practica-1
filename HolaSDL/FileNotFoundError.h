@@ -1,10 +1,11 @@
 #pragma once
 #include "checkML.h"
+#include "ArkanoidError.h"
 
-class FileNotFoundError
+class FileNotFoundError: public ArkanoidError
 {
 public:
-	FileNotFoundError();
+	FileNotFoundError(string filename);
 	~FileNotFoundError();
 };
 

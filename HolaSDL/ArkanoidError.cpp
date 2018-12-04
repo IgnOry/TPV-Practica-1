@@ -1,12 +1,10 @@
 #include "ArkanoidError.h"
 
-
-
-ArkanoidError::ArkanoidError()
+ArkanoidError::~ArkanoidError()
 {
 }
 
-
-ArkanoidError::~ArkanoidError()
+string ArkanoidError::what()
 {
+	return what();
 }

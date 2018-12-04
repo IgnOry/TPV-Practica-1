@@ -2,7 +2,7 @@
 
 
 
-FileFormatError::FileFormatError()
+FileFormatError::FileFormatError(string _message):ArkanoidError(_message)
 {
 }
 

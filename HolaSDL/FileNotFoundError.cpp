@@ -2,7 +2,7 @@
 
 
 
-FileNotFoundError::FileNotFoundError()
+FileNotFoundError::FileNotFoundError(string _message):ArkanoidError(_message)
 {
 }
 

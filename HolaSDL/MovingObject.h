@@ -16,9 +16,7 @@ public:
 	void loadFromFile(ifstream& file);
 	void saveToFile(ofstream& file);
 	void update();
-
 	void reset(Vector2D pos, Vector2D dir);
-
 protected:
 	Vector2D dirPos;
 };

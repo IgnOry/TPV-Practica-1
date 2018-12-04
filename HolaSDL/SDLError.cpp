@@ -2,8 +2,9 @@
 
 
 
-SDLError::SDLError()
+SDLError::SDLError(string _message):ArkanoidError(_message)
 {
+
 }
 
 

@@ -36,7 +36,7 @@ void BlocksMAP::render()
 		for (int c = 0; c < rows; c++)
 		{
 			if (blocks[r][c] != nullptr)
-			blocks[r][c]->render();
+				blocks[r][c]->render();
 		}
 	}
 }
@@ -71,6 +71,10 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 {
 	ifstream file;
 	file.open(filePath);
+	if (!file.good())
+	{
+		throw FileNotFoundError("El archivo " + filePath + " no se ha encontrado");
+	}
 
 	uint x;
 	uint y;
@@ -91,10 +95,12 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 	for (int r = 0; r < colums; r++) {
 		for (int c = 0; c < rows; c++) {
 			file >> colour;
+			if (colour > 5 || colour < 0)
+				throw FileFormatError("Error en los colores del mapa de bloques del nivel");
 			if (colour == 0)
 				blocks[r][c] = nullptr;
 			else
-			{
+			{	
 				blocks[r][c] = new Block(Vector2D (BlockSize * c + 20,(BlockSize/3) * r + 20), BlockSize, BlockSize/3, colour-1, c, r, textureD); // se suma 20 porque es el ancho del muro
 				//Deja basura
 				numBlocks++;			
@@ -229,10 +235,6 @@ Block*** BlocksMAP::BlockStructure()
 }
 
 void BlocksMAP::saveToFile(ofstream& file) {
-
-	//file << MapX() << endl;
-
-	//file << MapY() << endl;
 
 	for (int i = 0; i < MapX(); i++)
 	{
