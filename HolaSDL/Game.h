@@ -17,6 +17,7 @@
 #include "Reward.h"
 #include "BestPlayers.h"
 #include "Lives.h"
+#include "Enemy.h"
 #include "ArkanoidError.h"
 #include "FileFormatError.h"
 #include "FileNotFoundError.h"
@@ -30,7 +31,7 @@ enum TextureName {BallTexture, BlocksTexure, PaddleTexture };
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-const uint NUM_TEXTURES = 7;
+const uint NUM_TEXTURES = 8;
 const uint FRAMERATE = 200; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
@@ -72,7 +73,7 @@ class Game
 		TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] =
 		{
 			{"../images/ball.png",1,1}, {"../images/bricks.png",2,3}, {"../images/paddle.png",1,1}, {"../images/side.png",1,1}, {"../images/topside.png",1,1},
-			{"../images/timer.png", 1, 11},{"../images/rewards.png", 10, 8}
+			{"../images/timer.png", 1, 11},{"../images/rewards.png", 10, 8}, {"../images/enemy.png", 5, 5}
 		};
 
 		public:

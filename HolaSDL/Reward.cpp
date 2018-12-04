@@ -42,7 +42,7 @@ Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 void Reward1::behavior()
 {
 	cout << "1 shorter paddle" << endl;
-	ptrGame->paddleLonger();
+	ptrGame->paddleShorter();
 	Reward::behavior();
 }
 

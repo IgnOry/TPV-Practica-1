@@ -11,6 +11,7 @@ public:
 	void more();
 	virtual void render();
 private:
+	uint maxLives = 7;
 	uint lives;
 };
 

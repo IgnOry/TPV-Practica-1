@@ -322,6 +322,8 @@ void Game::newGame()
 	//lista.push_back(bestplayers);
 	lives = new Lives(Vector2D(WIN_WIDTH - (ObjSize* 3 + ObjSize), WIN_HEIGHT - (ObjSize / 2)), ObjSize * 3, ObjSize / 2, textures[2]); // ojbsize = ancho del muro
 	lista.push_back(lives);																							  //objsize * 3 = ancho del minipaddle
+	//Enemy* enemy = new Enemy(Vector2D(400,100), ObjSize * 2, ObjSize * 2, textures[7], Vector2D(0,0));
+	//lista.push_back(enemy);
 	blocksMAP = new BlocksMAP();
 	lista.push_back(blocksMAP);
 	//iterador

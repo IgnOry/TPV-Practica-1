@@ -36,7 +36,7 @@ void BlocksMAP::render()
 		for (int c = 0; c < rows; c++)
 		{
 			if (blocks[r][c] != nullptr)
-			blocks[r][c]->render();
+				blocks[r][c]->render();
 		}
 	}
 }

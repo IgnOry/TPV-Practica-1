@@ -1,7 +1,2 @@
-﻿  ArkanoidError.cpp
-  Game.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(23): error C2440: 'inicializando': no se puede realizar la conversión de 'std::string' a 'char *'
-  c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(23): note: No hay disponible ningún operador de conversión definido por el usuario que pueda realizar esta conversión, o bien no se puede llamar al operador
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(24): error C2061: error de sintaxis: identificador 'characters'
-  Generando código...
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\arkanoiderror.cpp(10): warning C4717: 'ArkanoidError::what': recursiva para todas las rutas de acceso de control; la función provocará el desbordamiento de la pila en tiempo de ejecución
+﻿  Reward.cpp
+  HolaSDL.vcxproj -> D:\Escritorio\2º Desarrollo de Videojuegos\TVP (Tecnología de la Programación de Videojuegos)\TVP P1\TPV-Practica-1\bin\HolaSDLDebug.exe

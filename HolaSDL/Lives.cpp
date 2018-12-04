@@ -22,8 +22,9 @@ void Lives::less()
 	lives--;
 }
 
-void Lives::more() {
-	lives++;
+void Lives::more() 
+{
+	if(lives < maxLives) lives++;
 }
 
 void Lives::render()
