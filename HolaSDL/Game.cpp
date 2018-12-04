@@ -121,7 +121,33 @@ void Game::PassLevel()
 {
 	bestplayers->CompareTimes(timer->time());
 	level++;
-	reset();
+
+	lives->reset();
+	resetRewards();
+	resetObjects();
+}
+
+void Game::resetRewards() {
+	// antes de destruir el mapa de bloques hay que destruir las rewards
+	//lista.pop_back();
+	for (auto it = firstReward; it != lista.end(); ++it) {
+		//delete *it;
+		it = lista.erase(it);
+	}
+	firstReward = lista.end();
+}
+
+void Game::resetObjects() {
+	// Destruye el mapa de 
+	lista.pop_back();
+	delete blocksMAP;
+	blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
+	lista.push_back(blocksMAP);
+
+	// Resetea la pelota, el paddle y el tiempo
+	ball->reset(POS_START_BALL, DIR_START_BALL);
+	paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
+	timer->reset();
 }
 
 void Game::deleteList (list<ArkanoidObject*>::iterator it)
@@ -139,42 +165,30 @@ void Game::update()
 	{
 		PassLevel();
 	}
-	else if (!pause)	// se llama a los updates de todos los objetos de la lista
-		for (auto o = lista.begin(); o != lista.end();)
-		{
-			auto next = o;
-			++next;
-			(*o)->update();
-			o = next;
-		}
-			/*for (ArkanoidObject* o : lista)
-				o->update();*/
-		
-	if (lista.front()->getRect().y >= WIN_HEIGHT) 
-		reset();
+	else {
+		if (!pause)	// se llama a los updates de todos los objetos de la lista
+			for (auto o = lista.begin(); o != lista.end();)
+			{
+				auto next = o;
+				++next;
+				(*o)->update();
+				o = next;
+			}
+		/*for (ArkanoidObject* o : lista)
+			o->update();*/
+
+		if (lista.front()->getRect().y >= WIN_HEIGHT)
+			reset();
+	}
 }
 
 void Game::reset() {
-	// antes de destruir el mapa de bloques hay que destruir las rewards
-	//lista.pop_back();
-	for (auto it = firstReward; it != lista.end(); ++it) {
-		//delete *it;
-		it = lista.erase(it);
-	}
-	firstReward = lista.end();
+
+	resetRewards();
 
 	if (lives->getLives() > 0) {
 		lives->less();
-		// Destruye el mapa de 
-		lista.pop_back();
-		delete blocksMAP;
-		blocksMAP = new BlocksMAP(nextLevel(), textures[1], WIN_WIDTH);
-		lista.push_back(blocksMAP);
-
-		// Resetea la pelota, el paddle y el tiempo
-		ball->reset(POS_START_BALL, DIR_START_BALL);
-		paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
-		timer->reset();
+		resetObjects();
 	}
 
 	else {
@@ -224,6 +238,9 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 				break;
 			case 3:
 				reward = new Reward3(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
+				break;
+			case 4:
+				reward = new Reward4(Vector2D(rect.x, rect.y), ObjSize, ObjSize, textures[6], Vector2D(0, 0.05), this);
 				break;
 			default:
 				return true;

@@ -92,8 +92,8 @@ Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 void Reward4::behavior()
 {
 	cout << "Next Level" << endl;
-	ptrGame->PassLevel();
 	Reward::behavior();
+	ptrGame->PassLevel();
 }
 
 Reward4::~Reward4()

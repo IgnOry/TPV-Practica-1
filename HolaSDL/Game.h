@@ -96,5 +96,7 @@ class Game
 			void DeleteAll();
 			void newGame();
 			void loadSave();
+			void resetRewards();
+			void resetObjects();
 			string nextLevel();
 };

@@ -9,9 +9,11 @@ public:
 	uint getLives();
 	void less();
 	void more();
+	void reset();
 	virtual void render();
 private:
 	uint maxLives = 7;
 	uint lives;
+	uint originalLives;
 };
 

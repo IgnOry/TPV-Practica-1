@@ -5,6 +5,7 @@
 Lives::Lives(Vector2D pos, int width, int height, Texture * texture) :ArkanoidObject(pos, width, height, texture)
 {
 	lives = 3;
+	originalLives = lives;
 }
 
 
@@ -15,6 +16,10 @@ Lives::~Lives()
 uint Lives::getLives()
 {
 	return lives;
+}
+
+void Lives::reset() {
+	lives = originalLives;
 }
 
 void Lives::less()
