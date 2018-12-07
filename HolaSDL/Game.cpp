@@ -191,14 +191,6 @@ void Game::reset() {
 		resetObjects();
 	}
 
-<<<<<<< HEAD
-bool Game::Random()
-{
-	uint prob = rand() % 100 + 1;
-	if (prob > RewardProb)
-		return true;
-	else
-=======
 	else {
 		exit = true;
 		cout << "Gameover" << endl;
@@ -218,7 +210,6 @@ bool Game::rewardCollides(const SDL_Rect& rect, list<ArkanoidObject*>::iterator 
 	if (paddle->collides(rect)) return true;
 	else if (rect.y > WIN_HEIGHT)
 		deleteList(it);
->>>>>>> origin/Rewards
 		return false;
 }
 
@@ -231,11 +222,6 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 		if (block != nullptr)
 		{
 			blocksMAP->ballHitsBlock(*block);
-<<<<<<< HEAD
-			//if (Random)
-				//Crear reward
-				//Añadir a la lista, meter iterador?
-=======
 
 			uint p = rand() % 5;
 			Reward *reward;
@@ -260,7 +246,6 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 				return true;
 			}
 			createReward(reward);
->>>>>>> origin/Rewards
 			return true;
 		}
 	}
@@ -299,23 +284,16 @@ bool Game::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVec
 
 void Game::saveGame(uint code) //puntero a ball, paddle y blocksmap
 {
-<<<<<<< HEAD
-	ofstream FileData("..\\saves\\save.ark");
-=======
+
 	string filename = std::to_string(code);
 	ofstream FileData("..\\saves\\" + filename + ".ark");
->>>>>>> origin/Rewards
 	FileData << level << endl;
 
 	for (ArkanoidObject* o : lista)
 	{
 		o->saveToFile(FileData);
-<<<<<<< HEAD
-	
-=======
 	}
 
->>>>>>> origin/Rewards
 	FileData.close();
 }
 
@@ -375,9 +353,6 @@ void Game::newGame()
 
 void Game::loadSave()
 {
-<<<<<<< HEAD
-	ifstream FileData("..\\saves\\save.ark");
-=======
 	cout << "Introduce código de la partida";
 
 	uint code;
@@ -388,7 +363,6 @@ void Game::loadSave()
 	if (!FileData.good())
 		throw FileNotFoundError("El archivo ..\\saves\\" + filename + ".ark" + " no se ha encontrado");
 
->>>>>>> origin/Rewards
 	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
 	FileData.close();
 	newGame();
@@ -399,11 +373,6 @@ void Game::loadSave()
 	for (ArkanoidObject* o : lista)
 	{
 		o->loadFromFile(file);
-<<<<<<< HEAD
-
-
-	file.close();
-=======
 		if (o == nullptr)
 			throw FileFormatError("Error en la lectura del archivo");
 	}
@@ -422,5 +391,4 @@ string Game::nextLevel()
 	FileData.close();
 
 	return nextLevelst;
->>>>>>> origin/Rewards
 }

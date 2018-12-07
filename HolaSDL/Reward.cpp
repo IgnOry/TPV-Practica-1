@@ -1,24 +1,15 @@
 #include "Reward.h"
 #include "Game.h"
 
-<<<<<<< HEAD
-Reward::Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, uint Tipo) :MovingObject(pos, wid, heightD, ptr, direction)
-{
-	tipo = Tipo;
-=======
 Reward::Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, Game* ptrGameD) :MovingObject(pos, wid, heightD, ptr, direction)
 {
 	ptrGame = ptrGameD;
->>>>>>> origin/Rewards
 }
 
 Reward::~Reward()
 {
 }
 
-<<<<<<< HEAD
-//Efectos Rewards
-=======
 void Reward::render() {
 	ptrTexture->renderFrame(getRect(), numReward -1, (frame/ 80) % 8);
 	frame++;
@@ -107,4 +98,3 @@ void Reward4::behavior()
 Reward4::~Reward4()
 {
 }
->>>>>>> origin/Rewards

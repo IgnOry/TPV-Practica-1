@@ -10,11 +10,6 @@ class Reward: public MovingObject
 private:
 	uint tipo; //de 0 a ?? para ver que tipo de Reward es
 public:
-<<<<<<< HEAD
-	Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, uint Tipo);
-	~Reward();
-	//Efectos Rewards
-=======
 	Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, Game* ptrGameD);
 	~Reward();
 	void render();
@@ -61,6 +56,5 @@ public:
 	virtual void behavior();
 
 	~Reward4();
->>>>>>> origin/Rewards
 };
 

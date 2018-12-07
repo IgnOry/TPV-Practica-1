@@ -31,21 +31,12 @@ enum TextureName {BallTexture, BlocksTexure, PaddleTexture };
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-<<<<<<< HEAD
-const uint NUM_TEXTURES = 6;
-//const uint FRAMERATE = 10; //¿?
-const uint ELEM_SIZE = 76;
-const uint WALL_SIZE = 20;
-const uint ObjSize = 20;
-const uint RewardProb = (1 / 6);
-=======
 const uint NUM_TEXTURES = 8;
 const uint FRAMERATE = 200; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
 const uint ObjSize = 20;
 const uint levels = 3;
->>>>>>> origin/Rewards
 const Vector2D POS_START_BALL = Vector2D(400,300);
 const Vector2D POS_START_PADDLE = Vector2D (400,500);
 const Vector2D DIR_START_BALL = Vector2D(0.1, 0.1);
@@ -97,13 +88,8 @@ class Game
 			void PassLevel();
 			void update();
 			void reset();
-<<<<<<< HEAD
-			void bestPlayers(uint time);
-			bool Random();
-=======
 			void createReward(Reward* reward);
 			bool rewardCollides(const SDL_Rect & rect, list<ArkanoidObject*>::iterator it);
->>>>>>> origin/Rewards
 			bool collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& collVector);
 			void deleteList(list<ArkanoidObject*>::iterator it);
 			void saveGame(uint code);
