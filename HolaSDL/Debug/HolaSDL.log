@@ -1,3 +1,4 @@
-﻿  Game.cpp
-  LINK : no se encontró C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+﻿  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
   HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

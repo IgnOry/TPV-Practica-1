@@ -1,9 +1,0 @@
-Autores:
- David Carmona Fauste
- Ignacio Ory Alonso
-
-Funcionalidades:
-	Falla la gestión del iterador (y por tanto deja basura)
-	Incluido enemigo (puede pulirse)
-	No hay gestión de menú
-	

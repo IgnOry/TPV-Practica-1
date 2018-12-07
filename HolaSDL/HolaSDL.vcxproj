@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{28A4C5CD-307A-4FE6-81E4-4CE1F1E49AB4}</ProjectGuid>
     <RootNamespace>HolaSDL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -67,52 +67,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArkanoidError.cpp" />
-    <ClCompile Include="ArkanoidObject.cpp" />
-    <ClCompile Include="Ball.cpp" />
-    <ClCompile Include="BestPlayers.cpp" />
-    <ClCompile Include="Block.cpp" />
-    <ClCompile Include="BlocksMAP.cpp" />
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="FileFormatError.cpp" />
-    <ClCompile Include="FileNotFoundError.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="Lives.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="MovingObject.cpp" />
-    <ClCompile Include="Paddle.cpp" />
-    <ClCompile Include="Reward.cpp" />
-    <ClCompile Include="SDLError.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
-    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArkanoidError.h" />
-    <ClInclude Include="ArkanoidObject.h" />
-    <ClInclude Include="Ball.h" />
-    <ClInclude Include="BestPlayers.h" />
-    <ClInclude Include="Block.h" />
-    <ClInclude Include="BlocksMAP.h" />
+    <ClInclude Include="..\SDL2_ttf-2.0.14\include\SDL_ttf.h" />
     <ClInclude Include="checkML.h" />
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="FileFormatError.h" />
-    <ClInclude Include="FileNotFoundError.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="Lives.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="MovingObject.h" />
-    <ClInclude Include="Paddle.h" />
-    <ClInclude Include="Reward.h" />
-    <ClInclude Include="SDLError.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Timer.h" />
-    <ClInclude Include="Vector2D.h" />
-    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
