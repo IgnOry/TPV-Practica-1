@@ -28,3 +28,15 @@ void GameState::handleEvents(SDL_Event e)
 void GameState::render()
 {
 }
+
+bool GameState::handleEvent(SDL_Event e)
+{
+	bool handled = false;
+
+	auto it = stage.begin();
+	while (it != stage.end() && !handled)
+		if (*it)->handleEvent(e)
+			handled = true;
+		else
+			++it;
+}

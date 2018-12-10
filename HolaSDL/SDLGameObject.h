@@ -9,7 +9,7 @@ class SDLGameObject: public GameObject
 {
 public:
 	SDLGameObject(uint w, uint h, Texture* txt, double x, double y);
-	void handleEvents(SDL_Event e); //habría que cambiar a bool todos los handleEvents
+	virtual bool handleEvents(SDL_Event e); //habría que cambiar a bool todos los handleEvents
 	~SDLGameObject();
 
 protected:

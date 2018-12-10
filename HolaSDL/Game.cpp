@@ -127,3 +127,24 @@ void Game::update()
 			reset();
 	}*/
 }
+
+map<string, Texture*> textures; //por defecto se usa el operator <, para string está definido
+
+textures.insert(pair<string, Texture*>)"ball", new Texture();
+textures["ball"] = new Texture();
+
+t1 = textures.at("ball");
+t2 = textures["ball"];
+
+struct Score {
+	string nick;
+	time.t time;
+	unit score;
+};
+
+struct ScoreKey {
+	unit score;
+	time.t time;
+};
+
+using Scoresmap = map<ScoreKey, Score>;
