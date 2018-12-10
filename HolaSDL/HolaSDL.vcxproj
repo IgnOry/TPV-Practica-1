@@ -67,11 +67,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="EndState.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenuState.cpp" />
+    <ClCompile Include="PauseState.cpp" />
+    <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="SDLGameObject.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SDL2_ttf-2.0.14\include\SDL_ttf.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="checkML.h" />
+    <ClInclude Include="EndState.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateMachine.h" />
+    <ClInclude Include="MainMenuState.h" />
+    <ClInclude Include="PauseState.h" />
+    <ClInclude Include="PlayState.h" />
+    <ClInclude Include="SDLGameObject.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

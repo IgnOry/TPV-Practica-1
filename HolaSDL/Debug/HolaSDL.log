@@ -1,4 +1,10 @@
-﻿  main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
+﻿  Button.cpp
+  Game.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(62): warning C4551: la llamada a la función no tiene lista de argumentos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(83): warning C4551: la llamada a la función no tiene lista de argumentos
+  GameState.cpp
+  GameStateMachine.cpp
+  PauseState.cpp
+  PlayState.cpp
+  Generando código...
   HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
