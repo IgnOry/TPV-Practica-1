@@ -7,8 +7,8 @@ class GameObject
 public:
 	GameObject();
 	virtual ~GameObject();
-	virtual void render();
-	virtual void update();
-	virtual void handleEvents(SDL_Event event);
+	virtual void render() = 0;
+	virtual void update() = 0;
+	virtual bool handleEvent(SDL_Event event) = 0;
 };
 

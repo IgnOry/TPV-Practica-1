@@ -4,6 +4,13 @@
 #include "SDL_image.h" // Windows
 #include <string>
 #include "checkML.h"
+#include "Texture.h"
+#include "Button.h"
+#include "GameStateMachine.h"
+#include "MainMenuState.h"
+#include "PlayState.h"
+#include "PauseState.h"
+#include "EndState.h"
 
 using namespace std;
 
@@ -19,7 +26,10 @@ class Game
 private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
-
+	MainMenuState* menu;
+	PlayState* play;
+	PauseState* pause;
+	EndState* end;
 
 public:
 	Game(int x);

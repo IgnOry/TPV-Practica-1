@@ -20,12 +20,20 @@ Game::Game(int x) {
 		//throw SDLError(SDL_GetError());
 	}
 
+	Texture* txt = new Texture(renderer, "..\images\background1.png", 1, 1);
+	menu = new MainMenuState(this, txt, singleton.push());
+	GameStateMachine singleton = GameStateMachine();
+
+	MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
+
+	singleton.changeState();
+
 	/*for (uint i = 0; i < NUM_TEXTURES; i++)
 	{
 		textures[i] = new Texture(renderer, TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
 		if (textures[i] == nullptr)
 			throw SDLError(IMG_GetError());
-	}*/
+	}
 
 	/*switch (x)
 	{
@@ -128,7 +136,9 @@ void Game::update()
 	}*/
 }
 
-map<string, Texture*> textures; //por defecto se usa el operator <, para string está definido
+
+
+/*map<string, Texture*> textures; //por defecto se usa el operator <, para string está definido
 
 textures.insert(pair<string, Texture*>)"ball", new Texture();
 textures["ball"] = new Texture();
@@ -147,4 +157,4 @@ struct ScoreKey {
 	time.t time;
 };
 
-using Scoresmap = map<ScoreKey, Score>;
+using Scoresmap = map<ScoreKey, Score>;*/

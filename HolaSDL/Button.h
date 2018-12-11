@@ -7,11 +7,11 @@ using CallBackOnClick = void(Game* g);
 class Button: public SDLGameObject
 {
 public:
-	Button(Game* g, ...,cb);
+	Button(uint w, uint h, Texture* txt, Vector2D pos, Game* g , CallBackOnClick cb);
 	~Button();
-	bool handleEvent(SDL_Event e);
-
+	virtual bool handleEvent(SDL_Event e);
 protected:
-	CallBackOnClick cb;
+	CallBackOnClick* cb;
+	Game* app;
 };
 

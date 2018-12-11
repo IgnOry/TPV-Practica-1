@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "Game.h"
 #include <list>
+#include "Button.h"
 
 using namespace std;
 
@@ -11,9 +12,9 @@ protected:
 	list<GameObject*> stage;
 	Game* app;
 public:
-	GameState();
-	~GameState();
+	GameState(Game* g);
+	virtual ~GameState();
 	virtual void update();
-	virtual void handleEvents(SDL_Event e);
+	virtual bool handleEvent(SDL_Event e);
 	virtual void render();
 };

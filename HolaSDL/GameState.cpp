@@ -2,8 +2,9 @@
 
 
 
-GameState::GameState()
+GameState::GameState(Game* g)
 {
+	app = g;
 }
 
 
@@ -19,12 +20,6 @@ void GameState::update()
 		o->update();
 }
 
-void GameState::handleEvents(SDL_Event e)
-{
-	for (GameObject* o : stage)
-		o->handleEvents(e);
-}
-
 void GameState::render()
 {
 }
@@ -32,11 +27,12 @@ void GameState::render()
 bool GameState::handleEvent(SDL_Event e)
 {
 	bool handled = false;
-
 	auto it = stage.begin();
-	while (it != stage.end() && !handled)
-		if (*it)->handleEvent(e)
+	while (it != stage.end() && !handled) {
+		if ((*it)->handleEvent(e))
 			handled = true;
 		else
 			++it;
+	}
+	return handled;
 }

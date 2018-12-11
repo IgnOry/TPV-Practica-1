@@ -5,14 +5,16 @@
 class GameStateMachine
 {
 public:
-	stack<GameState> stack;
+	stack<GameState*> stack;
 
 	GameStateMachine();
 	~GameStateMachine();
 	
-	GameState currentState();
-	void pushState();
-	void changeState();
+	GameState* currentState();
+	void changeState(GameState* state);
+
+private:
+	void pushState(GameState* state);
 	void popState();
 };
 

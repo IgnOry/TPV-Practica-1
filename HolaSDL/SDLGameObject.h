@@ -8,8 +8,8 @@ typedef unsigned int uint;
 class SDLGameObject: public GameObject
 {
 public:
-	SDLGameObject(uint w, uint h, Texture* txt, double x, double y);
-	virtual bool handleEvents(SDL_Event e); //habría que cambiar a bool todos los handleEvents
+	SDLGameObject(uint w, uint h, Texture* txt, Vector2D pos);
+	virtual bool handleEvent(SDL_Event e) = 0;
 	~SDLGameObject();
 
 protected:
