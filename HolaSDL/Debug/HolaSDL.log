@@ -1,201 +1,151 @@
 ﻿  Button.cpp
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(15): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(12): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(12): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.cpp(19): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
-c:\hlocal\tpv-practica-1\holasdl\button.cpp(19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\hlocal\tpv-practica-1\holasdl\button.cpp(19): warning C4838: conversion from 'uint' to 'int' requires a narrowing conversion
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(15): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(11): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(11): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(12): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(12): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.cpp(19): warning C4838: conversion from 'double' to 'int' requires a narrowing conversion
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.cpp(19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.cpp(19): warning C4838: conversion from 'uint' to 'int' requires a narrowing conversion
   Game.cpp
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(15): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\game.cpp(23): warning C4129: 'i': unrecognized character escape sequence
-c:\hlocal\tpv-practica-1\holasdl\game.cpp(74): warning C4551: function call missing argument list
-c:\hlocal\tpv-practica-1\holasdl\game.cpp(95): warning C4551: function call missing argument list
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(15): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\game.cpp(23): warning C4129: 'i': unrecognized character escape sequence
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\game.cpp(27): error C2660: 'GameStateMachine::changeState': function does not take 0 arguments
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(14): note: see declaration of 'GameStateMachine::changeState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\game.cpp(27): error C2661: 'MainMenuState::MainMenuState': no overloaded function takes 2 arguments
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\game.cpp(29): error C2660: 'GameStateMachine::changeState': function does not take 0 arguments
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(14): note: see declaration of 'GameStateMachine::changeState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\game.cpp(70): warning C4551: function call missing argument list
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\game.cpp(91): warning C4551: function call missing argument list
   GameState.cpp
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
   c:\software\programacion\msvstudio2017\vc\tools\msvc\14.15.26726\include\stack(19): note: see declaration of 'std::stack'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(15): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(17): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
   GameStateMachine.cpp
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\game.h(33): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\game.h(33): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\game.h(33): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\game.h(37): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\game.h(37): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\game.h(37): error C2238: unexpected token(s) preceding ';'
-  main.cpp
-c:\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': macro redefinition
-  c:\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: see previous definition of '_malloca'
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestate.h(15): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
   MainMenuState.cpp
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
   c:\software\programacion\msvstudio2017\vc\tools\msvc\14.15.26726\include\stack(19): note: see declaration of 'std::stack'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(15): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\game.h(29): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\game.h(29): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\game.h(29): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'CallBackOnClick'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.cpp(3): error C2061: syntax error: identifier 'CallBackOnClick'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.cpp(8): error C2661: 'Button::Button': no overloaded function takes 6 arguments
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.cpp(21): error C2660: 'GameStateMachine::pushState': function does not take 1 arguments
-  c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(15): note: see declaration of 'GameStateMachine::pushState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(17): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'CallBackOnClick'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.cpp(3): error C2061: syntax error: identifier 'CallBackOnClick'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.cpp(7): error C2259: 'Button': cannot instantiate abstract class
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.cpp(7): note: due to following members:
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.cpp(7): note: 'void GameObject::render(void)': is abstract
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gameobject.h(10): note: see declaration of 'GameObject::render'
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.cpp(7): note: 'void GameObject::update(void)': is abstract
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gameobject.h(11): note: see declaration of 'GameObject::update'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.cpp(7): error C2065: 'cb': undeclared identifier
   PauseState.cpp
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
   c:\software\programacion\msvstudio2017\vc\tools\msvc\14.15.26726\include\stack(19): note: see declaration of 'std::stack'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(15): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\game.h(31): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\game.h(31): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\game.h(31): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\pausestate.cpp(6): error C2512: 'GameState': no appropriate default constructor available
-  c:\hlocal\tpv-practica-1\holasdl\gamestate.h(9): note: see declaration of 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(17): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\playstate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\pausestate.cpp(6): error C2512: 'GameState': no appropriate default constructor available
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(9): note: see declaration of 'GameState'
   PlayState.cpp
-c:\hlocal\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(5): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(10): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(14): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\button.h(15): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2065: 'GameState': undeclared identifier
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2059: syntax error: '>'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(8): error C2976: 'std::stack': too few template arguments
   c:\software\programacion\msvstudio2017\vc\tools\msvc\14.15.26726\include\stack(19): note: see declaration of 'std::stack'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\gamestatemachine.h(15): error C2061: syntax error: identifier 'GameState'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(10): error C2061: syntax error: identifier 'Game'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\mainmenustate.h(15): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
-c:\hlocal\tpv-practica-1\holasdl\game.h(30): error C2143: syntax error: missing ';' before '*'
-c:\hlocal\tpv-practica-1\holasdl\game.h(30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-c:\hlocal\tpv-practica-1\holasdl\game.h(30): error C2238: unexpected token(s) preceding ';'
-c:\hlocal\tpv-practica-1\holasdl\playstate.cpp(6): error C2512: 'GameState': no appropriate default constructor available
-  c:\hlocal\tpv-practica-1\holasdl\gamestate.h(9): note: see declaration of 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2143: syntax error: missing ';' before '*'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(13): error C2238: unexpected token(s) preceding ';'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(14): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestatemachine.h(17): error C2061: syntax error: identifier 'GameState'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\mainmenustate.h(7): error C2061: syntax error: identifier 'Game'
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\pausestate.h(5): error C2504: 'GameState': base class undefined
+c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\playstate.cpp(6): error C2512: 'GameState': no appropriate default constructor available
+  c:\hlocal\tpv-practica-1\tpv-practica-1\holasdl\gamestate.h(9): note: see declaration of 'GameState'
   Generating Code...
