@@ -30,9 +30,11 @@ private:
 	PlayState* play;
 	PauseState* pause;
 	EndState* end;
+	GameStateMachine* machine;
 
 public:
-	Game(int x);
+	Game();
+	GameStateMachine * getMachine();
 	~Game();
 	void run();
 	void render() const;

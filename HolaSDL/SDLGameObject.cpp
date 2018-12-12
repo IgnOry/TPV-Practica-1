@@ -10,8 +10,21 @@ SDLGameObject::SDLGameObject(uint w, uint h, Texture* txt,Vector2D pos):GameObje
 	texture = txt;
 }
 
+bool SDLGameObject::handleEvent(SDL_Event e)
+{
+	return false;
+}
+
 
 SDLGameObject::~SDLGameObject()
+{
+}
+
+void SDLGameObject::render()
+{
+}
+
+void SDLGameObject::update()
 {
 }
 

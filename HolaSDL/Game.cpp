@@ -9,7 +9,7 @@ using namespace std;
 
 typedef unsigned int uint;
 
-Game::Game(int x) {
+Game::Game() {
 
 	// We first initialize SDL
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -21,12 +21,12 @@ Game::Game(int x) {
 	}
 
 	Texture* txt = new Texture(renderer, "..\images\background1.png", 1, 1);
-	menu = new MainMenuState(this, txt, singleton.push());
+	//menu = new MainMenuState(this, txt, );
 	GameStateMachine singleton = GameStateMachine();
 
-	MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
+	//MainMenuState menu = new MainMenuState(this, txt, );
 
-	singleton.changeState();
+	//singleton.changeState();
 
 	/*for (uint i = 0; i < NUM_TEXTURES; i++)
 	{
@@ -56,6 +56,10 @@ Game::Game(int x) {
 		throw SDLError("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
 		break;
 	}*/
+}
+
+GameStateMachine* Game::getMachine() {
+	return machine;
 }
 
 Game::~Game() {
