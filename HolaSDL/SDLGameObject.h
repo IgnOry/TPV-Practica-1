@@ -10,6 +10,8 @@ class SDLGameObject : public GameObject
 public:
 	SDLGameObject(uint w, uint h, Texture* txt, Vector2D pos);
 	virtual bool handleEvent(SDL_Event e) = 0;
+	virtual void render();
+	virtual void update();
 	~SDLGameObject();
 
 protected:

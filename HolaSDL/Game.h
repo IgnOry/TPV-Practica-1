@@ -26,6 +26,7 @@ class Game
 private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
+	GameStateMachine* machine;
 	/*MainMenuState* menu;
 	PlayState* play;
 	PauseState* pause;
