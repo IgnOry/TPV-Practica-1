@@ -11,4 +11,3 @@ public:
 	virtual void update() = 0;
 	virtual bool handleEvent(SDL_Event event) = 0;
 };
-

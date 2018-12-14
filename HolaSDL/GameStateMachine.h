@@ -9,7 +9,7 @@ public:
 
 	GameStateMachine();
 	~GameStateMachine();
-	
+
 	GameState* currentState();
 	void changeState(GameState* state);
 

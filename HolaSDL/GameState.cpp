@@ -1,7 +1,5 @@
 #include "GameState.h"
 
-
-
 GameState::GameState(Game* g)
 {
 	app = g;

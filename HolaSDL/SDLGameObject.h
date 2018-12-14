@@ -5,7 +5,7 @@
 
 typedef unsigned int uint;
 
-class SDLGameObject: public GameObject
+class SDLGameObject : public GameObject
 {
 public:
 	SDLGameObject(uint w, uint h, Texture* txt, Vector2D pos);
@@ -18,4 +18,3 @@ protected:
 	Texture* texture;
 	Vector2D position;
 };
-

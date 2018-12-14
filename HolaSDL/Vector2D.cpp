@@ -30,7 +30,7 @@ Vector2D Vector2D::operator*(double d) const {
 	return r;
 }
 
-Vector2D Vector2D::operator-(const Vector2D& v) const 
+Vector2D Vector2D::operator-(const Vector2D& v) const
 {
 	Vector2D r;
 	r.x = this->x - v.x; // El this no es necesario. Se pone para ilustrar su uso
