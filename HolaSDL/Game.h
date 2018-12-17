@@ -34,6 +34,7 @@ private:
 
 public:
 	Game();
+	GameStateMachine* GetGameStateMachine();
 	~Game();
 	void run();
 	void render() const;

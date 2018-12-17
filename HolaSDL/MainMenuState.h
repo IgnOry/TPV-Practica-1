@@ -4,7 +4,8 @@
 class MainMenuState : public GameState
 {
 public:
-	MainMenuState(Game* g, Texture* texture, CallBackOnClick cb);
+	MainMenuState(Game* g, Texture* texture);
+	void NewGame();
 	~MainMenuState();
 
 private:

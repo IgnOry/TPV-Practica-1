@@ -20,13 +20,13 @@ Game::Game() {
 		//throw SDLError(SDL_GetError());
 	}
 
-	Texture* txt = new Texture(renderer, "..\images\background1.png", 1, 1);
-	/*menu = new MainMenuState(this, txt, singleton.push());
-	GameStateMachine singleton = GameStateMachine();
+	Texture* txt = new Texture(renderer, "../images/NewGame.png", 1, 1);
+	menu = new MainMenuState(this, txt);
+	//GameStateMachine singleton = GameStateMachine();
 
-	MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
+	//MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
 
-	singleton.changeState();*/
+	//singleton.changeState();*/
 
 	/*for (uint i = 0; i < NUM_TEXTURES; i++)
 	{
@@ -56,6 +56,10 @@ Game::Game() {
 		throw SDLError("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
 		break;
 	}*/
+}
+
+GameStateMachine* Game::GetGameStateMachine(){
+	return machine;
 }
 
 Game::~Game() {

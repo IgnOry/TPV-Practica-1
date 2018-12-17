@@ -1,9 +1,16 @@
 ﻿  Game.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(23): warning C4129: 'i': secuencia de escape de carácter no reconocida
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(70): warning C4551: la llamada a la función no tiene lista de argumentos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(91): warning C4551: la llamada a la función no tiene lista de argumentos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(74): warning C4551: la llamada a la función no tiene lista de argumentos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\game.cpp(95): warning C4551: la llamada a la función no tiene lista de argumentos
+  GameState.cpp
+  MainMenuState.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\mainmenustate.cpp(7): error C2065: 'cb': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\mainmenustate.cpp(13): error C2027: uso del tipo 'Game' sin definir
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\button.h(5): note: vea la declaración de 'Game'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\mainmenustate.cpp(14): error C2059: error de sintaxis: '}'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\mainmenustate.cpp(17): error C2059: error de sintaxis: '::'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\mainmenustate.cpp(18): error C2143: error de sintaxis: falta ';' delante de '{'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\mainmenustate.cpp(18): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
   main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
   Generando código...
-  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
