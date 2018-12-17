@@ -1,45 +1,9 @@
-﻿  Button.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\button.cpp(19): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\button.cpp(19): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\button.cpp(19): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
-  EndState.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
-  Game.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
+﻿  Game.cpp
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(23): warning C4129: 'i': secuencia de escape de carácter no reconocida
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(70): warning C4551: la llamada a la función no tiene lista de argumentos
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.cpp(91): warning C4551: la llamada a la función no tiene lista de argumentos
-  GameState.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
-  GameStateMachine.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
   main.cpp
 c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
-  MainMenuState.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
-  PauseState.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
-  PlayState.cpp
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2143: error de sintaxis: falta ';' delante de '*'
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-c:\users\ignac\documents\github\tpv-practica-1\holasdl\game.h(29): error C2238: símbolos (token) inesperados delante de ';'
   Generando código...
+  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

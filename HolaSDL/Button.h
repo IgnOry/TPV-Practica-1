@@ -1,6 +1,8 @@
 #pragma once
 #include "SDLGameObject.h"
-#include "Game.h"
+//#include "Game.h"
+
+class Game;
 
 using CallBackOnClick = void(Game* g);
 

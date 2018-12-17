@@ -1,10 +1,11 @@
 #pragma once
 #include "GameObject.h"
-#include "Game.h"
 #include <list>
 #include "Button.h"
 
 using namespace std;
+
+//class Game{};
 
 class GameState
 {
