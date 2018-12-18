@@ -6,6 +6,6 @@ class PlayState : public GameState
 public:
 	PlayState(Game* g);
 	~PlayState();
-	void handleEvents(SDL_Event e); //habría que cambiar a bool todos los handleEvents
+	virtual bool handleEvent(SDL_Event e);
 
 };

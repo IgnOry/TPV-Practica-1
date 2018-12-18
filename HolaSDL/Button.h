@@ -1,6 +1,5 @@
 #pragma once
 #include "SDLGameObject.h"
-//#include "Game.h"
 
 class Game;
 

@@ -20,6 +20,8 @@ const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
 
 #include <list>
+enum text { playT, exitT, loadT, menuT, resumeT, saveT };
+
 
 class Game
 {
@@ -27,11 +29,8 @@ private:
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	GameStateMachine* machine;
-	MainMenuState* menu;
-	PlayState* play;
-	PauseState* pause;
-	EndState* end;
-	bool exitV;
+	bool exitV = false;
+	Texture* textures[6];
 
 public:
 	Game();
@@ -42,4 +41,5 @@ public:
 	void update();
 	void exit();
 	void handleEvents();
+	Texture* getTexture(text name);
 };

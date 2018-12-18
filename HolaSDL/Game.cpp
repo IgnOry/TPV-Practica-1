@@ -20,21 +20,21 @@ Game::Game() {
 		//throw SDLError(SDL_GetError());
 	}
 
-	Texture* txt = new Texture(renderer, "../images/NewGame.png", 1, 1);
+	string rutas[] = { "../images/NewGame.png","../images/exit.png", "../images/load.png" , "../images/menu.png", "../images/resume.png", "../images/save.png" };
 	
-	//menu = new MainMenuState(this, txt);
-	//GameStateMachine singleton = GameStateMachine();
+	for (uint i = 0; i < 6; i++)
+	{
+		textures[i] = new Texture(renderer, rutas[i], 1, 1);
+	}
+
+	machine = new GameStateMachine();
+
+	machine->pushState(new MainMenuState(this));
 
 	//MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
 
 	//singleton.changeState();*/
 
-	/*for (uint i = 0; i < NUM_TEXTURES; i++)
-	{
-		textures[i] = new Texture(renderer, TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
-		if (textures[i] == nullptr)
-			throw SDLError(IMG_GetError());
-	}
 
 	/*switch (x)
 	{
@@ -64,7 +64,9 @@ GameStateMachine* Game::getMachine(){
 }
 
 Game::~Game() {
-	//for (uint i = 0; i < NUM_TEXTURES; i++) delete textures[i];
+	for (uint i = 0; i < 6; i++) 
+		delete textures[i];
+	delete machine;
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -83,8 +85,7 @@ void Game::render() const
 {
 	SDL_RenderClear(renderer);
 
-	//for (ArkanoidObject* o : lista)
-		//o->render();
+	machine->currentState()->render();
 
 	SDL_RenderPresent(renderer);
 }
@@ -93,8 +94,12 @@ void Game::handleEvents()
 {
 	SDL_Event event;
 
+
 	while (SDL_PollEvent(&event) && !exitV)
 	{
+		machine->currentState()->handleEvent(event);
+
+
 		/*if (event.type == SDL_QUIT)
 			exitV = true;
 		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
@@ -113,13 +118,20 @@ void Game::handleEvents()
 					pause = false;
 			}
 			else
-				paddle->handleEvents(event);*
+				paddle->handleEvents(event);
 		}*/
 	}
 }
 
+Texture * Game::getTexture(text name)
+{
+	return textures[name];
+}
+
 void Game::update()
 {
+	machine->currentState()->update();
+	
 	/*if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
 		PassLevel();

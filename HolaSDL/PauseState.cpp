@@ -2,20 +2,20 @@
 #include "Game.h"
 
 
-PauseState::PauseState(Game* g, Texture* texture1, Texture* texture2, Texture* texture3, CallBackOnClick* cb): GameState(g) //3 botones, 3 texturas
+PauseState::PauseState(Game* g): GameState(g) //3 botones, 3 texturas
 {
 	game = g;
 
 	//nueva partida
-	resumeB = new Button(100, 100, texture1, Vector2D(50, 50), g, resume);
+	resumeB = new Button(100, 100, g->getTexture(resumeT), Vector2D(50, 100), g, resume);
 	stage.push_back(resumeB);
 
 	//cargar partida
-	saveB = new Button(100, 100, texture2, Vector2D(100, 50), g, save);
+	saveB = new Button(100, 100, g->getTexture(saveT), Vector2D(100, 300), g, save);
 	stage.push_back(saveB);
 
 	//salir
-	menuB = new Button(100, 100, texture2, Vector2D(200, 50), g, menu);
+	menuB = new Button(100, 100, g->getTexture(menuT), Vector2D(200, 500), g, menu);
 	stage.push_back(menuB);
 }
 
@@ -33,6 +33,7 @@ void PauseState::resume(Game* app)
 void PauseState::menu(Game* app)
 {
 	cout << "Yendo al menu" << endl;
+	app->getMachine()->popState();
 	app->getMachine()->popState();
 }
 

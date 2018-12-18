@@ -1,11 +1,10 @@
 ﻿  EndState.cpp
   Game.cpp
-  GameStateMachine.cpp
   MainMenuState.cpp
   PauseState.cpp
   PlayState.cpp
   main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
-  Generando código...
-  HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe
+c:\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': macro redefinition
+  c:\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: see previous definition of '_malloca'
+  Generating Code...
+  HolaSDL.vcxproj -> C:\hlocal\TPV-Practica-1\bin\HolaSDLDebug.exe

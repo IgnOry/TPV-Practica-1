@@ -21,13 +21,15 @@ void GameState::update()
 
 void GameState::render()
 {
+	for (GameObject* o : stage)
+		o->render();
 }
 
 bool GameState::handleEvent(SDL_Event e)
 {
 	bool handled = false;
 	auto it = stage.begin();
-	while (it != stage.end() && !handled) {
+	while (!handled && it != stage.end()) {
 		if ((*it)->handleEvent(e))
 			handled = true;
 		else

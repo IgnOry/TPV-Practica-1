@@ -19,9 +19,8 @@ int main(int argc, char* argv[]) {
 	int a;
 	cin >> a;*/
 	try {
-		Game* game = new Game();
-		game->run();
-		delete game;
+		Game game;
+		game.run();
 	}
 	catch (exception e)
 	{

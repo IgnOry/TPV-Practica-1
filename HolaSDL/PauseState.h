@@ -4,7 +4,7 @@
 class PauseState : public GameState
 {
 public:
-	PauseState(Game* g, Texture* texture1, Texture* texture2, Texture* texture3, CallBackOnClick* cb);
+	PauseState(Game* g);
 	~PauseState();
 
 	static void resume(Game* app);
