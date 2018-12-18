@@ -31,13 +31,15 @@ private:
 	PlayState* play;
 	PauseState* pause;
 	EndState* end;
+	bool exitV;
 
 public:
 	Game();
-	GameStateMachine* GetGameStateMachine();
+	GameStateMachine* getMachine();
 	~Game();
 	void run();
 	void render() const;
 	void update();
+	void exit();
 	void handleEvents();
 };

@@ -21,7 +21,8 @@ Game::Game() {
 	}
 
 	Texture* txt = new Texture(renderer, "../images/NewGame.png", 1, 1);
-	menu = new MainMenuState(this, txt);
+	
+	//menu = new MainMenuState(this, txt);
 	//GameStateMachine singleton = GameStateMachine();
 
 	//MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
@@ -58,7 +59,7 @@ Game::Game() {
 	}*/
 }
 
-GameStateMachine* Game::GetGameStateMachine(){
+GameStateMachine* Game::getMachine(){
 	return machine;
 }
 
@@ -71,7 +72,7 @@ Game::~Game() {
 
 void Game::run()
 {
-	while (!exit) {
+	while (!exitV) {
 		handleEvents();
 		update();
 		render();	//PELIGRO: cuando se acaba el juego se llama a render con una lista vacía, porque se borra dentro de update
@@ -92,10 +93,10 @@ void Game::handleEvents()
 {
 	SDL_Event event;
 
-	while (SDL_PollEvent(&event) && !exit)
+	while (SDL_PollEvent(&event) && !exitV)
 	{
 		/*if (event.type == SDL_QUIT)
-			exit = true;
+			exitV = true;
 		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
 		{
 			if (event.key.keysym.sym == SDLK_s)
@@ -140,7 +141,10 @@ void Game::update()
 	}*/
 }
 
-
+void Game::exit()
+{
+	exitV = true;
+}
 
 /*map<string, Texture*> textures; //por defecto se usa el operator <, para string está definido
 

@@ -5,6 +5,8 @@
 
 using namespace std;
 
+class Game;
+
 class GameState
 {
 protected:
