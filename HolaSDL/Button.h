@@ -11,7 +11,7 @@ protected:
 	CallBackOnClick* cb;
 	Game* app;
 public:
-	Button(uint w, uint h, Texture* txt, Vector2D pos, Game* g, CallBackOnClick cb);
+	Button(Vector2D pos, uint w, uint h, Texture* tx, Game* g, CallBackOnClick callback);
 	~Button();
 	virtual bool handleEvent(SDL_Event e);
 };

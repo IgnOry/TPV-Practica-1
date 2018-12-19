@@ -1,10 +1,69 @@
-﻿  EndState.cpp
+﻿  Ball.cpp
+  BlocksMAP.cpp
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(18): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(33): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(35): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(56): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(84): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(87): warning C4244: '=': conversion from 'double' to 'uint', possible loss of data
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(94): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(95): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(196): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(198): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(238): warning C4018: '<': signed/unsigned mismatch
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(240): warning C4018: '<': signed/unsigned mismatch
+  EndState.cpp
   Game.cpp
-  MainMenuState.cpp
-  PauseState.cpp
-  PlayState.cpp
   main.cpp
 c:\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': macro redefinition
   c:\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: see previous definition of '_malloca'
+  MainMenuState.cpp
+  PauseState.cpp
+  PlayState.cpp
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): error C2259: 'Reward1': cannot instantiate abstract class
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): note: due to following members:
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): error C2065: 'textures': undeclared identifier
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): error C2661: 'Reward1::Reward1': no overloaded function takes 5 arguments
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): error C2259: 'Reward2': cannot instantiate abstract class
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): note: due to following members:
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): error C2065: 'textures': undeclared identifier
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): error C2661: 'Reward2::Reward2': no overloaded function takes 5 arguments
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): error C2259: 'Reward3': cannot instantiate abstract class
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): note: due to following members:
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): error C2065: 'textures': undeclared identifier
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): error C2661: 'Reward3::Reward3': no overloaded function takes 5 arguments
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): error C2259: 'Reward3': cannot instantiate abstract class
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): note: due to following members:
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): error C2065: 'textures': undeclared identifier
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): error C2661: 'Reward3::Reward3': no overloaded function takes 5 arguments
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): error C2259: 'Reward4': cannot instantiate abstract class
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): note: due to following members:
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): error C2065: 'textures': undeclared identifier
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): error C2661: 'Reward4::Reward4': no overloaded function takes 5 arguments
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(59): error C3861: 'createReward': identifier not found
+  Reward.cpp
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(22): error C2039: 'rewardCollides': is not a member of 'Game'
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(28): error C2039: 'deleteList': is not a member of 'Game'
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(49): error C2039: 'paddleShorter': is not a member of 'Game'
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(65): error C2039: 'moreLives': is not a member of 'Game'
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(83): error C2039: 'paddleLonger': is not a member of 'Game'
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
+c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(100): error C2039: 'PassLevel': is not a member of 'Game'
+  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
   Generating Code...
-  HolaSDL.vcxproj -> C:\hlocal\TPV-Practica-1\bin\HolaSDLDebug.exe

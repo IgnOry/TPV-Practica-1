@@ -1,7 +1,7 @@
 #include "Button.h"
 
 
-Button::Button(uint w, uint h, Texture* txt, Vector2D pos, Game* g, CallBackOnClick callback) :SDLGameObject(w, h, txt, pos)
+Button::Button(Vector2D pos, uint w, uint h, Texture* tx, Game* g, CallBackOnClick callback) :SDLGameObject(pos, w, h, tx)
 {
 	app = g;
 	cb = callback;

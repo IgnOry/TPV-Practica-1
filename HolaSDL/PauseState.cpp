@@ -7,15 +7,15 @@ PauseState::PauseState(Game* g): GameState(g) //3 botones, 3 texturas
 	game = g;
 
 	//nueva partida
-	resumeB = new Button(100, 100, g->getTexture(resumeT), Vector2D(50, 100), g, resume);
+	resumeB = new Button(Vector2D(50, 100), 100, 100, g->getTexture(resumeT), g, resume);
 	stage.push_back(resumeB);
 
 	//cargar partida
-	saveB = new Button(100, 100, g->getTexture(saveT), Vector2D(100, 300), g, save);
+	saveB = new Button(Vector2D(100, 300), 100, 100, g->getTexture(saveT), g, save);
 	stage.push_back(saveB);
 
 	//salir
-	menuB = new Button(100, 100, g->getTexture(menuT), Vector2D(200, 500), g, menu);
+	menuB = new Button(Vector2D(200, 500), 100, 100, g->getTexture(menuT), g, menu);
 	stage.push_back(menuB);
 }
 

@@ -1,12 +1,15 @@
 #include "SDLGameObject.h"
 #include "SDL_ttf.h"
 
-SDLGameObject::SDLGameObject(uint w, uint h, Texture* txt, Vector2D pos) :GameObject()
+SDLGameObject::SDLGameObject()
+{}
+
+SDLGameObject::SDLGameObject(Vector2D pos, int w, int h, Texture *tx) :GameObject()
 {
 	position = pos;
 	width = w;
 	height = h;
-	texture = txt;
+	texture = tx;
 }
 
 void SDLGameObject::render()

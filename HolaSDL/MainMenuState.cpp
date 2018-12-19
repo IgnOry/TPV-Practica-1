@@ -6,15 +6,15 @@ MainMenuState::MainMenuState(Game* g) :GameState(g)
 	game = g;
 
 	//nueva partida
-	newGameB = new Button(100, 100, g->getTexture(playT), Vector2D(100, 100), g, play);
+	newGameB = new Button(Vector2D(100, 100), 100, 100, g->getTexture(playT), g, play);
 	stage.push_back(newGameB);
 
 	//cargar partida
-	loadGameB = new Button(100, 100, g->getTexture(loadT), Vector2D(100, 300), g, load);
+	loadGameB = new Button(Vector2D(100, 300), 100, 100, g->getTexture(loadT), g, load);
 	stage.push_back(loadGameB);
 
 	//salir
-	exitB = new Button(100, 100, g->getTexture(exitT), Vector2D(100, 500), g, exit);
+	exitB = new Button(Vector2D(100, 500), 100, 100, g->getTexture(exitT),  g, exit);
 	stage.push_back(exitB);
 }
 
