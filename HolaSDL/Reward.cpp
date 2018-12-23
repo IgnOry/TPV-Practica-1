@@ -1,7 +1,7 @@
 #include "Reward.h"
-#include "Game.h"
+#include "PlayState.h"
 
-Reward::Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, Game* ptrGameD) :MovingObject(pos, wid, heightD, ptr, direction)
+Reward::Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, PlayState* ptrGameD) :MovingObject(pos, wid, heightD, ptr, direction)
 {
 	ptrGame = ptrGameD;
 }
@@ -38,7 +38,7 @@ bool Reward::handleEvent()
 }
 
 // Reward1
-Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD):Reward(pos, wid, heightD,ptr, direction, ptrGameD)
+Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD):Reward(pos, wid, heightD,ptr, direction, ptrGameD)
 {
 	numReward = 1;
 }
@@ -55,7 +55,7 @@ Reward1::~Reward1()
 }
 
 // Reward2
-Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
 {
 	numReward = 2;
 }
@@ -72,7 +72,7 @@ Reward2::~Reward2()
 }
 
 // Reward3
-Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
 {
 	numReward = 3;
 }
@@ -88,7 +88,7 @@ Reward3::~Reward3()
 {
 }
 
-Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, Game* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
 {
 	numReward = 4;
 }

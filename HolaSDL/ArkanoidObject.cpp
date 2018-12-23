@@ -28,6 +28,11 @@ void ArkanoidObject::saveToFile(ofstream& file)
 	file << position.getY() << endl;
 }
 
+bool ArkanoidObject::handleEvent(SDL_Event e)
+{
+	return false;
+}
+
 Vector2D ArkanoidObject::getPosition()
 {
 	return position;

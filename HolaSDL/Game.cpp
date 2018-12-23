@@ -19,12 +19,10 @@ Game::Game() {
 	{
 		//throw SDLError(SDL_GetError());
 	}
-
-	string rutas[] = { "../images/NewGame.png","../images/exit.png", "../images/load.png" , "../images/menu.png", "../images/resume.png", "../images/save.png" };
 	
-	for (uint i = 0; i < 6; i++)
+	for (uint i = 0; i < NUM_TEXTURES; i++)
 	{
-		textures[i] = new Texture(renderer, rutas[i], 1, 1);
+		textures[i] = new Texture(renderer, TEXTUREATTRIBUTES[i].fileName, TEXTUREATTRIBUTES[i].nRows, TEXTUREATTRIBUTES[i].nCols);
 	}
 
 	machine = new GameStateMachine();
@@ -72,7 +70,7 @@ Game::~Game() {
 	SDL_Quit();
 }
 
-void Game::run()
+void Game::run()		//se llama desde main después de ejecutarse la constructora de Game
 {
 	while (!exitV) {
 		handleEvents();
@@ -123,11 +121,6 @@ void Game::handleEvents()
 	}
 }
 
-Texture * Game::getTexture(text name)
-{
-	return textures[name];
-}
-
 void Game::update()
 {
 	machine->currentState()->update();
@@ -158,6 +151,10 @@ void Game::exit()
 	exitV = true;
 }
 
+Texture * Game::getTexture(text name)
+{
+	return textures[name];
+}
 /*map<string, Texture*> textures; //por defecto se usa el operator <, para string está definido
 
 textures.insert(pair<string, Texture*>)"ball", new Texture();

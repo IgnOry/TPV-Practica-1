@@ -16,6 +16,7 @@ public:
 	virtual ~ArkanoidObject();
 	virtual void loadFromFile(ifstream& file);
 	virtual void saveToFile(ofstream& file);
+	virtual bool handleEvent(SDL_Event e);
 	Vector2D getPosition();
 };
 

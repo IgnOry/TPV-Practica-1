@@ -22,7 +22,7 @@ typedef unsigned int uint;
 
 const uint WIN_WIDTH = 800;
 const uint WIN_HEIGHT = 600;
-const uint NUM_TEXTURES = 8;
+const uint NUM_TEXTURES = 13;
 const uint FRAMERATE = 200; //¿?
 const uint ELEM_SIZE = 76;
 const uint WALL_SIZE = 20;
@@ -35,17 +35,22 @@ const Vector2D DIR_START_PADDLE = Vector2D(0, 0);
 const struct TextureAttributes { string fileName; uint nRows; uint nCols; };
 
 #include <list>
-enum text { playT, exitT, loadT, menuT, resumeT, saveT };
+enum text { playT, exitT, loadT, menuT, resumeT, saveT, ballT, bricksT, paddleT, rewardsT, sideT, topSideT, timerT };
 
 
 class Game
 {
 private:
+	TextureAttributes TEXTUREATTRIBUTES[NUM_TEXTURES] = { //rutas y  filas y columnas de cada textura
+		{"../images/NewGame.png",1,1}, {"../images/exit.png",1,1}, {"../images/load.png",1,1} , {"../images/menu.png",1,1}, {"../images/resume.png",1,1}, 
+		{"../images/save.png",1,1}, {"../images/ball.png",1,1}, {"../images/bricks.png",2,3}, {"../images/paddle.png",1,1}, {"../images/rewards.png",10,8}, 
+		{"../images/side.png",1,1},{ "../images/topside.png",1,1}, {"../images/timer.png" ,1,11} 
+	};
 	SDL_Window* window = nullptr;
 	SDL_Renderer* renderer = nullptr;
 	GameStateMachine* machine;
 	bool exitV = false;
-
+	Texture* textures[NUM_TEXTURES];
 public:
 	Game();
 	GameStateMachine* getMachine();
@@ -56,5 +61,7 @@ public:
 	void exit();
 	void handleEvents();
 	Texture* getTexture(text name);
-	Texture* textures[6];
+	void moreLives();
+	void paddleLonger();
+	void paddleShorter();
 };

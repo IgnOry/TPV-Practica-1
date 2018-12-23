@@ -1,69 +1,112 @@
-﻿  Ball.cpp
+﻿  ArkanoidObject.cpp
+  Ball.cpp
+  Block.cpp
   BlocksMAP.cpp
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(18): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(20): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(33): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(35): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(55): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(56): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(84): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(87): warning C4244: '=': conversion from 'double' to 'uint', possible loss of data
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(94): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(95): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(196): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(198): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(238): warning C4018: '<': signed/unsigned mismatch
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(240): warning C4018: '<': signed/unsigned mismatch
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(18): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(20): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(33): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(35): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(55): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(56): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(84): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(87): warning C4244: '=': conversión de 'double' a 'uint'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(94): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(95): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(196): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(198): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(238): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\blocksmap.cpp(240): warning C4018: '<': no coinciden signed/unsigned
   EndState.cpp
   Game.cpp
+  Lives.cpp
   main.cpp
-c:\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': macro redefinition
-  c:\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: see previous definition of '_malloca'
+c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
   MainMenuState.cpp
+  MovingObject.cpp
+  Paddle.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(52): warning C4018: '<': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(58): warning C4018: '>': no coinciden signed/unsigned
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(79): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(79): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\paddle.cpp(79): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
   PauseState.cpp
   PlayState.cpp
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): error C2259: 'Reward1': cannot instantiate abstract class
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): note: due to following members:
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): error C2065: 'textures': undeclared identifier
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(42): error C2661: 'Reward1::Reward1': no overloaded function takes 5 arguments
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): error C2259: 'Reward2': cannot instantiate abstract class
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): note: due to following members:
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): error C2065: 'textures': undeclared identifier
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(45): error C2661: 'Reward2::Reward2': no overloaded function takes 5 arguments
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): error C2259: 'Reward3': cannot instantiate abstract class
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): note: due to following members:
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): error C2065: 'textures': undeclared identifier
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(48): error C2661: 'Reward3::Reward3': no overloaded function takes 5 arguments
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): error C2259: 'Reward3': cannot instantiate abstract class
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): note: due to following members:
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): error C2065: 'textures': undeclared identifier
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(51): error C2661: 'Reward3::Reward3': no overloaded function takes 5 arguments
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): error C2259: 'Reward4': cannot instantiate abstract class
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): note: due to following members:
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): note: 'bool SDLGameObject::handleEvent(SDL_Event)': is abstract
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\sdlgameobject.h(13): note: see declaration of 'SDLGameObject::handleEvent'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): error C2065: 'textures': undeclared identifier
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(54): error C2661: 'Reward4::Reward4': no overloaded function takes 5 arguments
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\playstate.cpp(59): error C3861: 'createReward': identifier not found
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\playstate.cpp(25): error C2143: error de sintaxis: falta ')' delante de ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\playstate.cpp(131): error C2679: '=' binario: no se encontró un operador que adopte un operando en la parte derecha de tipo 'std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>' (o bien no existe una conversión aceptable)
+          with
+          [
+              _Ty=GameObject *
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\list(334): note: puede ser 'std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>> &std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>::operator =(std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>> &&)'
+          with
+          [
+              _Ty=ArkanoidObject *
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.15.26726\include\list(334): note: o       'std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>> &std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>::operator =(const std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>> &)'
+          with
+          [
+              _Ty=ArkanoidObject *
+          ]
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\playstate.cpp(131): note: al hacer coincidir la lista de argumentos '(std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>, std::_List_iterator<std::_List_val<std::_List_simple_types<_Ty>>>)'
+          with
+          [
+              _Ty=ArkanoidObject *
+          ]
+          and
+          [
+              _Ty=GameObject *
+          ]
   Reward.cpp
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(22): error C2039: 'rewardCollides': is not a member of 'Game'
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(28): error C2039: 'deleteList': is not a member of 'Game'
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(49): error C2039: 'paddleShorter': is not a member of 'Game'
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(65): error C2039: 'moreLives': is not a member of 'Game'
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(83): error C2039: 'paddleLonger': is not a member of 'Game'
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
-c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\reward.cpp(100): error C2039: 'PassLevel': is not a member of 'Game'
-  c:\users\usuario_local\documents\github\tpv-practica-1\holasdl\game.h(41): note: see declaration of 'Game'
-  Generating Code...
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(13): error C2061: error de sintaxis: identificador 'PlayState'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(23): error C2143: error de sintaxis: falta ';' delante de '*'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(23): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(23): error C2238: símbolos (token) inesperados delante de ';'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(29): error C2061: error de sintaxis: identificador 'PlayState'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(38): error C2061: error de sintaxis: identificador 'PlayState'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(47): error C2061: error de sintaxis: identificador 'PlayState'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(56): error C2061: error de sintaxis: identificador 'PlayState'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(4): error C2511: 'Reward::Reward(Vector2D,uint,uint,Texture *,Vector2D,PlayState *)': la función miembro sobrecargada no se ha encontrado en 'Reward'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(8): note: vea la declaración de 'Reward'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(5): error C2550: 'Reward::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(6): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(22): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(28): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(41): error C2511: 'Reward1::Reward1(Vector2D,uint,uint,Texture *,Vector2D,PlayState *)': la función miembro sobrecargada no se ha encontrado en 'Reward1'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(26): note: vea la declaración de 'Reward1'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(42): error C2550: 'Reward1::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(43): error C2597: referencia no válida a miembro no static 'Reward::numReward'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(49): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(58): error C2511: 'Reward2::Reward2(Vector2D,uint,uint,Texture *,Vector2D,PlayState *)': la función miembro sobrecargada no se ha encontrado en 'Reward2'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(35): note: vea la declaración de 'Reward2'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(59): error C2550: 'Reward2::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(60): error C2597: referencia no válida a miembro no static 'Reward::numReward'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(65): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(75): error C2511: 'Reward3::Reward3(Vector2D,uint,uint,Texture *,Vector2D,PlayState *)': la función miembro sobrecargada no se ha encontrado en 'Reward3'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(44): note: vea la declaración de 'Reward3'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(76): error C2550: 'Reward3::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(77): error C2597: referencia no válida a miembro no static 'Reward::numReward'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(83): error C2065: 'ptrGame': identificador no declarado
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(91): error C2511: 'Reward4::Reward4(Vector2D,uint,uint,Texture *,Vector2D,PlayState *)': la función miembro sobrecargada no se ha encontrado en 'Reward4'
+  d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.h(53): note: vea la declaración de 'Reward4'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(92): error C2550: 'Reward4::{ctor}': las listas de inicializadores de constructor solo se permiten en las definiciones de constructor
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(93): error C2597: referencia no válida a miembro no static 'Reward::numReward'
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\reward.cpp(100): error C2065: 'ptrGame': identificador no declarado
+  Timer.cpp
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(35): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(35): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(35): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(36): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(36): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(36): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(38): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(38): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(38): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(40): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(40): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(40): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(41): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(41): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+d:\escritorio\2º desarrollo de videojuegos\tvp (tecnología de la programación de videojuegos)\tvp p1\tpv-practica-1\holasdl\timer.cpp(41): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+  Wall.cpp
+  Generando código...
