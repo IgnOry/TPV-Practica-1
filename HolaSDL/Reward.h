@@ -2,6 +2,7 @@
 #include "checkML.h"
 #include "MovingObject.h"
 #include <list>
+#include "PlayState.h"
 
 class Game;
 
@@ -20,7 +21,7 @@ public:
 protected:
 	int numReward = 0;
 	int frame = 0;
-	PlayState* ptrGame;
+	PlayState* state;
 };
 
 class Reward1 : public Reward

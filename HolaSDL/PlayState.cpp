@@ -1,5 +1,7 @@
 #include "PlayState.h"
 #include "Game.h"
+#include "Reward.h" //dependencia circular
+
 
 PlayState::PlayState(Game* g):GameState(g)
 {
@@ -22,7 +24,7 @@ void PlayState::newGame() {
 	stage.push_back(timer);
 	//bestplayers = new BestPlayers(levels);
 	//lista.push_back(bestplayers);
-	lives = new Lives(Vector2D(WIN_WIDTH - (ObjSize * 3 + ObjSize), WIN_HEIGHT - (ObjSize / 2)), ObjSize * 3, ObjSize / 2, game->getTexture(paddleT); // ojbsize = ancho del muro
+	lives = new Lives(Vector2D(WIN_WIDTH - (ObjSize * 3 + ObjSize), WIN_HEIGHT - (ObjSize / 2)), ObjSize * 3, ObjSize / 2, game->getTexture(paddleT)); // ojbsize = ancho del muro
 	stage.push_back(lives);																							  //objsize * 3 = ancho del minipaddle
 	//Enemy* enemy = new Enemy(Vector2D(400,100), ObjSize * 2, ObjSize * 2, textures[7], Vector2D(0,0));
 	//lista.push_back(enemy);
@@ -51,6 +53,91 @@ bool PlayState::handleEvent(SDL_Event e)
 			return true;
 		}
 
+	return false;
+}
+
+void PlayState::moreLives() {
+	lives->more();
+}
+
+void PlayState::paddleLonger() {
+	paddle->longer();
+}
+
+void PlayState::paddleShorter() {
+	paddle->shorter();
+}
+
+void PlayState::PassLevel()
+{
+	//bestplayers->CompareTimes(timer->time());
+	level++;
+
+	lives->reset();
+	resetRewards();
+	resetObjects();
+}
+
+void PlayState::resetRewards() {
+	// antes de destruir el mapa de bloques hay que destruir las rewards
+	//lista.pop_back();
+	for (auto it = firstReward; it != stage.end(); ++it) {
+		//delete *it;
+		it = stage.erase(it);
+	}
+	firstReward = stage.end();
+}
+
+void PlayState::resetObjects() {
+	// Destruye el mapa de 
+	stage.pop_back();
+	delete blocksMAP;
+	blocksMAP = new BlocksMAP(nextLevel(), game->getTexture(bricksT), WIN_WIDTH);
+	stage.push_back(blocksMAP);
+
+	// Resetea la pelota, el paddle y el tiempo
+	ball->reset(POS_START_BALL, DIR_START_BALL);
+	paddle->reset(POS_START_PADDLE, DIR_START_PADDLE);
+	timer->reset();
+}
+
+void PlayState::deleteList(list<ArkanoidObject*>::iterator it)
+{
+	if (it == firstReward)
+		firstReward++;
+	//delete* it;
+	stage.erase(it);
+	cout << "borro reward" << endl;
+}
+
+void PlayState::reset() {
+
+	resetRewards();
+
+	if (lives->getLives() > 0) {
+		lives->less();
+		resetObjects();
+	}
+
+	else {
+		game->exit();
+		cout << "Gameover" << endl;
+		DeleteAll();
+	}
+}
+
+void PlayState::createReward(Reward* reward) {
+	stage.push_back(reward);
+	auto itFR = --(stage.end());
+	if (firstReward == stage.end())
+		firstReward = itFR;
+	reward->it = itFR; // igual no va
+}
+bool PlayState::rewardCollides(const SDL_Rect& rect, list<ArkanoidObject*>::iterator it)
+{
+	if (paddle->collides(rect)) return true;
+	else if (rect.y > WIN_HEIGHT)
+		deleteList(it);
 	return false;
 }
 
@@ -123,23 +210,74 @@ bool PlayState::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& co
 	return false;
 }
 
-void PlayState::createReward(Reward* reward) {
-	stage.push_back(reward);
-	auto itFR = --(stage.end());
-	if (firstReward == stage.end())
-		firstReward = itFR;
-	reward->it = itFR; // igual no va
-}
-void Game::moreLives() {
-	lives->more();
+void PlayState::saveGame(uint code) //puntero a ball, paddle y blocksmap
+{
+
+	string filename = std::to_string(code);
+	ofstream FileData("..\\saves\\" + filename + ".ark");
+	FileData << level << endl;
+
+	for (GameObject* o : stage)
+	{
+		o->saveToFile(FileData);
+	}
+
+	FileData.close();
 }
 
-void Game::paddleLonger() {
-	paddle->longer();
+void PlayState::DeleteAll() //hacerlo también con listas?
+{
+	delete ball;
+	delete paddle;
+	delete wallA;
+	delete wallI;
+	delete wallD;
+	delete timer;
+	delete blocksMAP;
+	//delete bestplayers;
+	delete lives;
+
+	ball = nullptr;
+	paddle = nullptr;
+	wallA = nullptr;
+	wallI = nullptr;
+	wallD = nullptr;
+	timer = nullptr;
+	//bestplayers = nullptr;
+	lives = nullptr;
+
+	stage.clear();
+
 }
 
-void Game::paddleShorter() {
-	paddle->shorter();
+void PlayState::loadSave()
+{
+	cout << "Introduce código de la partida";
+
+	uint code;
+	cin >> code;
+
+	string filename = std::to_string(code);
+	ifstream FileData("..\\saves\\" + filename + ".ark");
+	if (!FileData.good())
+		throw FileNotFoundError("El archivo ..\\saves\\" + filename + ".ark" + " no se ha encontrado");
+
+	FileData >> level;		// solo se lee el nivel para crear el blocksmap en new game bien
+	FileData.close();
+	newGame();
+
+
+	ifstream file("..\\saves\\" + filename + ".ark"); //Con una sola comprobación basta
+	file >> level;
+	for (GameObject* o : stage)
+	{
+		o->loadFromFile(file);
+		if (o == nullptr)
+			throw FileFormatError("Error en la lectura del archivo");
+	}
+
+	file.close();
+
 }
 
 string PlayState::nextLevel()
@@ -153,3 +291,5 @@ string PlayState::nextLevel()
 
 	return nextLevelst;
 }
+
+

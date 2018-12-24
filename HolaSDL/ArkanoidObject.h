@@ -3,8 +3,6 @@
 #include "checkML.h"
 #include "SDLGameobject.h"
 #include "Texture.h"
-#include <iostream>
-#include <fstream>
 #include <string>
 
 

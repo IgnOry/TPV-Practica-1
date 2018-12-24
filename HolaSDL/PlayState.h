@@ -7,8 +7,8 @@
 #include "BlocksMAP.h"
 #include "Timer.h"
 #include "Lives.h"
-#include "Reward.h"
 
+class Reward;
 
 class PlayState : public GameState
 {
@@ -28,16 +28,32 @@ protected:
 public:
 	PlayState(Game* g);
 	void newGame();
+	void loadSave();
 	~PlayState();
 	virtual bool handleEvent(SDL_Event e);
 
 	bool collides(const SDL_Rect & rect, const Vector2D & vel, Vector2D & collVector);
+	void saveGame(uint code);
+	void DeleteAll();
 	const uint ELEM_SIZE = 76;
 	const uint WALL_SIZE = 20;
 	const uint ObjSize = 20;
 	const uint levels = 3;
 	string nextLevel();
-	void createReward(Reward * reward);
+	void PassLevel();
+	void resetRewards();
+	void resetObjects();
+	void deleteList(list<ArkanoidObject*>::iterator it);
+	void reset();
+	void createReward(Reward* reward);
+
+	bool rewardCollides(const SDL_Rect & rect, list<ArkanoidObject*>::iterator it);
+
+	void moreLives();
+
+	void paddleLonger();
+
+	void paddleShorter();
 
 
 };

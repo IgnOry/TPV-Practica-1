@@ -1,9 +1,9 @@
 #include "Reward.h"
 #include "PlayState.h"
 
-Reward::Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, PlayState* ptrGameD) :MovingObject(pos, wid, heightD, ptr, direction)
+Reward::Reward(Vector2D pos, uint wid, uint heightD, Texture* ptr, Vector2D direction, PlayState* pState) :MovingObject(pos, wid, heightD, ptr, direction)
 {
-	ptrGame = ptrGameD;
+	state = pState;
 }
 
 Reward::~Reward()
@@ -19,13 +19,13 @@ void Reward::update()
 {
 	MovingObject::update();
 
-	if (ptrGame->rewardCollides(getRect(),it))
+	if (state->rewardCollides(getRect(),it))
 		behavior();
 }
 
 void Reward::behavior()
 {
-	ptrGame->deleteList(it);
+	state->deleteList(it);
 	//delete &it;
 	//borrar de la lista
 	//iterador a null
@@ -46,7 +46,7 @@ Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 void Reward1::behavior()
 {
 	cout << "1 shorter paddle" << endl;
-	ptrGame->paddleShorter();
+	state->paddleShorter();
 	Reward::behavior();
 }
 
@@ -62,7 +62,7 @@ Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 
 void Reward2::behavior()
 {
-	ptrGame->moreLives();
+	state->moreLives();
 	cout << "2 +vidas" << endl;
 	Reward::behavior();
 }
@@ -80,7 +80,7 @@ Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 void Reward3::behavior()
 {
 	cout << "3 longer paddle" << endl;
-	ptrGame->paddleLonger();
+	state->paddleLonger();
 	Reward::behavior();
 }
 
@@ -97,7 +97,7 @@ void Reward4::behavior()
 {
 	cout << "Next Level" << endl;
 	Reward::behavior();
-	ptrGame->PassLevel();
+	state->PassLevel();
 }
 
 Reward4::~Reward4()

@@ -61,7 +61,4 @@ public:
 	void exit();
 	void handleEvents();
 	Texture* getTexture(text name);
-	void moreLives();
-	void paddleLonger();
-	void paddleShorter();
 };
