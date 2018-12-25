@@ -29,32 +29,6 @@ Game::Game() {
 
 	machine->pushState(new MainMenuState(this));
 
-	//MainMenuState menu = new MainMenuState(this, txt, singleton.pushsta());
-
-	//singleton.changeState();*/
-
-
-	/*switch (x)
-	{
-	case 0:
-		newGame();
-		break;
-	case 1:
-		loadSave();
-		break;
-	case 2:
-		bestplayers = new BestPlayers(levels);
-		bestplayers->PrintList();
-
-		delete bestplayers;
-		bestplayers = nullptr;
-
-		newGame(); //paso a partida
-		break;
-	default:
-		throw SDLError("Cierra el programa, vuelve a abrirlo y pulsa 0 o 1 o 2");
-		break;
-	}*/
 }
 
 GameStateMachine* Game::getMachine(){

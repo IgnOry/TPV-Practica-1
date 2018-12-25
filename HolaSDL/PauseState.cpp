@@ -1,10 +1,14 @@
 #include "PauseState.h"
+#include "PlayState.h"
 #include "Game.h"
 
 
-PauseState::PauseState(Game* g): GameState(g) //3 botones, 3 texturas
+
+PauseState::PauseState(Game * g, PlayState * state): GameState(g)
 {
 	game = g;
+
+	pState = state;
 
 	//nueva partida
 	resumeB = new Button(Vector2D(50, 100), 100, 100, g->getTexture(resumeT), g, resume);
@@ -19,6 +23,23 @@ PauseState::PauseState(Game* g): GameState(g) //3 botones, 3 texturas
 	stage.push_back(menuB);
 }
 
+bool PauseState::handleEvent(SDL_Event e)
+{
+	if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
+	{
+		if (e.key.keysym.sym == SDLK_s)
+		{
+			uint code;
+			cin >> code;
+			pState->saveGame(code);
+			cout << "Partida guardada";
+
+			return true;
+		}
+	}
+
+	return false;
+}
 
 PauseState::~PauseState()
 {

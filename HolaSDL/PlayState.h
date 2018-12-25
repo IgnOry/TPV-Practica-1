@@ -26,7 +26,7 @@ protected:
 	//BestPlayers* bestplayers;
 	Lives* lives;
 public:
-	PlayState(Game* g);
+	PlayState(Game* g, uint mode);
 	void newGame();
 	void loadSave();
 	~PlayState();

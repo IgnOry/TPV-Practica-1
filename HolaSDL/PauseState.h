@@ -1,10 +1,13 @@
 #pragma once
 #include "GameState.h"
 
+class PlayState;
+
 class PauseState : public GameState
 {
 public:
-	PauseState(Game* g);
+	PauseState(Game* g, PlayState* state);
+	virtual bool handleEvent(SDL_Event e);
 	~PauseState();
 
 	static void resume(Game* app);
@@ -15,4 +18,5 @@ private:
 	Button* resumeB;
 	Button* saveB;
 	Button* menuB;
+	PlayState* pState;
 };

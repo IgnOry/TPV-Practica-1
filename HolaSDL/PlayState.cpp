@@ -3,11 +3,15 @@
 #include "Reward.h" //dependencia circular
 
 
-PlayState::PlayState(Game* g):GameState(g)
+PlayState::PlayState(Game* g, uint mode):GameState(g)
 {
 	game = g;
 	//Creamos todos los objetos del juego (escena PlayState)
-	newGame();
+
+	if (mode == 0)
+		newGame();
+	else if (mode == 1)
+		loadSave();
 }
 
 void PlayState::newGame() {
@@ -73,8 +77,7 @@ bool PlayState::handleEvent(SDL_Event e)
 		if (e.key.keysym.sym == SDLK_ESCAPE)
 		{
 			cout << "Menu de pausa" << endl;
-			app->getMachine()->pushState(new PauseState(app));
-
+			app->getMachine()->pushState(new PauseState(app, this));
 			return true;
 		}
 
@@ -86,21 +89,8 @@ bool PlayState::handleEvent(SDL_Event e)
 
 	else if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
 		{
-			if (e.key.keysym.sym == SDLK_s)
-			{
-				/*if (!pause)
-				{
-					pause = true;
-					uint code;
-					cin >> code;
-					saveGame(code);
-					cout << "Vuelve a pulsar S para reanudar la partida";
-				}
-				else
-					pause = false;*/
-			}
-			else
 				paddle->handleEvents(e);
+				return true;
 		}
 
 	return false;
@@ -129,10 +119,11 @@ void PlayState::PassLevel()
 }
 
 void PlayState::resetRewards() {
-	// antes de destruir el mapa de bloques hay que destruir las rewards
+	
 	//lista.pop_back();
+	
 	for (auto it = firstReward; it != stage.end(); ++it) {
-		//delete *it;
+		delete *it;
 		it = stage.erase(it);
 	}
 	firstReward = stage.end();
@@ -170,9 +161,10 @@ void PlayState::reset() {
 	}
 
 	else {
-		game->exit();
 		cout << "Gameover" << endl;
 		DeleteAll();
+
+		app->getMachine()->pushState(new EndState(app));
 	}
 }
 
@@ -262,7 +254,6 @@ bool PlayState::collides(const SDL_Rect& rect, const Vector2D& vel, Vector2D& co
 
 void PlayState::saveGame(uint code) //puntero a ball, paddle y blocksmap
 {
-
 	string filename = std::to_string(code);
 	ofstream FileData("..\\saves\\" + filename + ".ark");
 	FileData << level << endl;
@@ -297,7 +288,6 @@ void PlayState::DeleteAll() //hacerlo también con listas?
 	lives = nullptr;
 
 	stage.clear();
-
 }
 
 void PlayState::loadSave()

@@ -24,13 +24,13 @@ MainMenuState::~MainMenuState()
 
 void MainMenuState::play(Game* game) {
 	cout << "jugando" << endl;
-	game->getMachine()->pushState(new PlayState(game));
+	game->getMachine()->pushState(new PlayState(game,0));
 }
 
 void MainMenuState::load(Game * game)
 {
 	cout << "cargando" << endl;
-	game->getMachine()->pushState(new PlayState(game));	//faltan argumentos
+	game->getMachine()->pushState(new PlayState(game,1));	//faltan argumentos
 }
 
 void MainMenuState::exit(Game * game)
