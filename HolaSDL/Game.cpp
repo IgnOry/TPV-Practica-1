@@ -62,7 +62,7 @@ GameStateMachine* Game::getMachine(){
 }
 
 Game::~Game() {
-	for (uint i = 0; i < 6; i++) 
+	for (uint i = 0; i < NUM_TEXTURES; i++) 
 		delete textures[i];
 	delete machine;
 	SDL_DestroyRenderer(renderer);
@@ -96,54 +96,12 @@ void Game::handleEvents()
 	while (SDL_PollEvent(&event) && !exitV)
 	{
 		machine->currentState()->handleEvent(event);
-
-
-		/*if (event.type == SDL_QUIT)
-			exitV = true;
-		else if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP)
-		{
-			if (event.key.keysym.sym == SDLK_s)
-			{
-				if (!pause)
-				{
-					pause = true;
-					uint code;
-					cin >> code;
-					saveGame(code);
-					cout << "Vuelve a pulsar S para reanudar la partida";
-				}
-				else
-					pause = false;
-			}
-			else
-				paddle->handleEvents(event);
-		}*/
 	}
 }
 
 void Game::update()
 {
 	machine->currentState()->update();
-	
-	/*if (blocksMAP->BlockNum() == 0)	// paso de nivel
-	{
-		PassLevel();
-	}
-	else {
-		if (!pause)	// se llama a los updates de todos los objetos de la lista
-			for (auto o = lista.begin(); o != lista.end();)
-			{
-				auto next = o;
-				++next;
-				(*o)->update();
-				o = next;
-			}
-		for (ArkanoidObject* o : lista)
-			o->update();
-
-		if (lista.front()->getRect().y >= WIN_HEIGHT)
-			reset();
-	}*/
 }
 
 void Game::exit()
@@ -155,6 +113,7 @@ Texture * Game::getTexture(text name)
 {
 	return textures[name];
 }
+
 /*map<string, Texture*> textures; //por defecto se usa el operator <, para string está definido
 
 textures.insert(pair<string, Texture*>)"ball", new Texture();

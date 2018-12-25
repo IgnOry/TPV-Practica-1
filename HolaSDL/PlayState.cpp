@@ -5,6 +5,7 @@
 
 PlayState::PlayState(Game* g):GameState(g)
 {
+	game = g;
 	//Creamos todos los objetos del juego (escena PlayState)
 	newGame();
 }
@@ -42,6 +43,30 @@ PlayState::~PlayState()
 {
 }
 
+void PlayState::update()
+{
+	GameState::update();
+
+	if (blocksMAP->BlockNum() == 0)	// paso de nivel
+	{
+		PassLevel();
+	}
+	else {
+			for (auto o = stage.begin(); o != stage.end();)
+			{
+				auto next = o;
+				++next;
+				(*o)->update();
+				o = next;
+			}
+		for (GameObject* o : stage)
+			o->update();
+
+		if (stage.front()->getRect().y >= WIN_HEIGHT)
+			reset();
+	}
+}
+
 bool PlayState::handleEvent(SDL_Event e)
 {
 	if (e.type == SDL_KEYDOWN)
@@ -51,6 +76,31 @@ bool PlayState::handleEvent(SDL_Event e)
 			app->getMachine()->pushState(new PauseState(app));
 
 			return true;
+		}
+
+	else if (e.type == SDL_QUIT)
+	{
+		game->exit();
+		return true;
+	}
+
+	else if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
+		{
+			if (e.key.keysym.sym == SDLK_s)
+			{
+				/*if (!pause)
+				{
+					pause = true;
+					uint code;
+					cin >> code;
+					saveGame(code);
+					cout << "Vuelve a pulsar S para reanudar la partida";
+				}
+				else
+					pause = false;*/
+			}
+			else
+				paddle->handleEvents(e);
 		}
 
 	return false;
@@ -101,7 +151,7 @@ void PlayState::resetObjects() {
 	timer->reset();
 }
 
-void PlayState::deleteList(list<ArkanoidObject*>::iterator it)
+void PlayState::deleteList(list<GameObject*>::iterator it)
 {
 	if (it == firstReward)
 		firstReward++;
@@ -133,7 +183,7 @@ void PlayState::createReward(Reward* reward) {
 		firstReward = itFR;
 	reward->it = itFR; // igual no va
 }
-bool PlayState::rewardCollides(const SDL_Rect& rect, list<ArkanoidObject*>::iterator it)
+bool PlayState::rewardCollides(const SDL_Rect& rect, list<GameObject*>::iterator it)
 {
 	if (paddle->collides(rect)) return true;
 	else if (rect.y > WIN_HEIGHT)
@@ -291,5 +341,3 @@ string PlayState::nextLevel()
 
 	return nextLevelst;
 }
-
-

@@ -30,6 +30,7 @@ public:
 	void newGame();
 	void loadSave();
 	~PlayState();
+	virtual void update();
 	virtual bool handleEvent(SDL_Event e);
 
 	bool collides(const SDL_Rect & rect, const Vector2D & vel, Vector2D & collVector);
@@ -43,11 +44,11 @@ public:
 	void PassLevel();
 	void resetRewards();
 	void resetObjects();
-	void deleteList(list<ArkanoidObject*>::iterator it);
+	void deleteList(list<GameObject*>::iterator it);
 	void reset();
 	void createReward(Reward* reward);
 
-	bool rewardCollides(const SDL_Rect & rect, list<ArkanoidObject*>::iterator it);
+	bool rewardCollides(const SDL_Rect & rect, list<GameObject*>::iterator it);
 
 	void moreLives();
 

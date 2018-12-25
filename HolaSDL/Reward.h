@@ -17,7 +17,7 @@ public:
 	void update();
 	virtual void behavior();
 	virtual bool handleEvent();
-	list<ArkanoidObject*>::iterator it;
+	list<GameObject*>::iterator it;
 protected:
 	int numReward = 0;
 	int frame = 0;

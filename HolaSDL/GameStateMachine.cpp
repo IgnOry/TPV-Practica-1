@@ -9,6 +9,11 @@ GameStateMachine::GameStateMachine()
 
 GameStateMachine::~GameStateMachine()
 {
+	while (!stack.empty())
+	{
+		delete stack.top();
+		stack.pop();
+	}
 }
 
 GameState* GameStateMachine::currentState()

@@ -15,6 +15,7 @@ public:
 	virtual void render() = 0;
 	virtual void update() = 0;
 	virtual bool handleEvent(SDL_Event event) = 0;
+	virtual SDL_Rect getRect() = 0;
 
 	//necesarios para la lista stage, declarados como vacíos, puede ser necesario hacerlos abstractos
 	virtual void loadFromFile(ifstream& file);

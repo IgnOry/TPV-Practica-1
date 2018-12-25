@@ -13,7 +13,7 @@ public:
 	virtual bool handleEvent(SDL_Event e) = 0;
 	virtual void render();
 	virtual void update();
-	SDL_Rect getRect();
+	virtual SDL_Rect getRect();
 	~SDLGameObject();
 
 protected:
