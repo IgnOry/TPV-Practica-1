@@ -88,6 +88,7 @@ Reward3::~Reward3()
 {
 }
 
+// Reward4
 Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
 {
 	numReward = 4;

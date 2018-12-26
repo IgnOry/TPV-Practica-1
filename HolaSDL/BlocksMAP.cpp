@@ -1,5 +1,6 @@
 #include "BlocksMAP.h"
 #include "Game.h"
+#include "PlayState.h"
 #include <iostream>
 #include <fstream>
 

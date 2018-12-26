@@ -63,8 +63,8 @@ void PlayState::update()
 				(*o)->update();
 				o = next;
 			}
-		for (GameObject* o : stage)
-			o->update();
+		//for (GameObject* o : stage)
+			//o->update();
 
 		if (stage.front()->getRect().y >= WIN_HEIGHT)
 			reset();
@@ -73,25 +73,23 @@ void PlayState::update()
 
 bool PlayState::handleEvent(SDL_Event e)
 {
-	if (e.type == SDL_KEYDOWN)
-		if (e.key.keysym.sym == SDLK_ESCAPE)
-		{
-			cout << "Menu de pausa" << endl;
-			app->getMachine()->pushState(new PauseState(app, this));
+	if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
+		cout << "Menu de pausa" << endl;
+		app->getMachine()->pushState(new PauseState(app, this));
+		return true;
+	}
+	else {
+
+		if (e.type == SDL_QUIT) {
+			game->exit();
 			return true;
 		}
 
-	else if (e.type == SDL_QUIT)
-	{
-		game->exit();
-		return true;
-	}
-
-	else if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
-		{
-				paddle->handleEvents(e);
-				return true;
+		if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP) {
+			paddle->handleEvents(e);
+			return true;
 		}
+	}
 
 	return false;
 }
@@ -146,7 +144,7 @@ void PlayState::deleteList(list<GameObject*>::iterator it)
 {
 	if (it == firstReward)
 		firstReward++;
-	//delete* it;
+	delete* it;
 	stage.erase(it);
 	cout << "borro reward" << endl;
 }
@@ -177,7 +175,8 @@ void PlayState::createReward(Reward* reward) {
 }
 bool PlayState::rewardCollides(const SDL_Rect& rect, list<GameObject*>::iterator it)
 {
-	if (paddle->collides(rect)) return true;
+	if (paddle->collides(rect)) 
+		return true;
 	else if (rect.y > WIN_HEIGHT)
 		deleteList(it);
 	return false;

@@ -15,8 +15,15 @@ GameState::~GameState()
 
 void GameState::update()
 {
-	for (GameObject* o : stage)
-		o->update();
+	for (auto o = stage.begin(); o != stage.end();)
+	{
+		auto next = o;
+		++next;
+		(*o)->update();
+		o = next;
+	}
+	//for (GameObject* o : stage)
+		//o->update();
 }
 
 void GameState::render()

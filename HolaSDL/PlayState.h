@@ -9,7 +9,10 @@
 #include "Lives.h"
 
 class Reward;
-
+const uint ELEM_SIZE = 76;
+const uint WALL_SIZE = 20;
+const uint ObjSize = 20;
+const uint levels = 3;
 class PlayState : public GameState
 {
 protected:
@@ -36,10 +39,6 @@ public:
 	bool collides(const SDL_Rect & rect, const Vector2D & vel, Vector2D & collVector);
 	void saveGame(uint code);
 	void DeleteAll();
-	const uint ELEM_SIZE = 76;
-	const uint WALL_SIZE = 20;
-	const uint ObjSize = 20;
-	const uint levels = 3;
 	string nextLevel();
 	void PassLevel();
 	void resetRewards();
@@ -47,14 +46,8 @@ public:
 	void deleteList(list<GameObject*>::iterator it);
 	void reset();
 	void createReward(Reward* reward);
-
 	bool rewardCollides(const SDL_Rect & rect, list<GameObject*>::iterator it);
-
 	void moreLives();
-
 	void paddleLonger();
-
 	void paddleShorter();
-
-
 };
