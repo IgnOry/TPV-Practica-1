@@ -17,7 +17,6 @@ PlayState::PlayState(Game* g, uint mode):GameState(g)
 
 void PlayState::newGame() {
 
-	level = 1;
 	ball = new Ball(POS_START_BALL, ObjSize, ObjSize, game->getTexture(ballT), DIR_START_BALL, this);
 	stage.push_back(ball);
 	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, game->getTexture(paddleT), DIR_START_PADDLE);

@@ -38,7 +38,7 @@ bool Reward::handleEvent()
 }
 
 // Reward1
-Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD):Reward(pos, wid, heightD,ptr, direction, ptrGameD)
+Reward1::Reward1(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* pState):Reward(pos, wid, heightD,ptr, direction, pState)
 {
 	numReward = 1;
 }
@@ -55,7 +55,7 @@ Reward1::~Reward1()
 }
 
 // Reward2
-Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+Reward2::Reward2(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* pState) :Reward(pos, wid, heightD, ptr, direction, pState)
 {
 	numReward = 2;
 }
@@ -72,7 +72,7 @@ Reward2::~Reward2()
 }
 
 // Reward3
-Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+Reward3::Reward3(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* pState) :Reward(pos, wid, heightD, ptr, direction, pState)
 {
 	numReward = 3;
 }
@@ -89,7 +89,7 @@ Reward3::~Reward3()
 }
 
 // Reward4
-Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* ptrGameD) :Reward(pos, wid, heightD, ptr, direction, ptrGameD)
+Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D direction, PlayState* pState) :Reward(pos, wid, heightD, ptr, direction, pState)
 {
 	numReward = 4;
 }
@@ -97,8 +97,8 @@ Reward4::Reward4(Vector2D pos, uint wid, uint heightD, Texture * ptr, Vector2D d
 void Reward4::behavior()
 {
 	cout << "Next Level" << endl;
-	Reward::behavior();
 	state->PassLevel();
+	Reward::behavior();
 }
 
 Reward4::~Reward4()
