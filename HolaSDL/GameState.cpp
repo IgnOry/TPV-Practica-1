@@ -22,8 +22,7 @@ void GameState::update()
 		(*o)->update();
 		o = next;
 	}
-	//for (GameObject* o : stage)
-		//o->update();
+
 }
 
 void GameState::render()

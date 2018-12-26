@@ -6,8 +6,7 @@ class PlayState;
 class PauseState : public GameState
 {
 public:
-	PauseState(Game* g, PlayState* state);
-	virtual bool handleEvent(SDL_Event e);
+	PauseState(Game* g);
 	~PauseState();
 
 	static void resume(Game* app);
@@ -18,5 +17,4 @@ private:
 	Button* resumeB;
 	Button* saveB;
 	Button* menuB;
-	PlayState* pState;
 };

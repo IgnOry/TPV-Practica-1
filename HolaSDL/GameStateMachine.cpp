@@ -1,11 +1,8 @@
 #include "GameStateMachine.h"
 
-
-
 GameStateMachine::GameStateMachine()
 {
 }
-
 
 GameStateMachine::~GameStateMachine()
 {
@@ -37,3 +34,14 @@ void GameStateMachine::changeState(GameState* state)
 	popState();
 	pushState(state);
 }
+
+/*void GameStateMachine::setPlayState(GameState* state)
+{
+	pState = state;
+	pushState(state);
+}
+
+GameState* GameStateMachine::getPlayState()
+{
+	return pState;
+}*/

@@ -6,6 +6,7 @@
 PlayState::PlayState(Game* g, uint mode):GameState(g)
 {
 	game = g;
+
 	//Creamos todos los objetos del juego (escena PlayState)
 
 	if (mode == 0)
@@ -15,6 +16,8 @@ PlayState::PlayState(Game* g, uint mode):GameState(g)
 }
 
 void PlayState::newGame() {
+
+	level = 1;
 	ball = new Ball(POS_START_BALL, ObjSize, ObjSize, game->getTexture(ballT), DIR_START_BALL, this);
 	stage.push_back(ball);
 	paddle = new Paddle(POS_START_PADDLE, ObjSize * 6, ObjSize, game->getTexture(paddleT), DIR_START_PADDLE);
@@ -75,7 +78,7 @@ bool PlayState::handleEvent(SDL_Event e)
 {
 	if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_ESCAPE) {
 		cout << "Menu de pausa" << endl;
-		app->getMachine()->pushState(new PauseState(app, this));
+		app->getMachine()->pushState(new PauseState(app));
 		return true;
 	}
 	else {

@@ -4,11 +4,9 @@
 
 
 
-PauseState::PauseState(Game * g, PlayState * state): GameState(g)
+PauseState::PauseState(Game * g): GameState(g)
 {
 	game = g;
-
-	pState = state;
 
 	//nueva partida
 	resumeB = new Button(Vector2D(50, 100), 100, 100, g->getTexture(resumeT), g, resume);
@@ -21,24 +19,6 @@ PauseState::PauseState(Game * g, PlayState * state): GameState(g)
 	//salir
 	menuB = new Button(Vector2D(200, 500), 100, 100, g->getTexture(menuT), g, menu);
 	stage.push_back(menuB);
-}
-
-bool PauseState::handleEvent(SDL_Event e)
-{
-	if (e.type == SDL_KEYDOWN || e.type == SDL_KEYUP)
-	{
-		if (e.key.keysym.sym == SDLK_s)
-		{
-			uint code;
-			cin >> code;
-			pState->saveGame(code);
-			cout << "Partida guardada";
-
-			return true;
-		}
-	}
-
-	return false;
 }
 
 PauseState::~PauseState()
@@ -58,8 +38,15 @@ void PauseState::menu(Game* app)
 	app->getMachine()->popState();
 }
 
-void PauseState::save(Game* app)
+void PauseState::save(Game* app) //falla por llamarse a un metodo que necesita PlayState desde PauseState
 {
-	cout << "Guardando partida" << endl;
+	cout << "Introduce código de guardado de partida" << endl;	
+	
+	//PlayState* pState = app->getMachine()->getPlayState();
+
+	uint code;
+	cin >> code;
+	//pState->saveGame(code);
+	cout << "Guardando de partida" << endl;
 	//app->getMachine()->popState();
 }

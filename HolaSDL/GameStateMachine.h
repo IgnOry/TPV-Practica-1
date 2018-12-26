@@ -12,7 +12,11 @@ public:
 
 	GameState* currentState();
 	void changeState(GameState* state);
+	/*void setPlayState(GameState* state);
+	GameState* getPlayState();*/
 	void pushState(GameState* state);
 	void popState();
+protected:
+	GameState* pState;
 };
 
