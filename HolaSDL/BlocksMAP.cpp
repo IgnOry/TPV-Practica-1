@@ -16,18 +16,16 @@ BlocksMAP::BlocksMAP(string filepath, Texture* textureD, uint ELEM_BLOCK):Arkano
 
 BlocksMAP::~BlocksMAP()
 {
-	for (int c = 0; c < colums; c++)
+	for (int r = 0; r < colums; r++)
 	{
-		for (int r = 0; r < rows; r++)
+		for (int c = 0; c < rows; c++)
 		{
-				blocks[c][r] = nullptr;
-				delete blocks[c][r];
+			delete blocks[r][c];
+			//blocks[r][c] = nullptr;
 		}
-		delete[] blocks[c];
-		//blocks[c] = nullptr;
-
+		delete blocks[r];
 	}
-	delete blocks;
+	delete[] blocks;
 	blocks = nullptr;
 }
 
@@ -100,9 +98,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 			if (colour > 5 || colour < 0)
 				throw FileFormatError("Error en los colores del mapa de bloques del nivel");
 			if (colour == 0)
-			{
 				blocks[r][c] = nullptr;
-			}
 			else
 			{	
 				blocks[r][c] = new Block(Vector2D (BlockSize * c + 20,(BlockSize/3) * r + 20), BlockSize, BlockSize/3, colour-1, c, r, textureD); // se suma 20 porque es el ancho del muro
@@ -217,8 +213,8 @@ Block* BlocksMAP::blockAt(const Vector2D& p)
 
 void BlocksMAP::ballHitsBlock(Block& blockToDestroy) {
 
+	//delete blocks[blockToDestroy.colum()][blockToDestroy.row()];
 	blocks[blockToDestroy.colum()][blockToDestroy.row()] = nullptr;
-	delete blocks[blockToDestroy.colum()][blockToDestroy.row()];
 	numBlocks--;
 }
 
