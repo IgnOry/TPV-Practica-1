@@ -114,15 +114,17 @@ void PlayState::PassLevel()
 	level++;
 
 	lives->reset();
-	resetRewards();
+	//resetRewards();
 	resetObjects();
+	newGame();
 }
 
 void PlayState::resetRewards() {
 	
 	//lista.pop_back();
 	
-	for (auto it = firstReward; it != stage.end(); ++it) {
+	for (auto it = firstReward; it != stage.end(); ++it)
+	{
 		delete *it;
 		it = stage.erase(it);
 	}

@@ -1,4 +1,9 @@
-﻿  Ball.cpp
+﻿  ArkanoidObject.cpp
+  Ball.cpp
+  BestPlayers.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\bestplayers.cpp(61): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\bestplayers.cpp(64): warning C4018: '<': no coinciden signed/unsigned
+  Block.cpp
   BlocksMAP.cpp
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(19): warning C4018: '<': no coinciden signed/unsigned
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(21): warning C4018: '<': no coinciden signed/unsigned
@@ -14,14 +19,53 @@ c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(197): warni
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(199): warning C4018: '<': no coinciden signed/unsigned
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(239): warning C4018: '<': no coinciden signed/unsigned
 c:\users\ignac\documents\github\tpv-practica-1\holasdl\blocksmap.cpp(241): warning C4018: '<': no coinciden signed/unsigned
+  Button.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\button.cpp(26): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\button.cpp(26): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\button.cpp(26): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
   EndState.cpp
+  Font.cpp
   Game.cpp
+  GameState.cpp
+  GameStateMachine.cpp
+  Lives.cpp
+  main.cpp
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
   MainMenuState.cpp
+  MovingObject.cpp
+  Paddle.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(52): warning C4018: '<': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(58): warning C4018: '>': no coinciden signed/unsigned
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(79): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(79): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\paddle.cpp(79): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
   PauseState.cpp
   PlayState.cpp
   Reward.cpp
-  main.cpp
-c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\crtdbg.h(303): warning C4005: '_malloca': redefinición de macro
-  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\malloc.h(122): note: vea la definición anterior de '_malloca'
+  SDLGameObject.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\sdlgameobject.cpp(26): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\sdlgameobject.cpp(26): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\sdlgameobject.cpp(26): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+  Generando código...
+  Compilando...
+  Texture.cpp
+  Timer.cpp
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(35): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(35): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(35): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(36): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(36): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(36): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(38): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(38): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(38): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(40): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(40): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(40): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(41): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(41): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\ignac\documents\github\tpv-practica-1\holasdl\timer.cpp(41): warning C4838: la conversión de 'uint' en 'int' requiere una conversión de restricción
+  Wall.cpp
   Generando código...
   HolaSDL.vcxproj -> C:\Users\ignac\Documents\GitHub\TPV-Practica-1\bin\HolaSDLDebug.exe

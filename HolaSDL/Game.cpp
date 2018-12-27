@@ -19,6 +19,8 @@ Game::Game() {
 	{
 		//throw SDLError(SDL_GetError());
 	}
+
+	//TTF_Init();
 	
 	for (uint i = 0; i < NUM_TEXTURES; i++)
 	{

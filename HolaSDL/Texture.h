@@ -3,9 +3,11 @@
 
 #include "SDL.h" // Windows
 #include "SDL_image.h" // Windows
-
+//#include <SDL_ttf.h> // Puede variar dependiendo de la instalación
+//#include "Font.h"
 #include <string>
 #include "checkML.h"
+#include "SDLError.h"
 
 using namespace std;
 
@@ -36,6 +38,7 @@ public:
 	void load(string filename, uint numRows = 1, uint numCols = 1);
 	void render(const SDL_Rect& rect, SDL_RendererFlip flip = SDL_FLIP_NONE) const;
 	void renderFrame(const SDL_Rect& destRect, int row, int col, int angle = 0, SDL_RendererFlip flip = SDL_FLIP_NONE) const;
+	//void loadFromText(SDL_Renderer * renderer, string text, const Font & font, SDL_Color color);
 };
 
 #endif

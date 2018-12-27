@@ -41,3 +41,23 @@ void Texture::renderFrame(const SDL_Rect& destRect, int row, int col, int angle,
 	srcRect.h = fh;
 	SDL_RenderCopyEx(renderer, texture, &srcRect, &destRect, angle, 0, flip);
 }
+
+/*void Texture::loadFromText(SDL_Renderer* renderer, string text, const Font& font,
+	SDL_Color color) {
+	SDL_Surface* textSurface = font.generateSurface(text, color);
+	if (textSurface == nullptr)
+		throw exception("Unable to render text surface: "); //+ TTF_GetError());
+	else {
+		clean();
+		texture = SDL_CreateTextureFromSurface(renderer, textSurface);
+		if (texture == nullptr) {
+			throw exception("Unable to create texture from text: ");// + SDL_GetError());
+			w = h = 0;
+		}
+		else {
+			w = textSurface->w;
+			h = textSurface->h;
+		}
+		SDL_FreeSurface(textSurface);
+	}
+}*/
