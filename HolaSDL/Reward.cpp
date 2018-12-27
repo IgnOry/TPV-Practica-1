@@ -98,7 +98,7 @@ void Reward4::behavior()
 {
 	cout << "Next Level" << endl;
 	state->PassLevel();
-	Reward::behavior();
+	//Reward::behavior();
 }
 
 Reward4::~Reward4()

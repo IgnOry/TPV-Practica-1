@@ -65,8 +65,6 @@ void PlayState::update()
 				(*o)->update();
 				o = next;
 			}
-		//for (GameObject* o : stage)
-			//o->update();
 
 		if (stage.front()->getRect().y >= WIN_HEIGHT)
 			reset();
@@ -113,17 +111,15 @@ void PlayState::PassLevel()
 	//bestplayers->CompareTimes(timer->time());
 	level++;
 
+
 	lives->reset();
-	//resetRewards();
+	resetRewards();
 	resetObjects();
-	newGame();
 }
 
 void PlayState::resetRewards() {
-	
-	//lista.pop_back();
-	
-	for (auto it = firstReward; it != stage.end(); ++it)
+		
+	for (auto it = firstReward; it != stage.end();)
 	{
 		delete *it;
 		it = stage.erase(it);
