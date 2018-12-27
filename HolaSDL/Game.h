@@ -27,7 +27,7 @@ const uint NUM_TEXTURES = 13;
 const uint FRAMERATE = 200; //¿?
 const Vector2D POS_START_BALL = Vector2D(400, 300);
 const Vector2D POS_START_PADDLE = Vector2D(400, 500);
-const Vector2D DIR_START_BALL = Vector2D(0.05, 0.05);
+const Vector2D DIR_START_BALL = Vector2D(0.1, 0.1);
 const Vector2D DIR_START_PADDLE = Vector2D(0, 0);
 const struct TextureAttributes { string fileName; uint nRows; uint nCols; };
 

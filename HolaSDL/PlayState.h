@@ -16,6 +16,7 @@ const uint levels = 3;
 class PlayState : public GameState
 {
 protected:
+	bool nextL = false;
 	int level = 1;		//nivel actual
 	list<GameObject*>::iterator firstReward;	//iterador a la primera reward
 	Game* game;

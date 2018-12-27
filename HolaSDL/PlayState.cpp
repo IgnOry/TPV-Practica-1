@@ -51,23 +51,24 @@ PlayState::~PlayState()
 
 void PlayState::update()
 {
-	GameState::update();
+	//GameState::update();
 
 	if (blocksMAP->BlockNum() == 0)	// paso de nivel
 	{
 		PassLevel();
 	}
 	else {
-			for (auto o = stage.begin(); o != stage.end();)
-			{
-				auto next = o;
-				++next;
-				(*o)->update();
-				o = next;
-			}
+		GameState::update();
 
 		if (stage.front()->getRect().y >= WIN_HEIGHT)
 			reset();
+
+		if (nextL) {		//pasa de nivel
+			lives->reset();
+			resetRewards();
+			resetObjects();
+			nextL = false;
+		}
 	}
 }
 
@@ -110,11 +111,7 @@ void PlayState::PassLevel()
 {
 	//bestplayers->CompareTimes(timer->time());
 	level++;
-
-
-	lives->reset();
-	resetRewards();
-	resetObjects();
+	nextL = true;
 }
 
 void PlayState::resetRewards() {
