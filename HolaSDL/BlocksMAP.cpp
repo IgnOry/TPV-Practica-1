@@ -25,7 +25,7 @@ BlocksMAP::~BlocksMAP()
 		}
 		delete blocks[r];
 	}
-	delete[] blocks;
+	//delete[] blocks;
 	blocks = nullptr;
 }
 
@@ -95,7 +95,7 @@ void BlocksMAP::loadFile(const string& filePath, Texture* textureD, uint WIN_WID
 	for (int r = 0; r < colums; r++) {
 		for (int c = 0; c < rows; c++) {
 			file >> colour;
-			if (colour > 5 || colour < 0)
+			if (colour > 6 || colour < 0)
 				throw FileFormatError("Error en los colores del mapa de bloques del nivel");
 			if (colour == 0)
 				blocks[r][c] = nullptr;
