@@ -128,7 +128,8 @@ void PlayState::resetObjects() {
 	// Destruye el mapa de 
 	stage.pop_back();
 	delete blocksMAP;
-	blocksMAP = new BlocksMAP(nextLevel(), game->getTexture(bricksT), WIN_WIDTH);
+	//blocksMAP = nullptr;
+	blocksMAP->loadFile(nextLevel(), game->getTexture(bricksT), WIN_WIDTH);
 	stage.push_back(blocksMAP);
 
 	// Resetea la pelota, el paddle y el tiempo
