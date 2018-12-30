@@ -25,7 +25,7 @@ BlocksMAP::~BlocksMAP()
 		}
 		delete blocks[r];
 	}
-	delete blocks;
+	//delete[] blocks;
 	blocks = nullptr;
 }
 

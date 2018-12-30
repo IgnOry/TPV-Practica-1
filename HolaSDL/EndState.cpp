@@ -6,10 +6,10 @@ EndState::EndState(Game* g): GameState(g)
 {
 	game = g;
 
-	menuB = new Button(Vector2D(200, 100), 100, 100, g->getTexture(menuT), g, menu);
+	menuB = new Button(Vector2D(335, 150), 100, 65, g->getTexture(menuT), g, menu);
 	stage.push_back(menuB);
 
-	exitB = new Button(Vector2D(200, 300), 100, 100, g->getTexture(exitT), g, exit);
+	exitB = new Button(Vector2D(335, 450), 100, 65, g->getTexture(exitT), g, exit);
 	stage.push_back(exitB);
 }
 
