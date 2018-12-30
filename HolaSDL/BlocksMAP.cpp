@@ -21,11 +21,11 @@ BlocksMAP::~BlocksMAP()
 		for (int c = 0; c < rows; c++)
 		{
 			delete blocks[r][c];
-			//blocks[r][c] = nullptr;
+			blocks[r][c] = nullptr;
 		}
 		delete blocks[r];
 	}
-	//delete[] blocks;
+	delete blocks;
 	blocks = nullptr;
 }
 
